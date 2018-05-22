@@ -1,20 +1,94 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container" style="margin-top: 30px">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+          <caption class="text-center">DSO34BT Student Report</caption>
+          <thead>
+            <tr style="background: #58D68D">
+              <th>ASSESSMENTS</th>
+              <th>STORY</th>
+              <th>STATUS</th>
+              <th>MARKS</th>
+              <th>ALLOCATED MARKS</th>
+            </tr>   
+            <tr style="background: #DC7633">
+              <th>ASSESSMENT 1 _ ( 12% )</th>
+              <th>OPEN SOURCE DATABASE</th>
+              <th></th>
+              <th>[ 6 ]</th>
+              <th>{{ average }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>ERD created (printed out). Field and table names conform to naming standards </td>
+              <td>
+                  <select class="form-control">
+                      <option value="0">Not done</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+              </td>
+              <td>2</td>
+              <td>
+                <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Database script created (printed out) </td>
+              <td>
+                  <select class="form-control">
+                      <option value="0">Not done</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+              </td>
+              <td>1</td>
+              <td>
+                <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>3 Example tables are created &populated (at least 5 records each) as per ERD </td>
+              <td>
+                <select class="form-control">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+              </td>
+              <td>1</td>
+              <td>
+                <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Relationships created as specified in ERD</td>
+              <td>
+                  <select class="form-control">
+                      <option value="0">Not done</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+              </td>
+              <td>2</td>
+              <td>
+                <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="text-center">Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
