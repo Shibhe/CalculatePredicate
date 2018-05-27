@@ -2,6 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="table-responsive">
+          <h4 class="text-right">Predicate: {{ total | number:'1.2-2' }}</h4>
+          <h4 class="text-right">Left with {{ left | number:'1.2-2'}} to pass</h4>
         <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
           <caption class="text-center" style="margin-bottom: 10px"><h2>DSO34BT (GRADING SYSTEM)</h2></caption>
           <thead>
@@ -780,7 +782,7 @@
           <th>12</th>
           <th>SOFTWARE INTEGRATION</th>
           <th>[ 10 ]</th>
-          <th>{{ average }}</th>
+          <th>{{ average4 | number:'1.1-1' }}</th>
           <th></th>
     </tr>
     <tr>
@@ -789,10 +791,10 @@
       <td>The student demonstrates the use of external code or components to add functionality to the system. </td>
       <td>8</td>
       <td>
-        <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+        <input type="number" (keyup)="assess1($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t1">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a5.s1">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -805,10 +807,10 @@
       <td>The student  provides useful links to external sites, including social network sites.  </td>
       <td>2</td>
       <td>
-        <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
+        <input type="number" (keyup)="assess2($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t2">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a5.s2">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -830,10 +832,10 @@
     <td>The site appears neat and professional. Alignment of controls, standardized appearance, ease of navigation and logical navigation are addressed </td>
     <td>4</td>
     <td>
-      <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+      <input type="number" (keyup)="assess3($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t3">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a5.s3">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -846,10 +848,10 @@
     <td>Enough suitable BUSINESS data is  displayed (at least 10 records in each table). </td>
     <td>4</td>
     <td>
-      <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
+      <input type="number" (keyup)="assess4($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t4">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a5.s4">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -862,10 +864,10 @@
     <td>The group understands the business. </td>
     <td>2</td>
     <td>
-      <input type="number" (keyup)="ass3($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t3">
+      <input type="number" (keyup)="assess5($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t5">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a5.s5">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -886,10 +888,10 @@
     <td>The system is deployed on a web server and can be accessed from a remote client </td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+      <input type="number" (keyup)="assess6($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t6">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a5.s6">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -902,10 +904,10 @@
     <td>The database is on a different machine from the web server </td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
+      <input type="number" (keyup)="assess7($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t7">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a5.s7">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -927,10 +929,10 @@
   <td>Security and Authentication are correct in the 3-tiered deployment. This includes creation of users and displaying content and menu according to logged-on users. It also includes restriction of users on pages for which they are not authenticated. </td>
   <td>3 * 4</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="assess8($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t8">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s8">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -952,10 +954,10 @@
   <td>All DML operations have the correct result in the 3- tiered deployment. Check  4 main pages. </td>
   <td>24</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="assess9($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t9">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s9">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -968,10 +970,10 @@
   <td>Data  integrity  is  ensured using defensive programming  and database design. </td>
   <td>16</td>
   <td>
-    <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
+    <input type="number" (keyup)="assess10($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t10">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s10">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -984,10 +986,10 @@
   <td>Exception handling of exceptions at server level. </td>
   <td>4</td>
   <td>
-    <input type="number" (keyup)="ass3($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t3">
+    <input type="number" (keyup)="assess11($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t11">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s11">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -1000,10 +1002,10 @@
   <td>Exception handling is done at the lowest possible level </td>
   <td>6</td>
   <td>
-    <input type="number" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
+    <input type="number" (keyup)="assess12($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t12">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s12">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -1024,10 +1026,10 @@
   <td>The reports contribute to the business functionality and are correct and properly and logically filtered. Check 4 main reports </td>
   <td>4 * 4</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="assess13($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t13">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s13">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -1049,10 +1051,10 @@
   <td>Hard copy: Fully attributed ERD, Project Proposal, Database scripts, and Security information such as roles, users and passwords. Test cases. Installation/deployment instructions. </td>
   <td>5</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="assess14($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t14">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s14">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
@@ -1065,10 +1067,10 @@
   <td>Softcopy: Complete system on CD, including database script file. </td>
   <td>5</td>
   <td>
-    <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
+    <input type="number" (keyup)="assess15($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t15">
   </td>
   <td>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="a5.s15">
         <option value="0">Not done</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
