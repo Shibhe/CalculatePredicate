@@ -25,12 +25,16 @@ export class AppComponent implements OnInit {
   average2: number = 0;
   average3: number = 0;
   average4: number = 0;
-  total: number = 0;
+  total: number = 8;
 
   constructor() {}
   
 
   ngOnInit() {
+
+    if (this.total < 50){
+      this.left = 50 - Number(this.total);
+    }
     // assessment 1
     this.a1.s1 = "0";
     this.a1.s2 = "0";
@@ -40,6 +44,11 @@ export class AppComponent implements OnInit {
     this.a1.s6 = "0";
     this.a1.s7 = "0";
     this.a1.s8 = "0";
+
+    // Assessment 2
+    this.a2.t1 = "Complete";
+    this.a2.t2 = "Complete";
+
     //Assessment 3
     this.a3.s1 = "0";
     this.a3.s2 = "0";
@@ -209,6 +218,7 @@ export class AppComponent implements OnInit {
          this.left = 50 - Number(this.total);
        }else {
         alert("Passed");
+        this.left = 0;
       }
 
       } else {
@@ -499,6 +509,7 @@ asse14(e){
         this.left = 50 - Number(this.total);
        }else {
         alert("Passed");
+        this.left = 0;
       }
      } else {
        this.a3.t14 = 0;
@@ -861,6 +872,7 @@ asses17(e){
         this.left = 50 - Number(this.total);
       }else {
         alert("Passed");
+        this.left = 0;
       }
 
      } else {
@@ -1167,6 +1179,7 @@ assess15(e){
       this.left = 50 - Number(this.total);
     } else {
       alert("Passed");
+      this.left = 0;
     }
   } else {
     this.a5.t15 = 0;

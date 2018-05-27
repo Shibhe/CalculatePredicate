@@ -181,7 +181,7 @@
               <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a2.t1">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -197,7 +197,7 @@
               <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a2.t1">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -471,9 +471,9 @@
                           <input type="number" (keyup)="asse15($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t15" disabled>
                         </td>
                         <td>
-                          <select class="form-control" [(ngModel)]="a3.s15">
+                          <select class="form-control" [(ngModel)]="a3.s15" disabled>
                               <option value="0">Not done</option>
-                              <option value="Complete" checked>Complete</option>
+                              <option value="Complete" selected>Complete</option>
                               <option value="Pending">Pending</option>
                           </select>
                       </td>
