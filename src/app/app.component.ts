@@ -5,6 +5,7 @@ import { Assessment3 } from './model/assessment_3';
 import { Assessment2 } from './model/assessment_2';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Assessment1 } from 'src/app/model/assessment_1';
+import { AssessmentService } from 'src/app/service/assessment.service';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,9 @@ export class AppComponent implements OnInit {
   average4: number = 0;
   total: number = 8;
 
-  constructor() {}
+  assessment: any;
+
+  constructor(private _AssessmentService: AssessmentService) {}
   
 
   ngOnInit() {
@@ -100,6 +103,11 @@ export class AppComponent implements OnInit {
     this.a5.s13 = "0";
     this.a5.s14 = "0";
     this.a5.s15 = "0";
+
+   /* this._AssessmentService.getAllAssessment()
+                           .subscribe((data) => {
+                             this.assessment = data;
+                           });*/
   }
 
   // Assessment 1
