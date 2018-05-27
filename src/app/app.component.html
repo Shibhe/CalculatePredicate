@@ -21,7 +21,7 @@
                   <th>12</th>
                   <th>OPEN SOURCE DATABASE</th>
                   <th>[ 6 ]</th>
-                  <th>{{ average }}</th>
+                  <th>{{ average | number:'1.1-1' }}</th>
                   <th></th>
             </tr>
             <tr>
@@ -30,13 +30,13 @@
               <td>ERD created (printed out). Field and table names conform to naming standards </td>
               <td>2</td>
               <td>
-                <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+                <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a1.s1">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
-                    <option value="Pending">Pending</option>
+                   <!-- <option value="Pending">Pending</option>-->
                 </select>
             </td>
             </tr>
@@ -46,10 +46,10 @@
               <td>Database script created (printed out) </td>
               <td>1</td>
               <td>
-                <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+                <input type="number" (keyup)="ass2($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t2">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a1.s2">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
                     <option value="Pending">Pending</option>
@@ -62,10 +62,10 @@
               <td>3 Example tables are created &populated (at least 5 records each) as per ERD </td>
               <td>1</td>
               <td>
-                <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+                <input type="number" (keyup)="ass3($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t3">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a1.s3">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
                     <option value="Pending">Pending</option>
@@ -78,10 +78,10 @@
               <td>Relationships created as specified in ERD</td>
               <td>2</td>
               <td>
-                <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                <input type="number" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a1.s4">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
                     <option value="Pending">Pending</option>
@@ -102,10 +102,10 @@
             <td>Web server set up, client can connect over network using Internet explorer or other web browser.</td>
             <td>3</td>
             <td>
-              <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+              <input type="number" (keyup)="ass5($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t5">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a1.s5">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -118,10 +118,10 @@
             <td>Database on different machine from web server.  </td>
             <td>2</td>
             <td>
-              <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+              <input type="number" (keyup)="ass6($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t6">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a1.s6">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -134,10 +134,10 @@
             <td>Learner illustrates understanding of 3-tiered set-up.  </td>
             <td>2</td>
             <td>
-              <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+              <input type="number" (keyup)="ass7($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t7">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a1.s7">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -150,10 +150,10 @@
             <td>Web application built to list, insert, update and delete data on selected tables. All functionality correct.</td>
             <td>2</td>
             <td>
-              <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+              <input type="number" (keyup)="ass8($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t8">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a1.s8">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -176,7 +176,7 @@
             <td>Website should be highly customizable and flexible </td>
             <td></td>
             <td>
-              <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+              <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
               <select class="form-control">
@@ -192,7 +192,7 @@
             <td>Technologies to be used: phpMyAdmin, Angular 5, HTML, JavaScript, JQuery, TypeScript, SQL, and PHP </td>
             <td></td>
             <td>
-              <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+              <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
               <select class="form-control">
@@ -208,8 +208,8 @@
               <th>ASSESSMENT 3</th>
               <th>15</th>
               <th>OPEN SOURCE DATABASE</th>
-              <th>[ 6 ]</th>
-              <th>{{ average }}</th>
+              <th>[ 10 ]</th>
+              <th>{{ average2 | number:'1.1-1' }}</th>
               <th></th>
         </tr>
         <tr>
@@ -218,10 +218,10 @@
           <td>Database design </td>
           <td>10</td>
           <td>
-            <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+            <input type="number" (keyup)="asse1($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t1">
           </td>
           <td>
-            <select class="form-control">
+            <select class="form-control" [(ngModel)]="a3.s1">
                 <option value="0">Not done</option>
                 <option value="Complete">Complete</option>
                 <option value="Pending">Pending</option>
@@ -242,10 +242,10 @@
         <td>Menu structure. Business terminology, ease of use.  </td>
         <td>2</td>
         <td>
-          <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+          <input type="number" (keyup)="asse2($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t2">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a3.s2">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -258,10 +258,10 @@
         <td>Pages created which support business functionality. </td>
         <td>5</td>
         <td>
-          <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+          <input type="number" (keyup)="asse3($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t3">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a3.s3">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -282,10 +282,10 @@
       <td>4 main pages to be checked. DML operations. </td>
      <td>24</td>
       <td>
-        <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+        <input type="number" (keyup)="asse4($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t4">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a3.s4">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -298,10 +298,10 @@
       <td>At least 2 pages use stored procedures containing  DML statements affecting more than one table </td>
       <td>6</td>
       <td>
-        <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+        <input type="number" (keyup)="asse5($event)" maxlength="2" class="form-control"[(ngModel)]="a3.t5">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a3.s5">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -322,10 +322,10 @@
             <td>The system appears professional. Alignment of controls, business terminology on controls.  </td>
             <td>3</td>
             <td>
-              <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+              <input type="number" (keyup)="asse6($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t6">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a3.s6">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -338,10 +338,10 @@
             <td>Standardised look throughout site.  </td>
             <td>2</td>
             <td>
-              <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+              <input type="number" (keyup)="asse7($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t7">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a3.s7">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -354,10 +354,10 @@
             <td>Every page has a title. </td>
             <td>2</td>
             <td>
-              <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+              <input type="number" (keyup)="asse8($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t8">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a3.s8">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -370,10 +370,10 @@
             <td>Drop downs where applicable (all fk fields).</td>
             <td>4</td>
             <td>
-              <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+              <input type="number" (keyup)="asse9($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t9">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a3.s9">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -386,10 +386,10 @@
               <td>All controls display suitable business meaning. (e.g. be careful of displaying PKs in drop- down list)</td>
               <td>2</td>
               <td>
-                <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                <input type="number" (keyup)="asse10($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t10">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a3.s10">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
                     <option value="Pending">Pending</option>
@@ -402,10 +402,10 @@
                 <td>A range of suitable controls used for recording sets, enumerated types, lists, dates.</td>
                 <td>8</td>
                 <td>
-                  <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                  <input type="number" (keyup)="asse11($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t11">
                 </td>
                 <td>
-                  <select class="form-control">
+                  <select class="form-control" [(ngModel)]="a3.s11">
                       <option value="0">Not done</option>
                       <option value="Complete">Complete</option>
                       <option value="Pending">Pending</option>
@@ -418,10 +418,10 @@
                   <td>Correct values are recorded in database when values are recorded using non- textbox controls (e.g. radiogroups, calendars, drop-down lists, checkboxes.)</td>
                   <td>5</td>
                   <td>
-                    <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                    <input type="number" (keyup)="asse12($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t12">
                   </td>
                   <td>
-                    <select class="form-control">
+                    <select class="form-control" [(ngModel)]="a3.s12">
                         <option value="0">Not done</option>
                         <option value="Complete">Complete</option>
                         <option value="Pending">Pending</option>
@@ -434,10 +434,10 @@
                     <td>At least one databound image displayed</td>
                     <td>3</td>
                     <td>
-                      <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                      <input type="number" (keyup)="asse13($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t13">
                     </td>
                     <td>
-                      <select class="form-control">
+                      <select class="form-control" [(ngModel)]="a3.s13">
                           <option value="0">Not done</option>
                           <option value="Complete">Complete</option>
                           <option value="Pending">Pending</option>
@@ -450,10 +450,10 @@
                       <td>At least two default values are  supplied inside a FormView, DetailsView or Grandview</td>
                       <td>2</td>
                       <td>
-                        <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                        <input type="number" (keyup)="asse14($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t14">
                       </td>
                       <td>
-                        <select class="form-control">
+                        <select class="form-control" [(ngModel)]="a3.s14">
                             <option value="0">Not done</option>
                             <option value="Complete">Complete</option>
                             <option value="Pending">Pending</option>
@@ -466,12 +466,12 @@
                         <td>Use case descriptions and diagrams with test cases and test data for each page for testing the system. (Hard copy) </td>
                         <td></td>
                         <td>
-                          <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                          <input type="number" (keyup)="asse15($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t15" disabled>
                         </td>
                         <td>
-                          <select class="form-control">
+                          <select class="form-control" [(ngModel)]="a3.s15">
                               <option value="0">Not done</option>
-                              <option value="Complete">Complete</option>
+                              <option value="Complete" checked>Complete</option>
                               <option value="Pending">Pending</option>
                           </select>
                       </td>
@@ -482,7 +482,7 @@
             <th>22</th>
             <th>SECURITY AND AUTHENTICATION</th>
             <th>[ 22 ]</th>
-            <th>{{ average }}</th>
+            <th>{{ average3 | number:'1.1-1' }}</th>
             <th></th>
       </tr>
       <tr>
@@ -491,10 +491,10 @@
         <td>Access is restricted according to  logged on user. Test for anonymous users and restricted users and roles.  </td>
         <td>3</td>
         <td>
-          <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+          <input type="number" (keyup)="asses1($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t1">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a4.s1">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -507,10 +507,10 @@
         <td> New users can be created dynamically.  </td>
         <td>2</td>
         <td>
-          <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+          <input type="number" (keyup)="asses2($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t2">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a4.s4">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -523,10 +523,10 @@
         <td>The user interface for creating new users is integrated with the business aspects. No duplicate data-entry (e.g. asking for username) is required</td>
         <td>3</td>
         <td>
-          <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+          <input type="number" (keyup)="asses3($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t3">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a4.s3">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -539,10 +539,10 @@
         <td>New users are assigned to correct role.</td>
         <td>2</td>
         <td>
-          <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+          <input type="number" (keyup)="asses4($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t4">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a4.s4">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -555,10 +555,10 @@
           <td>New user information is correctly recorded in DB.</td>
           <td>2</td>
           <td>
-            <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+            <input type="number" (keyup)="asses5($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t5">
           </td>
           <td>
-            <select class="form-control">
+            <select class="form-control" [(ngModel)]="a4.s5">
                 <option value="0">Not done</option>
                 <option value="Complete">Complete</option>
                 <option value="Pending">Pending</option>
@@ -571,10 +571,10 @@
             <td>Page content is displayed  according to logged on user. Check for Update/delete  pages. </td>
             <td>4</td>
             <td>
-              <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+              <input type="number" (keyup)="asses6($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t6">
             </td>
             <td>
-              <select class="form-control">
+              <select class="form-control" [(ngModel)]="a4.s6">
                   <option value="0">Not done</option>
                   <option value="Complete">Complete</option>
                   <option value="Pending">Pending</option>
@@ -587,10 +587,10 @@
               <td>Menu is adapted according to logged- on user using suitable method. </td>
               <td>4</td>
               <td>
-                <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                <input type="number" (keyup)="asses7($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t7">
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="a4.s7">
                     <option value="0">Not done</option>
                     <option value="Complete">Complete</option>
                     <option value="Pending">Pending</option>
@@ -603,10 +603,10 @@
                 <td>Default page is adapted according to logged-on user </td>
                 <td>2</td>
                 <td>
-                  <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+                  <input type="number" (keyup)="asses8($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t8">
                 </td>
                 <td>
-                  <select class="form-control">
+                  <select class="form-control" [(ngModel)]="a4.s8">
                       <option value="0">Not done</option>
                       <option value="Complete">Complete</option>
                       <option value="Pending">Pending</option>
@@ -627,10 +627,10 @@
       <td>There is at least one summary report page, useful for management. </td>
       <td>1</td>
       <td>
-        <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+        <input type="number" (keyup)="asses9($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t9">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a4.s9">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -643,10 +643,10 @@
       <td>There are at least three reports (different from the summary report), each of which displays data from more than one table. </td>
       <td>3</td>
       <td>
-        <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+        <input type="number" (keyup)="asses10($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t10">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a4.s10">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -659,10 +659,10 @@
       <td>The report is properly filtered according to business requirements. 1 mark for each filter  used (2) (E.g. dates). </td>
       <td>4</td>
       <td>
-        <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+        <input type="number" (keyup)="asses11($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t11">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a4.s11">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -675,10 +675,10 @@
       <td>The report is also filtered according to the logged-on user where applicable (2).</td>
       <td>3</td>
       <td>
-        <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+        <input type="number" (keyup)="asses12($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t12">
       </td>
       <td>
-        <select class="form-control">
+        <select class="form-control" [(ngModel)]="a4.s12">
             <option value="0">Not done</option>
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
@@ -691,10 +691,10 @@
         <td>The report filters use default values to simplify the filter selection, e.g. the filter shows beginning of current month. Each student evaluated individually</td>
         <td>5</td>
         <td>
-          <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+          <input type="number" (keyup)="asses13($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t13">
         </td>
         <td>
-          <select class="form-control">
+          <select class="form-control" [(ngModel)]="a4.s13">
               <option value="0">Not done</option>
               <option value="Complete">Complete</option>
               <option value="Pending">Pending</option>
@@ -707,10 +707,10 @@
           <td>Each report can be exported to another format, e.g. PDF, CSV.</td>
           <td>4</td>
           <td>
-            <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+            <input type="number" (keyup)="asses14($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t14">
           </td>
           <td>
-            <select class="form-control">
+            <select class="form-control" [(ngModel)]="a4.s14">
                 <option value="0">Not done</option>
                 <option value="Complete">Complete</option>
                 <option value="Pending">Pending</option>
@@ -731,10 +731,10 @@
     <td>In each case check error handling for empty fields </td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+      <input type="number" (keyup)="asses15($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t15">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a4.s15">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -747,10 +747,10 @@
     <td>Numeric and/or date data</td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+      <input type="number" (keyup)="asses16($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t16">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a4.s16">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -763,10 +763,10 @@
     <td>Field lengths or ranges </td>
     <td>1</td>
     <td>
-      <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+      <input type="number" (keyup)="asses17($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t17">
     </td>
     <td>
-      <select class="form-control">
+      <select class="form-control" [(ngModel)]="a4.s17">
           <option value="0">Not done</option>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
@@ -789,7 +789,7 @@
       <td>The student demonstrates the use of external code or components to add functionality to the system. </td>
       <td>8</td>
       <td>
-        <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+        <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
       </td>
       <td>
         <select class="form-control">
@@ -805,7 +805,7 @@
       <td>The student  provides useful links to external sites, including social network sites.  </td>
       <td>2</td>
       <td>
-        <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+        <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
       </td>
       <td>
         <select class="form-control">
@@ -830,7 +830,7 @@
     <td>The site appears neat and professional. Alignment of controls, standardized appearance, ease of navigation and logical navigation are addressed </td>
     <td>4</td>
     <td>
-      <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+      <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
     </td>
     <td>
       <select class="form-control">
@@ -846,7 +846,7 @@
     <td>Enough suitable BUSINESS data is  displayed (at least 10 records in each table). </td>
     <td>4</td>
     <td>
-      <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+      <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
     </td>
     <td>
       <select class="form-control">
@@ -862,7 +862,7 @@
     <td>The group understands the business. </td>
     <td>2</td>
     <td>
-      <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+      <input type="number" (keyup)="ass3($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t3">
     </td>
     <td>
       <select class="form-control">
@@ -886,7 +886,7 @@
     <td>The system is deployed on a web server and can be accessed from a remote client </td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+      <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
     </td>
     <td>
       <select class="form-control">
@@ -902,7 +902,7 @@
     <td>The database is on a different machine from the web server </td>
     <td>6</td>
     <td>
-      <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+      <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
     </td>
     <td>
       <select class="form-control">
@@ -927,7 +927,7 @@
   <td>Security and Authentication are correct in the 3-tiered deployment. This includes creation of users and displaying content and menu according to logged-on users. It also includes restriction of users on pages for which they are not authenticated. </td>
   <td>3 * 4</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
   </td>
   <td>
     <select class="form-control">
@@ -952,7 +952,7 @@
   <td>All DML operations have the correct result in the 3- tiered deployment. Check  4 main pages. </td>
   <td>24</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
   </td>
   <td>
     <select class="form-control">
@@ -968,7 +968,7 @@
   <td>Data  integrity  is  ensured using defensive programming  and database design. </td>
   <td>16</td>
   <td>
-    <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+    <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
   </td>
   <td>
     <select class="form-control">
@@ -984,7 +984,7 @@
   <td>Exception handling of exceptions at server level. </td>
   <td>4</td>
   <td>
-    <input type="number" (keyup)="ass3($event)" class="form-control" [(ngModel)]="a1.t3">
+    <input type="number" (keyup)="ass3($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t3">
   </td>
   <td>
     <select class="form-control">
@@ -1000,7 +1000,7 @@
   <td>Exception handling is done at the lowest possible level </td>
   <td>6</td>
   <td>
-    <input type="number" (keyup)="ass4($event)" class="form-control" [(ngModel)]="a1.t4">
+    <input type="number" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
   </td>
   <td>
     <select class="form-control">
@@ -1024,7 +1024,7 @@
   <td>The reports contribute to the business functionality and are correct and properly and logically filtered. Check 4 main reports </td>
   <td>4 * 4</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
   </td>
   <td>
     <select class="form-control">
@@ -1049,7 +1049,7 @@
   <td>Hard copy: Fully attributed ERD, Project Proposal, Database scripts, and Security information such as roles, users and passwords. Test cases. Installation/deployment instructions. </td>
   <td>5</td>
   <td>
-    <input type="number" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
+    <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
   </td>
   <td>
     <select class="form-control">
@@ -1065,7 +1065,7 @@
   <td>Softcopy: Complete system on CD, including database script file. </td>
   <td>5</td>
   <td>
-    <input type="number" (keyup)="ass2($event)" class="form-control" [(ngModel)]="a1.t2">
+    <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t2">
   </td>
   <td>
     <select class="form-control">
