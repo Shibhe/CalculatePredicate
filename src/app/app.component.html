@@ -1,6 +1,35 @@
 <div class="container-fluid" style="margin-top: 30px">
   <div class="row">
+    <div class="col-lg-12">
+        <form>
+            <caption class="text-center"><h3>Student Details</h3></caption>
+          <fieldset>
+            <div class="row">
+              <div class="col-lg-4">
+                  <input class="form-control" style="height:40px" type="text" placeholder="Enter student number">
+              </div>
+              <div class="col-lg-4">
+                  <input class="form-control" style="height:40px" type="text" placeholder="Enter student surname">
+              </div>
+              <div class="col-lg-4">
+                  <input class="form-control" style="height:40px" type="text" placeholder="Enter student initials">
+              </div>
+            </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-lg-8">
+                    <input class="form-control" style="height:40px" type="text" placeholder="Enter group name">
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" style="height:40px" type="text" placeholder="Enter student group">
+                </div>
+            </div>
+          </fieldset>
+        </form>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12">
+      
       <div class="table-responsive">
           <h4 class="text-right">Predicate: {{ total | number:'1.2-2' }}</h4>
           <h4 class="text-right">Left with {{ left | number:'1.2-2'}} to pass</h4>
@@ -1081,7 +1110,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="5" class="text-center">Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
+              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
             </tr>
           </tfoot>
         </table>
@@ -1089,3 +1118,5 @@
     </div>
   </div>
 </div>
+
+>
