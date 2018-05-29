@@ -104,10 +104,11 @@ export class AppComponent implements OnInit {
     this.a5.s14 = "0";
     this.a5.s15 = "0";
 
-   /* this._AssessmentService.getAllAssessment()
+    this._AssessmentService.getAllAssessment()
                            .subscribe((data) => {
                              this.assessment = data;
-                           });*/
+                             console.log(this.assessment);
+                           });
   }
 
   // Assessment 1
