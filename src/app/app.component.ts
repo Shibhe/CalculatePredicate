@@ -68,8 +68,8 @@ export class AppComponent implements OnInit {
     this.a3.s13 = "0";
     this.a3.s14 = "0";
     this.a3.s15 = "0";
-    //Assessment 4
 
+    //Assessment 4
     this.a4.s1 = "0";
     this.a4.s2 = "0";
     this.a4.s3 = "0";
@@ -87,6 +87,7 @@ export class AppComponent implements OnInit {
     this.a4.s15 = "0";
     this.a4.s16 = "0";
     this.a4.s17 = "0";
+    
     // Assessment 5
     this.a5.s1 = "0";
     this.a5.s2 = "0";
