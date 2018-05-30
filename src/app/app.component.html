@@ -53,9 +53,9 @@
           <tbody>
             <!--Assessment 1-->
             <tr style="background: #DC7633">
-                  <th>ASSESSMENT 1</th>
-                  <th>12</th>
-                  <th>OPEN SOURCE DATABASE</th>
+                  <th>{{ assessment['0']?.assessment_Desc | uppercase }}</th>
+                  <th>{{ assessment['0']?.assessment_Weight }}</th>
+                  <th>{{ assessment['0']?.category_Desc | uppercase }}</th>
                   <th>[ 6 ]</th>
                   <th>{{ average | number:'1.1-1' }}</th>
                   <th></th>
@@ -63,8 +63,8 @@
             <tr>
               <td></td>
               <th></th>
-              <td>ERD created (printed out). Field and table names conform to naming standards </td>
-              <td>2</td>
+              <td>{{ assessment['0']?.name }} </td>
+              <td>{{ assessment['0']?.marks}} </td>
               <td>
                 <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
               </td>

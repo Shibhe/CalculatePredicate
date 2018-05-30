@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   average4: number = 0;
   total: number = 8;
 
-  assessment: any;
+  assessment: any[] = [];
 
   constructor(private _AssessmentService: AssessmentService) {}
   
@@ -107,6 +107,8 @@ export class AppComponent implements OnInit {
     this._AssessmentService.getAllAssessment()
                            .subscribe((data) => {
                              this.assessment = data;
+
+
                              console.log(this.assessment);
                            });
   }
