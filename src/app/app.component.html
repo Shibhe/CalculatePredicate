@@ -567,18 +567,18 @@
 
         <!--Assessment 4-->
         <tr style="background: #DC7633">
-            <th>ASSESSMENT 4</th>
+            <th> {{ assessment['33'].assessment_Desc }}</th>
             <th>22</th>
-            <th>SECURITY AND AUTHENTICATION</th>
-            <th>[ 22 ]</th>
+            <th>{{ assessment['33'].category_Desc }}</th>
+            <th>[ {{ assessment['33'].assessment_Weight }} ]</th>
             <th>{{ average3 | number:'1.1-1' }}</th>
             <th></th>
       </tr>
       <tr>
         <td></td>
         <th></th>
-        <td>Access is restricted according to  logged on user. Test for anonymous users and restricted users and roles.  </td>
-        <td>3</td>
+        <td>{{ assessment['33'].name }} </td>
+        <td>{{ assessment['33'].marks }}</td>
         <td>
           <input type="number" (keyup)="asses1($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t1">
         </td>
@@ -593,8 +593,8 @@
       <tr>
         <td></td>
         <th></th>
-        <td> New users can be created dynamically.  </td>
-        <td>2</td>
+        <td>{{ assessment['34'].name }} </td>
+        <td>{{ assessment['34'].marks }}</td>
         <td>
           <input type="number" (keyup)="asses2($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t2">
         </td>
@@ -609,8 +609,8 @@
       <tr>
         <td></td>
         <th></th>
-        <td>The user interface for creating new users is integrated with the business aspects. No duplicate data-entry (e.g. asking for username) is required</td>
-        <td>3</td>
+        <td>{{ assessment['35'].name }} </td>
+        <td>{{ assessment['35'].marks }}</td>
         <td>
           <input type="number" (keyup)="asses3($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t3">
         </td>
@@ -625,8 +625,8 @@
       <tr>
         <td></td>
         <td></td>
-        <td>New users are assigned to correct role.</td>
-        <td>2</td>
+        <td>{{ assessment['36'].name }} </td>
+        <td>{{ assessment['36'].marks }}</td>
         <td>
           <input type="number" (keyup)="asses4($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t4">
         </td>
@@ -641,8 +641,8 @@
       <tr>
           <td></td>
           <td></td>
-          <td>New user information is correctly recorded in DB.</td>
-          <td>2</td>
+          <td>{{ assessment['37'].name }} </td>
+          <td>{{ assessment['37'].marks }}</td>
           <td>
             <input type="number" (keyup)="asses5($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t5">
           </td>
@@ -657,8 +657,8 @@
         <tr>
             <td></td>
             <td></td>
-            <td>Page content is displayed  according to logged on user. Check for Update/delete  pages. </td>
-            <td>4</td>
+            <td>{{ assessment['38'].name }} </td>
+            <td>{{ assessment['38'].marks }}</td>
             <td>
               <input type="number" (keyup)="asses6($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t6">
             </td>
@@ -673,8 +673,8 @@
           <tr>
               <td></td>
               <td></td>
-              <td>Menu is adapted according to logged- on user using suitable method. </td>
-              <td>4</td>
+              <td>{{ assessment['39'].name }} </td>
+              <td>{{ assessment['39'].marks }}</td>
               <td>
                 <input type="number" (keyup)="asses7($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t7">
               </td>
@@ -689,8 +689,8 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td>Default page is adapted according to logged-on user </td>
-                <td>2</td>
+                <td>{{ assessment['40'].name }} </td>
+                <td>{{ assessment['40'].marks }}</td>
                 <td>
                   <input type="number" (keyup)="asses8($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t8">
                 </td>
@@ -705,16 +705,16 @@
       <tr style="background: #21618C">
           <th></th>
           <th></th>
-          <th>REPORTS</th>
-          <th>[20]</th>
+          <th>{{ assessment['21'].category_Desc }}</th>
+          <th>[{{ assessment['21'].assessment_Weight }}]</th>
           <th></th>
           <th></th>
     </tr>
     <tr>
       <td></td>
       <th></th>
-      <td>There is at least one summary report page, useful for management. </td>
-      <td>1</td>
+      <td>{{ assessment['21'].name }} </td>
+      <td>{{ assessment['21'].marks }}</td>
       <td>
         <input type="number" (keyup)="asses9($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t9">
       </td>
@@ -729,8 +729,8 @@
     <tr>
       <td></td>
       <th></th>
-      <td>There are at least three reports (different from the summary report), each of which displays data from more than one table. </td>
-      <td>3</td>
+      <td>{{ assessment['22'].name }} </td>
+      <td>{{ assessment['22'].marks }}</td>
       <td>
         <input type="number" (keyup)="asses10($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t10">
       </td>
@@ -745,8 +745,8 @@
     <tr>
       <td></td>
       <th></th>
-      <td>The report is properly filtered according to business requirements. 1 mark for each filter  used (2) (E.g. dates). </td>
-      <td>4</td>
+      <td>{{ assessment['23'].name }} </td>
+      <td>{{ assessment['23'].marks }}</td>
       <td>
         <input type="number" (keyup)="asses11($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t11">
       </td>
@@ -761,8 +761,8 @@
     <tr>
       <td></td>
       <td></td>
-      <td>The report is also filtered according to the logged-on user where applicable (2).</td>
-      <td>3</td>
+      <td>{{ assessment['24'].name }} </td>
+      <td>{{ assessment['24'].marks }}</td>
       <td>
         <input type="number" (keyup)="asses12($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t12">
       </td>
@@ -777,8 +777,8 @@
     <tr>
         <td></td>
         <td></td>
-        <td>The report filters use default values to simplify the filter selection, e.g. the filter shows beginning of current month. Each student evaluated individually</td>
-        <td>5</td>
+        <td>{{ assessment['25'].name }} </td>
+        <td>{{ assessment['25'].marks }}</td>
         <td>
           <input type="number" (keyup)="asses13($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t13">
         </td>
@@ -793,8 +793,8 @@
       <tr>
           <td></td>
           <td></td>
-          <td>Each report can be exported to another format, e.g. PDF, CSV.</td>
-          <td>4</td>
+          <td>{{ assessment['26'].name }} </td>
+          <td>{{ assessment['26'].marks }}</td>
           <td>
             <input type="number" (keyup)="asses14($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t14">
           </td>
@@ -809,16 +809,16 @@
     <tr style="background: #21618C">
         <th></th>
         <th></th>
-        <th>ERROR-HANDLING FOR THE FOUR-DATA ENTRY/UPDATE PAGES</th>
-        <th>[12]</th>
+        <th>{{ assessment['30'].category_Desc }}</th>
+        <th>[{{ assessment['30'].assessment_Weight }}]</th>
         <th></th>
         <th></th>
   </tr>
   <tr>
     <td></td>
     <th></th>
-    <td>In each case check error handling for empty fields </td>
-    <td>6</td>
+    <td>{{ assessment['30'].name }} </td>
+    <td>{{ assessment['30'].marks }}</td>
     <td>
       <input type="number" (keyup)="asses15($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t15">
     </td>
@@ -833,8 +833,8 @@
   <tr>
     <td></td>
     <th></th>
-    <td>Numeric and/or date data</td>
-    <td>6</td>
+    <td>{{ assessment['31'].name }} </td>
+    <td>{{ assessment['31'].marks }}</td>
     <td>
       <input type="number" (keyup)="asses16($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t16">
     </td>
@@ -849,8 +849,8 @@
   <tr>
     <td></td>
     <th></th>
-    <td>Field lengths or ranges </td>
-    <td>1</td>
+    <td>{{ assessment['32'].name }} </td>
+    <td>{{ assessment['32'].marks }}</td>
     <td>
       <input type="number" (keyup)="asses17($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t17">
     </td>
@@ -865,9 +865,9 @@
 
       <!--Assessment 5-->
       <tr style="background: #DC7633">
-          <th>ASSESSMENT 5</th>
+          <th>{{ assessment['42'].assessment_Desc }}</th>
           <th>12</th>
-          <th>SOFTWARE INTEGRATION</th>
+          <th>{{ assessment['42'].category_Desc }}</th>
           <th>[ 10 ]</th>
           <th>{{ average4 | number:'1.1-1' }}</th>
           <th></th>
@@ -875,8 +875,8 @@
     <tr>
       <td></td>
       <th></th>
-      <td>The student demonstrates the use of external code or components to add functionality to the system. </td>
-      <td>8</td>
+      <td>{{ assessment['42'].name }} </td>
+      <td>{{ assessment['42'].marks }}</td>
       <td>
         <input type="number" (keyup)="assess1($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t1">
       </td>
@@ -891,8 +891,8 @@
     <tr>
       <td></td>
       <th></th>
-      <td>The student  provides useful links to external sites, including social network sites.  </td>
-      <td>2</td>
+      <td>{{ assessment['43'].name }} </td>
+      <td>{{ assessment['43'].marks }}</td>
       <td>
         <input type="number" (keyup)="assess2($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t2">
       </td>
@@ -908,16 +908,16 @@
     <tr style="background: #21618C">
         <th></th>
         <th></th>
-        <th>OVERALL IMRESSION</th>
-        <th>[10]</th>
+        <th>{{ assessment['44'].category_Desc }}</th>
+        <th>[{{ assessment['44'].assessment_Weight }}]</th>
         <th></th>
         <th></th>
   </tr>
   <tr>
     <td></td>
     <th></th>
-    <td>The site appears neat and professional. Alignment of controls, standardized appearance, ease of navigation and logical navigation are addressed </td>
-    <td>4</td>
+    <td>{{ assessment['44'].name }} </td>
+      <td>{{ assessment['44'].marks }}</td>
     <td>
       <input type="number" (keyup)="assess3($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t3">
     </td>
@@ -932,8 +932,8 @@
   <tr>
     <td></td>
     <th></th>
-    <td>Enough suitable BUSINESS data is  displayed (at least 10 records in each table). </td>
-    <td>4</td>
+    <td>{{ assessment['45'].name }} </td>
+      <td>{{ assessment['45'].marks }}</td>
     <td>
       <input type="number" (keyup)="assess4($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t4">
     </td>
@@ -948,8 +948,8 @@
   <tr>
     <td></td>
     <th></th>
-    <td>The group understands the business. </td>
-    <td>2</td>
+    <td>{{ assessment['46'].name }} </td>
+      <td>{{ assessment['46'].marks }}</td>
     <td>
       <input type="number" (keyup)="assess5($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t5">
     </td>
@@ -964,16 +964,16 @@
   <tr style="background: #21618C">
       <th></th>
       <th></th>
-      <th>3-TIERED IMPLEMENTATION</th>
-      <th>[12]</th>
+      <th>{{ assessment['47'].category_Desc }}</th>
+        <th>[{{ assessment['47'].assessment_Weight }}]</th>
       <th></th>
       <th></th>
   </tr>
   <tr>
     <td></td>
     <th></th>
-    <td>The system is deployed on a web server and can be accessed from a remote client </td>
-    <td>6</td>
+    <td>{{ assessment['47'].name }} </td>
+    <td>{{ assessment['47'].marks }}</td>
     <td>
       <input type="number" (keyup)="assess6($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t6">
     </td>
@@ -988,8 +988,8 @@
   <tr>
     <td></td>
     <th></th>
-    <td>The database is on a different machine from the web server </td>
-    <td>6</td>
+    <td>{{ assessment['48'].name }} </td>
+      <td>{{ assessment['48'].marks }}</td>
     <td>
       <input type="number" (keyup)="assess7($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t7">
     </td>
@@ -1005,16 +1005,16 @@
   <tr style="background: #21618C">
       <th></th>
       <th></th>
-      <th>SECURITY AND AUTHENTICATION</th>
-      <th>[12]</th>
+      <th>{{ assessment['41'].category_Desc }} </th>
+      <th>{{ assessment['41'].assessment_Weight }}</th>
       <th></th>
       <th></th>
   </tr>
   <tr>
   <td></td>
   <th></th>
-  <td>Security and Authentication are correct in the 3-tiered deployment. This includes creation of users and displaying content and menu according to logged-on users. It also includes restriction of users on pages for which they are not authenticated. </td>
-  <td>3 * 4</td>
+  <td>{{ assessment['41'].name }} </td>
+  <td>{{ assessment['41'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess8($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t8">
   </td>
@@ -1030,16 +1030,16 @@
   <tr style="background: #21618C">
       <th></th>
       <th></th>
-      <th>INTEGRITY</th>
-      <th>[50]</th>
+      <th>{{ assessment['49'].category_Desc }} </th>
+      <th>{{ assessment['49'].assessment_Weight }}</th>
       <th></th>
       <th></th>
   </tr>
   <tr>
   <td></td>
   <th></th>
-  <td>All DML operations have the correct result in the 3- tiered deployment. Check  4 main pages. </td>
-  <td>24</td>
+  <td>{{ assessment['49'].name }} </td>
+  <td>{{ assessment['49'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess9($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t9">
   </td>
@@ -1054,8 +1054,8 @@
   <tr>
   <td></td>
   <th></th>
-  <td>Data  integrity  is  ensured using defensive programming  and database design. </td>
-  <td>16</td>
+  <td>{{ assessment['50'].name }} </td>
+  <td>{{ assessment['50'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess10($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t10">
   </td>
@@ -1070,8 +1070,8 @@
   <tr>
   <td></td>
   <th></th>
-  <td>Exception handling of exceptions at server level. </td>
-  <td>4</td>
+  <td>{{ assessment['51'].name }} </td>
+  <td>{{ assessment['51'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess11($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t11">
   </td>
@@ -1086,8 +1086,8 @@
   <tr>
   <td></td>
   <td></td>
-  <td>Exception handling is done at the lowest possible level </td>
-  <td>6</td>
+  <td>{{ assessment['52'].name }} </td>
+  <td>{{ assessment['52'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess12($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t12">
   </td>
@@ -1102,16 +1102,16 @@
   <tr style="background: #21618C">
       <th></th>
       <th></th>
-      <th>REPORTS</th>
-      <th>[16]</th>
+      <th>{{ assessment['49'].category_Desc }} </th>
+      <th>{{ assessment['49'].assessment_Weight }}</th>
       <th></th>
       <th></th>
   </tr>
   <tr>
   <td></td>
   <th></th>
-  <td>The reports contribute to the business functionality and are correct and properly and logically filtered. Check 4 main reports </td>
-  <td>4 * 4</td>
+  <td>{{ assessment['49'].name }} </td>
+  <td>{{ assessment['49'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess13($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t13">
   </td>
@@ -1127,16 +1127,16 @@
   <tr style="background: #21618C">
       <th></th>
       <th></th>
-      <th>PACKAGING</th>
-      <th>[10]</th>
+      <th>{{ assessment['53'].category_Desc }} </th>
+      <th>{{ assessment['53'].assessment_Weight }}</th>
       <th></th>
       <th></th>
   </tr>
   <tr>
   <td></td>
   <th></th>
-  <td>Hard copy: Fully attributed ERD, Project Proposal, Database scripts, and Security information such as roles, users and passwords. Test cases. Installation/deployment instructions. </td>
-  <td>5</td>
+  <td>{{ assessment['53'].name }} </td>
+  <td>{{ assessment['53'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess14($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t14">
   </td>
@@ -1151,8 +1151,8 @@
   <tr>
   <td></td>
   <th></th>
-  <td>Softcopy: Complete system on CD, including database script file. </td>
-  <td>5</td>
+  <td>{{ assessment['54'].name }} </td>
+  <td>{{ assessment['54'].marks }}</td>
   <td>
     <input type="number" (keyup)="assess15($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t15">
   </td>
@@ -1178,4 +1178,3 @@
   </div>
 </div>
 
->

@@ -12,6 +12,9 @@ export class AssessmentService {
 
   getAllAssessment(){
     return this.httpClient.get<any>("https://uncreditable-window.000webhostapp.com/financial_planning/getAllAssessment.php")
-                         
+  }
+
+  submitResults(results){
+
   }
 }
