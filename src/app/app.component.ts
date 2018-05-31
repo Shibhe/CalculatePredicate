@@ -6,6 +6,7 @@ import { Assessment2 } from './model/assessment_2';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Assessment1 } from 'src/app/model/assessment_1';
 import { AssessmentService } from 'src/app/service/assessment.service';
+import { Student } from 'src/app/model/student.model';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { AssessmentService } from 'src/app/service/assessment.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  student: Student = new Student();
   left: number = 0;
   
 
@@ -27,6 +29,7 @@ export class AppComponent implements OnInit {
   average3: number = 0;
   average4: number = 0;
   total: number = 8;
+  status: string = null;
 
   assessment: any[] = [];
 
@@ -228,7 +231,14 @@ export class AppComponent implements OnInit {
 
        if (this.total < 50){
          this.left = 50 - Number(this.total);
+         this.status = "Fail";
        }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
         alert("Passed");
         this.left = 0;
       }
@@ -519,10 +529,17 @@ asse14(e){
 
        if (this.total < 50){
         this.left = 50 - Number(this.total);
-       }else {
-        alert("Passed");
-        this.left = 0;
-      }
+        this.status = "Fail";
+      }else {
+
+       if (this.total >= 74){
+         this.status = "PD";
+       } else {
+         this.status = "Pass";
+       }
+       alert("Passed");
+       this.left = 0;
+     }
      } else {
        this.a3.t14 = 0;
        this.a3.s14 = "0";
@@ -882,10 +899,17 @@ asses17(e){
 
        if (this.total < 50){
         this.left = 50 - Number(this.total);
+        this.status = "Fail";
       }else {
-        alert("Passed");
-        this.left = 0;
-      }
+
+       if (this.total >= 74){
+         this.status = "PD";
+       } else {
+         this.status = "Pass";
+       }
+       alert("Passed");
+       this.left = 0;
+     }
 
      } else {
        this.a4.t17 = 0;
@@ -1189,10 +1213,17 @@ assess15(e){
 
     if (this.total < 50){
       this.left = 50 - Number(this.total);
-    } else {
-      alert("Passed");
-      this.left = 0;
-    }
+      this.status = "Fail";
+    }else {
+
+     if (this.total >= 74){
+       this.status = "PD";
+     } else {
+       this.status = "Pass";
+     }
+     alert("Passed");
+     this.left = 0;
+   }
   } else {
     this.a5.t15 = 0;
     this.a5.s15 = "0";
@@ -1200,5 +1231,18 @@ assess15(e){
   }
 }
 
+    submitResult(){
+      this._AssessmentService.submitResults(this.student, this.total, this.status)
+                              .subscribe((data) => {
 
+                                if (data.success == 1){
+                                  alert(data.message);
+                                } else {
+                                  alert(data.message);
+                                }
+                                console.log(data);
+                              }, (error) => {
+                                console.log(error);
+                              })
+    }
 }
