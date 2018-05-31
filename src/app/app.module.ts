@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AssessmentService } from 'src/app/service/assessment.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+// import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    Ng4LoadingSpinnerModule.forRoot()
+   // Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]

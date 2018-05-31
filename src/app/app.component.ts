@@ -7,7 +7,6 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Assessment1 } from 'src/app/model/assessment_1';
 import { AssessmentService } from 'src/app/service/assessment.service';
 import { Student } from 'src/app/model/student.model';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: 'app-root',
@@ -34,12 +33,11 @@ export class AppComponent implements OnInit {
 
   assessment: any[] = [];
 
-  constructor(private _AssessmentService: AssessmentService,
-              private spinnerService: Ng4LoadingSpinnerService) {}
+  constructor(private _AssessmentService: AssessmentService) {}
   
 
   ngOnInit() {
-    this.spinnerService.show();
+
     if (this.total < 50){
       this.left = 50 - Number(this.total);
     }
@@ -112,12 +110,10 @@ export class AppComponent implements OnInit {
 
     this._AssessmentService.getAllAssessment()
                            .subscribe((data) => {
-                            this.spinnerService.hide();
-                             this.assessment = data;    
+                             this.assessment = data;
+
+
                              console.log(this.assessment);
-                           }, (error) => {
-                            this.spinnerService.hide();
-                            console.log(error);
                            });
   }
 
@@ -1236,10 +1232,9 @@ assess15(e){
 }
 
     submitResult(){
-      this.spinnerService.show();
       this._AssessmentService.submitResults(this.student, this.total, this.status)
                               .subscribe((data) => {
-                                this.spinnerService.hide();
+
                                 if (data.success == 1){
                                   alert(data.message);
                                 } else {
@@ -1247,7 +1242,6 @@ assess15(e){
                                 }
                                 console.log(data);
                               }, (error) => {
-                                this.spinnerService.hide();
                                 console.log(error);
                               })
     }
