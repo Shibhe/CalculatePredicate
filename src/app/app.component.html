@@ -1,7 +1,6 @@
 <div class="container-fluid" style="margin-top: 30px">
   <div class="row">
     <div class="col-lg-12">
-        <ng4-loading-spinner> </ng4-loading-spinner>
         <form>
             <caption class="text-center"><h3>Student Details</h3></caption>
           <fieldset>
@@ -213,7 +212,7 @@
                 <th>8</th>
                 <th>OPEN SOURCE DATABASE</th>
                 <th></th>
-                <th>{{ average }}</th>
+                <th></th>
                 <th></th>
           </tr>
 
@@ -226,9 +225,9 @@
               <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
-              <select class="form-control" [(ngModel)]="a2.t1">
+              <select class="form-control">
                   <option value="0">Not done</option>
-                  <option value="Complete">Complete</option>
+                  <option value="Complete" selected>Complete</option>
                   <option value="Pending">Pending</option>
               </select>
           </td>
@@ -243,9 +242,9 @@
               <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
             </td>
             <td>
-              <select class="form-control" [(ngModel)]="a2.t1">
+              <select class="form-control" >
                   <option value="0">Not done</option>
-                  <option value="Complete">Complete</option>
+                  <option value="Complete" selected>Complete</option>
                   <option value="Pending">Pending</option>
               </select>
           </td>
@@ -260,9 +259,9 @@
                 <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
               </td>
               <td>
-                <select class="form-control" [(ngModel)]="a2.t1">
+                <select class="form-control">
                     <option value="0">Not done</option>
-                    <option value="Complete">Complete</option>
+                    <option value="Complete" selected>Complete</option>
                     <option value="Pending">Pending</option>
                 </select>
             </td>
@@ -277,9 +276,9 @@
                   <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
                 </td>
                 <td>
-                  <select class="form-control" [(ngModel)]="a2.t1">
+                  <select class="form-control">
                       <option value="0">Not done</option>
-                      <option value="Complete">Complete</option>
+                      <option value="Complete" selected>Complete</option>
                       <option value="Pending">Pending</option>
                   </select>
               </td>

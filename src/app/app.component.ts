@@ -121,6 +121,10 @@ export class AppComponent implements OnInit {
   ass1(e){
      let as1 = e.target.value;
 
+     if (as1 == "0"){
+      this.a1.s1 = "0";
+     }
+
      if (as1 <= 2){
        this.a1.t1 = as1;
 
@@ -1231,18 +1235,23 @@ assess15(e){
   }
 }
 
-    submitResult(){
-      this._AssessmentService.submitResults(this.student, this.total, this.status)
-                              .subscribe((data) => {
+  submitResult(){
 
-                                if (data.success == 1){
-                                  alert(data.message);
-                                } else {
-                                  alert(data.message);
-                                }
-                                console.log(data);
-                              }, (error) => {
-                                console.log(error);
-                              })
-    }
+  this._AssessmentService.submitResults(this.student, this.total, this.status)
+                                  .subscribe((data) => {
+
+                                    if (data.success == 1){
+                                      alert(data.message);
+                                    } else {
+                                      alert(data.message);
+                                    }
+                                    console.log(data);
+
+                                    this.student = new Student();
+                                  }, (error) => {
+                                    console.log(error);
+                                  })
+                               
+
+  }
 }
