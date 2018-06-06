@@ -31,6 +31,7 @@ export class AdminComponent implements OnInit {
                      .subscribe((data) => {
                       if (data.success == 1){
                         alert(data.message);
+                        this.stuff = new Stuff();
                       } else {
                         alert("Not successful added");
                       }

@@ -7,3 +7,10 @@ td {
     font-weight: bold;
 }
 
+input{
+    height: 40px;
+}
+
+select{
+    height: 40px;
+}

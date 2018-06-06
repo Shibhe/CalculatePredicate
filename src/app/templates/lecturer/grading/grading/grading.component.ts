@@ -6,6 +6,7 @@ import { Assessment3 } from '../../../../model/assessment_3';
 import { Assessment4 } from '../../../../model/assessment_4';
 import { Assessment5 } from '../../../../model/assessment_5';
 import { AssessmentService } from '../../../../service/assessment.service';
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-grading',
@@ -13,6 +14,7 @@ import { AssessmentService } from '../../../../service/assessment.service';
   styleUrls: ['./grading.component.css']
 })
 export class GradingComponent implements OnInit {
+ 
   student: Student = new Student();
   left: number = 0;
   
@@ -29,9 +31,9 @@ export class GradingComponent implements OnInit {
   average4: number = 0;
   total: number = 8;
   status: string = null;
-
+  tasks: any[] = [];
   assessment: any[] = [];
-
+  task: any = null;
   constructor(private _AssessmentService: AssessmentService) {}
   
 
@@ -113,6 +115,21 @@ export class GradingComponent implements OnInit {
 
 
                              console.log(this.assessment);
+                           });
+
+
+    this._AssessmentService.getAsses()
+                           .subscribe((data) => {
+                             this.tasks = data;
+                           })
+  }
+
+  onChange(val) {
+
+    this.task = val;
+    this._AssessmentService.getAssessment(this.task)
+                           .subscribe((data) => {
+                             this.assessment = data;
                            });
   }
 
