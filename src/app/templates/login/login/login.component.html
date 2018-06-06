@@ -1,0 +1,25 @@
+<div class="main-agileits">
+  <h1>Grading System</h1>
+  <div class="mainw3-agileinfo form">
+    <div id="login">    
+      <form action="#" method="post"> 
+        <div class="field-wrap">
+          <label> Enter Your Stuff No<span class="req">*</span> </label>
+          <input type="text" [(ngModel)]="stuff.Stuff_No" name="stuffNo" required autocomplete="off"/>
+        </div> 
+        <div class="field-wrap">
+          <label> Your Password<span class="req">*</span> </label>
+          <input type="password" [(ngModel)]="stuff.Password" name="password" required autocomplete="off"/>
+        </div> 
+        <p class="forgot"><a href="#">Forgot Password?</a></p> 
+        <button class="button button-block"  (click)="isLogged()">Log In</button> 
+      </form> 
+    </div>
+       
+  </div>	
+</div>	
+<!-- //main -->
+<!-- copyright -->
+<div class="w3copyright-agile">
+  <p>© 2018 Grading System. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">Joseph Sibiya</a></p>
+</div>

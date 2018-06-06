@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="color: #AEB6BF">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Grading System</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">{{ currentUser.role_Name }}</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Add Lecturer <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h3><b>Register</b></h3></div>
+                
+              <form id="ajax-register-form" action="http://phpoll.com/register/process" method="post" role="form" autocomplete="off">
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="stuff.Initials" name="Initials" id="username" tabindex="1" class="form-control" placeholder="Initials" value="">
+                </div>
+                <div class="form-group">
+                  <input type="email" [(ngModel)]="stuff.LastName" name="Last_Name" id="email" tabindex="1" class="form-control" placeholder="Last Name" value="">
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="stuff.Stuff_No" name="Stuff_No" id="password" tabindex="2" class="form-control" placeholder="Stuff No">
+                </div>
+                <div class="form-group">
+                  <input type="email" [(ngModel)]="stuff.Email" name="Email"  tabindex="2" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password" [(ngModel)]="stuff.Password" name="password" i tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3">
+                      <button type="button" name="register-submit" id="register-submit" (click)="AddLecturerInfo()" class="form-control btn btn-info">Register Now</button> 
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+              </form>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="http://phpoll.com/login" class="dropdown-toggle">{{ currentUser.Initials }}, {{ currentUser.LastName }} <span class="caret"></span></a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-primary" (click)="logout()" style="margin-top: 5px; margin-right: 5px">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      
+    </div>
+  </div>
+</div>

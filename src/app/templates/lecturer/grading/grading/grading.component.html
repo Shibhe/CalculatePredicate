@@ -1,0 +1,1180 @@
+<div class="container-fluid" style="margin-top: 30px; background-color: aliceblue">
+  <div class="row">
+    <div class="col-lg-12">
+        <form>
+            <caption class="text-center"><h3>Student Details</h3></caption>
+          <fieldset>
+            <div class="row">
+              <div class="col-lg-4">
+                <label>Student Number:</label>
+                  <input class="form-control" [(ngModel)]="student.studNo" name="studNo" style="height:40px" type="text" placeholder="Enter student number">
+              </div>
+              <div class="col-lg-4">
+                  <label>Surname:</label>
+                  <input class="form-control" [(ngModel)]="student.studSurname" name="surname" style="height:40px" type="text" placeholder="Enter student surname">
+              </div>
+              <div class="col-lg-4">
+                  <label>Initials:</label>
+                  <input class="form-control" [(ngModel)]="student.studInitials" name="initials" style="height:40px" type="text" placeholder="Enter student initials">
+              </div>
+            </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-lg-8">
+                    <label>Group Name:</label>
+                    <input class="form-control" [(ngModel)]="student.studGroup" name="group" style="height:40px" type="text" placeholder="Enter group name">
+                </div>
+                <div class="col-lg-4">
+                    <label>Project Name:</label>
+                    <input class="form-control" [(ngModel)]="student.projectName" name="projectName" style="height:40px" type="text" placeholder="Enter student group">
+                </div>
+            </div>
+          </fieldset>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      
+      <div class="table-responsive">
+          <h4 class="text-right">Predicate: {{ total | number:'1.2-2' }}</h4>
+          <h4 class="text-right">Left with {{ left | number:'1.2-2'}} to pass</h4>
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+          <caption class="text-center" style="margin-bottom: 10px"><h2>DSO34BT (GRADING SYSTEM)</h2></caption>
+          <thead>
+            <tr style="background: #58D68D">
+              <th>ASSESSMENTS</th>
+              <th>WEIGHT (%)</th>
+              <th>STORIES</th>
+              <th>MARKS</th>
+              <th>ALLOCATED MARKS</th>
+              <th style="width: 160px">TASK STATUS</th>
+            </tr>  
+          </thead>
+          <tbody>
+            <!--Assessment 1-->
+            <tr style="background: #DC7633">
+                  <th>{{ assessment['0']?.assessment_Desc | uppercase }}</th>
+                  <th>{{ assessment['0']?.assessment_Weight }}</th>
+                  <th>{{ assessment['0']?.category_Desc | uppercase }}</th>
+                  <th>[ 6 ]</th>
+                  <th>{{ average | number:'1.1-1' }}</th>
+                  <th></th>
+            </tr>
+
+            <tr>
+              <td></td>
+              <th></th>
+              <td>{{ assessment['0']?.name }} </td>
+              <td>{{ assessment['0']?.marks}} </td>
+              <td>
+                <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a1.s1">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <th></th>
+              <td>{{ assessment['1']?.name }} </td>
+              <td>{{ assessment['1']?.marks }} </td>
+              <td>
+                <input type="number" (keyup)="ass2($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t2">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a1.s2">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <th></th>
+              <td>{{ assessment['2']?.name }} </td>
+              <td>{{ assessment['2']?.marks }} </td>
+              <td>
+                <input type="number" (keyup)="ass3($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t3">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a1.s3">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <th></th>
+              <td>{{ assessment['3']?.name }} </td>
+              <td>{{ assessment['3']?.marks }} </td>
+              <td>
+                <input type="number" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a1.s4">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr style="background: #21618C">
+                <th></th>
+                <th></th>
+                <th>3-TIERED APPLICATION</th>
+                <th>[9]</th>
+                <th></th>
+                <th></th>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['5']?.name }} </td>
+              <td>{{ assessment['5']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="ass5($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t5">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a1.s5">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['6']?.name }} </td>
+              <td>{{ assessment['6']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="ass6($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t6">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a1.s6">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['7']?.name }} </td>
+              <td>{{ assessment['7']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="ass7($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t7">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a1.s7">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['8']?.name }} </td>
+              <td>{{ assessment['8']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="ass8($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t8">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a1.s8">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+            
+            <!--Assessment 2-->
+            <tr style="background: #DC7633">
+                <th>ASSESSMENT 2</th>
+                <th>8</th>
+                <th>OPEN SOURCE DATABASE</th>
+                <th></th>
+                <th></th>
+                <th></th>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+            <td>Website should be highly customizable and flexible </td>
+            <td></td>
+            <td>
+              <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" disabled>
+            </td>
+            <td>
+              <select class="form-control">
+                  <option value="0">Not done</option>
+                  <option value="Complete" selected>Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th></th>
+            <td>Technologies to be used: phpMyAdmin, Angular 5, HTML, JavaScript, JQuery, TypeScript, SQL, and PHP </td>
+            <td></td>
+            <td>
+              <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
+            </td>
+            <td>
+              <select class="form-control" >
+                  <option value="0">Not done</option>
+                  <option value="Complete" selected>Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+              <td></td>
+              <th></th>
+              <td>Technologies to be used: phpMyAdmin, Angular 5, HTML, JavaScript, JQuery, TypeScript, SQL, and PHP </td>
+              <td></td>
+              <td>
+                <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
+              </td>
+              <td>
+                <select class="form-control">
+                    <option value="0">Not done</option>
+                    <option value="Complete" selected>Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <th></th>
+                <td>Technologies to be used: phpMyAdmin, Angular 5, HTML, JavaScript, JQuery, TypeScript, SQL, and PHP </td>
+                <td></td>
+                <td>
+                  <input type="number" (keyup)="ass2($event)" maxlength="2" class="form-control" disabled>
+                </td>
+                <td>
+                  <select class="form-control">
+                      <option value="0">Not done</option>
+                      <option value="Complete" selected>Complete</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+              </td>
+              </tr>
+         
+          <!--Assessment 3-->
+          <tr style="background: #DC7633">
+              <th>ASSESSMENT 3</th>
+              <th>15</th>
+              <th>OPEN SOURCE DATABASE</th>
+              <th>[ 10 ]</th>
+              <th>{{ average2 | number:'1.1-1' }}</th>
+              <th></th>
+        </tr>
+        <tr>
+          <td></td>
+          <th></th>
+          <td>Database design </td>
+          <td>10</td>
+          <td>
+            <input type="number" (keyup)="asse1($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t1">
+          </td>
+          <td>
+            <select class="form-control" [(ngModel)]="a3.s1">
+                <option value="0">Not done</option>
+                <option value="Complete">Complete</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </td>
+        </tr>
+        <tr style="background: #21618C">
+            <th></th>
+            <th></th>
+            <th>MENU DESIGN</th>
+            <th>[7]</th>
+            <th></th>
+            <th></th>
+      </tr>
+      <tr>
+        <td></td>
+        <th></th>
+        <td>{{ assessment['28']?.name }} </td>
+        <td>{{ assessment['28']?.marks }} </td>
+        <td>
+          <input type="number" (keyup)="asse2($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t2">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a3.s2">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+        <td></td>
+        <th></th>
+        <td>{{ assessment['29']?.name }} </td>
+        <td>{{ assessment['29']?.marks }} </td>
+        <td>
+          <input type="number" (keyup)="asse3($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t3">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a3.s3">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr style="background: #21618C">
+          <th></th>
+          <th></th>
+          <th>DML OPERATIONS AND CORRECT BUSINESS FUNCTIONALITY</th>
+          <th>[30]</th>
+          <th></th>
+          <th></th>
+    </tr>
+
+    <tr>
+      <td></td>
+      <th></th>
+        <td>{{ assessment['19']?.name }} </td>
+        <td>{{ assessment['19']?.marks }} </td>
+      <td>
+        <input type="number" (keyup)="asse4($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t4">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a3.s4">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    
+    <tr>
+      <td></td>
+      <th></th>
+        <td>{{ assessment['20']?.name }} </td>
+        <td>{{ assessment['20']?.marks }} </td>
+      <td>
+        <input type="number" (keyup)="asse5($event)" maxlength="2" class="form-control"[(ngModel)]="a3.t5">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a3.s5">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+       <tr style="background: #21618C">
+                <th></th>
+                <th></th>
+                <th>USER INTERFACE DESIGN</th>
+                <th>[31]</th>
+                <th></th>
+                <th></th>
+          </tr>
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['9']?.name }} </td>
+              <td>{{ assessment['9']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="asse6($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t6">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a3.s6">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['10']?.name }} </td>
+              <td>{{ assessment['10']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="asse7($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t7">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a3.s7">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['11']?.name }} </td>
+              <td>{{ assessment['11']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="asse8($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t8">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a3.s8">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+          <tr>
+            <td></td>
+            <th></th>
+              <td>{{ assessment['12']?.name }} </td>
+              <td>{{ assessment['12']?.marks }} </td>
+            <td>
+              <input type="number" (keyup)="asse9($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t9">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a3.s9">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+
+          <tr>
+              <td></td>
+              <th></th>
+                <td>{{ assessment['13']?.name }} </td>
+                <td>{{ assessment['13']?.marks }} </td>
+              <td>
+                <input type="number" (keyup)="asse10($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t10">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a3.s10">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <th></th>
+                <td>{{ assessment['14']?.name }} </td>
+                <td>{{ assessment['14']?.marks }} </td>
+              <td>
+                <input type="number" (keyup)="asse11($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t11">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a3.s11">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+              </td>
+              </tr>
+
+              <tr>
+                 <td></td>
+                <th></th>
+                <td>{{ assessment['15']?.name }} </td>
+                <td>{{ assessment['15']?.marks }} </td>
+                  <td>
+                    <input type="number" (keyup)="asse12($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t12">
+                  </td>
+                  <td>
+                    <select class="form-control" [(ngModel)]="a3.s12">
+                        <option value="0">Not done</option>
+                        <option value="Complete">Complete</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <th></th>
+                    <td>{{ assessment['16']?.name }} </td>
+                    <td>{{ assessment['16']?.marks }} </td>
+                  <td>
+                      <input type="number" (keyup)="asse13($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t13">
+                    </td>  
+                    <td>
+                      <select class="form-control" [(ngModel)]="a3.s13">
+                          <option value="0">Not done</option>
+                          <option value="Complete">Complete</option>
+                          <option value="Pending">Pending</option>
+                      </select>
+                  </td>
+                  </tr>
+
+                  <tr>
+                      <td></td>
+                      <th></th>
+                        <td>{{ assessment['17']?.name }} </td>
+                        <td>{{ assessment['17']?.marks }} </td>
+                      <td>
+                        <input type="number" (keyup)="asse14($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t14">
+                      </td>
+                      <td>
+                        <select class="form-control" [(ngModel)]="a3.s14">
+                            <option value="0">Not done</option>
+                            <option value="Complete">Complete</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th></th>
+                         <td>{{ assessment['18']?.name }} </td>
+                         <td>{{ assessment['18']?.marks }} </td>
+                        <td>
+                          <input type="number" (keyup)="asse15($event)" maxlength="2" class="form-control" [(ngModel)]="a3.t15" disabled>
+                        </td>
+                        <td>
+                          <select class="form-control" [(ngModel)]="a3.s15" disabled>
+                              <option value="0">Not done</option>
+                              <option value="Complete" selected>Complete</option>
+                              <option value="Pending">Pending</option>
+                          </select>
+                      </td>
+                      </tr>
+
+        <!--Assessment 4-->
+        <tr style="background: #DC7633">
+            <th> {{ assessment['33'].assessment_Desc }}</th>
+            <th>22</th>
+            <th>{{ assessment['33'].category_Desc }}</th>
+            <th>[ {{ assessment['33'].assessment_Weight }} ]</th>
+            <th>{{ average3 | number:'1.1-1' }}</th>
+            <th></th>
+      </tr>
+      <tr>
+        <td></td>
+        <th></th>
+        <td>{{ assessment['33'].name }} </td>
+        <td>{{ assessment['33'].marks }}</td>
+        <td>
+          <input type="number" (keyup)="asses1($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t1">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s1">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+        <td></td>
+        <th></th>
+        <td>{{ assessment['34'].name }} </td>
+        <td>{{ assessment['34'].marks }}</td>
+        <td>
+          <input type="number" (keyup)="asses2($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t2">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s4">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+        <td></td>
+        <th></th>
+        <td>{{ assessment['35'].name }} </td>
+        <td>{{ assessment['35'].marks }}</td>
+        <td>
+          <input type="number" (keyup)="asses3($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t3">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s3">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>{{ assessment['36'].name }} </td>
+        <td>{{ assessment['36'].marks }}</td>
+        <td>
+          <input type="number" (keyup)="asses4($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t4">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s4">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>{{ assessment['37'].name }} </td>
+          <td>{{ assessment['37'].marks }}</td>
+          <td>
+            <input type="number" (keyup)="asses5($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t5">
+          </td>
+          <td>
+            <select class="form-control" [(ngModel)]="a4.s5">
+                <option value="0">Not done</option>
+                <option value="Complete">Complete</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>{{ assessment['38'].name }} </td>
+            <td>{{ assessment['38'].marks }}</td>
+            <td>
+              <input type="number" (keyup)="asses6($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t6">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a4.s6">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td>{{ assessment['39'].name }} </td>
+              <td>{{ assessment['39'].marks }}</td>
+              <td>
+                <input type="number" (keyup)="asses7($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t7">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a4.s7">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>{{ assessment['40'].name }} </td>
+                <td>{{ assessment['40'].marks }}</td>
+                <td>
+                  <input type="number" (keyup)="asses8($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t8">
+                </td>
+                <td>
+                  <select class="form-control" [(ngModel)]="a4.s8">
+                      <option value="0">Not done</option>
+                      <option value="Complete">Complete</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+              </td>
+              </tr>
+      <tr style="background: #21618C">
+          <th></th>
+          <th></th>
+          <th>{{ assessment['21'].category_Desc }}</th>
+          <th>[{{ assessment['21'].assessment_Weight }}]</th>
+          <th></th>
+          <th></th>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['21'].name }} </td>
+      <td>{{ assessment['21'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="asses9($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t9">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s9">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['22'].name }} </td>
+      <td>{{ assessment['22'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="asses10($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t10">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s10">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['23'].name }} </td>
+      <td>{{ assessment['23'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="asses11($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t11">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s11">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>{{ assessment['24'].name }} </td>
+      <td>{{ assessment['24'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="asses12($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t12">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s12">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{ assessment['25'].name }} </td>
+        <td>{{ assessment['25'].marks }}</td>
+        <td>
+          <input type="number" (keyup)="asses13($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t13">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s13">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>{{ assessment['26'].name }} </td>
+          <td>{{ assessment['26'].marks }}</td>
+          <td>
+            <input type="number" (keyup)="asses14($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t14">
+          </td>
+          <td>
+            <select class="form-control" [(ngModel)]="a4.s14">
+                <option value="0">Not done</option>
+                <option value="Complete">Complete</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </td>
+        </tr>
+    <tr style="background: #21618C">
+        <th></th>
+        <th></th>
+        <th>{{ assessment['30'].category_Desc }}</th>
+        <th>[{{ assessment['30'].assessment_Weight }}]</th>
+        <th></th>
+        <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['30'].name }} </td>
+    <td>{{ assessment['30'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="asses15($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t15">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s15">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['31'].name }} </td>
+    <td>{{ assessment['31'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="asses16($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t16">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s16">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['32'].name }} </td>
+    <td>{{ assessment['32'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="asses17($event)" maxlength="2" class="form-control" [(ngModel)]="a4.t17">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s17">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+
+      <!--Assessment 5-->
+      <tr style="background: #DC7633">
+          <th>{{ assessment['42'].assessment_Desc }}</th>
+          <th>12</th>
+          <th>{{ assessment['42'].category_Desc }}</th>
+          <th>[ 10 ]</th>
+          <th>{{ average4 | number:'1.1-1' }}</th>
+          <th></th>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['42'].name }} </td>
+      <td>{{ assessment['42'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="assess1($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t1">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a5.s1">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['43'].name }} </td>
+      <td>{{ assessment['43'].marks }}</td>
+      <td>
+        <input type="number" (keyup)="assess2($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t2">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a5.s2">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+   
+    <tr style="background: #21618C">
+        <th></th>
+        <th></th>
+        <th>{{ assessment['44'].category_Desc }}</th>
+        <th>[{{ assessment['44'].assessment_Weight }}]</th>
+        <th></th>
+        <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['44'].name }} </td>
+      <td>{{ assessment['44'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="assess3($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t3">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a5.s3">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['45'].name }} </td>
+      <td>{{ assessment['45'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="assess4($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t4">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a5.s4">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['46'].name }} </td>
+      <td>{{ assessment['46'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="assess5($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t5">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a5.s5">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr style="background: #21618C">
+      <th></th>
+      <th></th>
+      <th>{{ assessment['47'].category_Desc }}</th>
+        <th>[{{ assessment['47'].assessment_Weight }}]</th>
+      <th></th>
+      <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['47'].name }} </td>
+    <td>{{ assessment['47'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="assess6($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t6">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a5.s6">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['48'].name }} </td>
+      <td>{{ assessment['48'].marks }}</td>
+    <td>
+      <input type="number" (keyup)="assess7($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t7">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a5.s7">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+
+  <tr style="background: #21618C">
+      <th></th>
+      <th></th>
+      <th>{{ assessment['41'].category_Desc }} </th>
+      <th>{{ assessment['41'].assessment_Weight }}</th>
+      <th></th>
+      <th></th>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['41'].name }} </td>
+  <td>{{ assessment['41'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess8($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t8">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s8">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+
+  <tr style="background: #21618C">
+      <th></th>
+      <th></th>
+      <th>{{ assessment['49'].category_Desc }} </th>
+      <th>{{ assessment['49'].assessment_Weight }}</th>
+      <th></th>
+      <th></th>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['49'].name }} </td>
+  <td>{{ assessment['49'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess9($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t9">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s9">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['50'].name }} </td>
+  <td>{{ assessment['50'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess10($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t10">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s10">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['51'].name }} </td>
+  <td>{{ assessment['51'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess11($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t11">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s11">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <td></td>
+  <td>{{ assessment['52'].name }} </td>
+  <td>{{ assessment['52'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess12($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t12">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s12">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+  <tr style="background: #21618C">
+      <th></th>
+      <th></th>
+      <th>{{ assessment['49'].category_Desc }} </th>
+      <th>{{ assessment['49'].assessment_Weight }}</th>
+      <th></th>
+      <th></th>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['49'].name }} </td>
+  <td>{{ assessment['49'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess13($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t13">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s13">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+
+  <tr style="background: #21618C">
+      <th></th>
+      <th></th>
+      <th>{{ assessment['53'].category_Desc }} </th>
+      <th>{{ assessment['53'].assessment_Weight }}</th>
+      <th></th>
+      <th></th>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['53'].name }} </td>
+  <td>{{ assessment['53'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess14($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t14">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s14">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['54'].name }} </td>
+  <td>{{ assessment['54'].marks }}</td>
+  <td>
+    <input type="number" (keyup)="assess15($event)" maxlength="2" class="form-control" [(ngModel)]="a5.t15">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a5.s15">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+  </td>
+  </tr>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
+              <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+
