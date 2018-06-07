@@ -8,3 +8,8 @@ body{
 	-moz-background-size: cover; 
 	background-size: cover;
 }
+
+a {
+	pointer-events: none;
+	cursor: default;
+ }

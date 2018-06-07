@@ -5,7 +5,7 @@
       <form action="#" method="post"> 
         <div class="field-wrap">
          <!-- <label> Enter Your Stuff No<span class="req">*</span> </label>-->
-          <input type="text" [(ngModel)]="stuff.Stuff_No" name="stuffNo" placeholder="Your Stuff No." required autocomplete="off"/>
+          <input type="text" [(ngModel)]="stuff.Stuff_No" maxlength="9" pattern="[0-9]+" name="stuffNo" placeholder="Your Stuff No." required autocomplete="off"/>
         </div> 
         <div class="field-wrap">
          <!-- <label> Your Password<span class="req">*</span> </label>-->

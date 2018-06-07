@@ -6,7 +6,7 @@ import { Assessment3 } from '../../../../model/assessment_3';
 import { Assessment4 } from '../../../../model/assessment_4';
 import { Assessment5 } from '../../../../model/assessment_5';
 import { AssessmentService } from '../../../../service/assessment.service';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
+//import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: 'app-grading',
@@ -14,6 +14,7 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./grading.component.css']
 })
 export class GradingComponent implements OnInit {
+  average11: number = 0;
  
   assessSelected: any[] = [];
   student: Student = new Student();
@@ -57,8 +58,14 @@ export class GradingComponent implements OnInit {
     this.a1.s8 = "0";
     this.a1.s9 = "0";
     // Assessment 2
-    this.a2.t1 = "Complete";
-    this.a2.t2 = "Complete";
+    this.a2.s1 = "0";
+    this.a2.s2 = "0";
+    this.a2.s3 = "0";
+    this.a2.s4 = "0";
+    this.a2.s5 = "0";
+    this.a2.s6 = "0";
+    this.a2.s7 = "0";
+    
 
     //Assessment 3
     this.a3.s1 = "0";
@@ -113,14 +120,8 @@ export class GradingComponent implements OnInit {
     this.a5.s13 = "0";
     this.a5.s14 = "0";
     this.a5.s15 = "0";
-
-    this._AssessmentService.getAllAssessment()
-                           .subscribe((data) => {
-                             this.assessSelected = data;
-
-
-                             console.log(this.assessSelected);
-                           });
+    this.student.studNo = "0";
+   
 
 
     this._AssessmentService.getAsses()
@@ -136,7 +137,7 @@ export class GradingComponent implements OnInit {
   }
 
   onChangeObj(val){
-    this.info.push(val);
+    this.info[0] = val;
     this.student.stud_ID = this.info[0].student_Id;
     this.student.projectName = this.info[0].student_Project_Name;
     this.student.studInitials = this.info[0].student_Initials;
@@ -146,15 +147,32 @@ export class GradingComponent implements OnInit {
   }
 
   onChange(val) {
-   // console.log(val);
     this.task = val;
-   // console.log(this.task);
 
+   // this.spinnerService.show();
+    console.log(this.task)
+   if (this.task == "2"){
+     this._AssessmentService.getAssessment2()
+                            .subscribe((data) => {
+                            //  this.spinnerService.hide();
+                              this.assessment = data;
+                              console.log(this.assessment);
+                            })
+   } else if (this.task == "6"){
+    this._AssessmentService.getAllAssessment()
+    .subscribe((data) => {
+     // this.spinnerService.hide();
+      this.assessment = data;
+      console.log(this.assessment);
+    });
+   } else {
     this._AssessmentService.getAssessment(this.task)
-                           .subscribe((data) => {
-                             this.assessment = data;
-                             console.log(this.assessment);
-                           });
+    .subscribe((data) => {
+    //  this.spinnerService.hide();
+      this.assessment = data;
+      console.log(this.assessment);
+    });
+   }
   }
 
   // Assessment 1
@@ -325,6 +343,127 @@ export class GradingComponent implements OnInit {
   }
 
   // Assessment 2
+  as1(e){
+    let as1 = e.target.value;
+
+    if (as1 == "0"){
+     this.a2.s1 = "0";
+    }
+
+    if (as1 == 1){
+      this.a2.t1 = as1;
+
+      this.a2.s1 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+      
+    } else {
+     this.a2.t1 = 0;
+     this.a2.s1 = "0";
+      alert("Invalid number");
+    }
+ }
+
+ as2(e){
+   let as12 = e.target.value;
+
+    if (as12 <= 3){
+      this.a2.t2 = as12;
+      this.a2.s2 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+
+    } else {
+     this.a2.t2 = 0;
+     this.a2.s2 = "0";
+      alert("Invalid number");
+    }
+ }
+
+ as3(e){
+   let as3 = e.target.value;
+
+    if (as3 <= 2){
+      this.a2.t3 = as3;
+      this.a2.s3 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+
+    } else {
+     this.a2.t3 = 0;
+     this.a2.s3 = "0";
+      alert("Invalid number");
+    }
+ }
+
+ as4(e){
+   let as4 = e.target.value;
+
+    if (as4 <= 26){
+      this.a2.t4 = as4;
+      this.a2.s4 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+    } else {
+      this.a2.t4 = 0;
+      this.a2.s4 = "0";
+      alert("Invalid number");
+    }
+ }
+
+ as5(e){
+   let as5 = e.target.value;
+
+    if (as5 <= 2){
+      this.a2.t5 = as5;
+      this.a2.s5 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+    } else {
+      this.a2.t5 = 0;
+      this.a2.s5 = "5";
+      alert("Invalid number");
+    }
+ }
+
+ as6(e){
+   let as6 = e.target.value;
+
+    if (as6 == 1){
+      this.a2.t6 = as6;
+      this.a2.s6 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
+    } else {
+      this.a2.t6 = 0;
+      this.a2.s6 = "0";
+      alert("Invalid number");
+    }
+ }
+
+ as7(e){
+   let as7 = e.target.value;
+
+    if (as7 == 1){
+      this.a2.t7 = as7;
+      this.a2.s7 = "Complete";
+      this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) / 36) * 100) * 0.15;
+      this.total += this.average11;
+
+      if (this.total < 50){
+        this.left = 50 - Number(this.total);
+        this.status = "Fail";
+      }else {
+
+       if (this.total >= 74){
+         this.status = "PD";
+       } else {
+         this.status = "Pass";
+       }
+       alert("Passed");
+       this.left = 0;
+     }
+
+    } else {
+      this.a2.t7 = 0;
+      this.a2.s7 = "0";
+      alert("Invalid number");
+    }
+ }
 
   // Assessment 3
 asse1(e){

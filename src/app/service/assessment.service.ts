@@ -14,6 +14,10 @@ export class AssessmentService {
   getAllAssessment(){
     return this.httpClient.get<any>("https://uncreditable-window.000webhostapp.com/financial_planning/getAllAssessment.php")
   }
+
+  getAssessment2(){
+    return this.httpClient.get<any>("https://uncreditable-window.000webhostapp.com/financial_planning/getAssment2.php")
+  }
   
   getAssessment(id){
     return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/getAssessment.php?assessment_Id=${id}`)
