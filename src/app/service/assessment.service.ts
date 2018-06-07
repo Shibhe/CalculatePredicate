@@ -28,6 +28,6 @@ export class AssessmentService {
   }
 
   submitResults(results, mark_Obtained, status){
-    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/submitResults.php?student_Number=${results.studNo}&student_Initials=${results.studInitials}&student_Surname=${results.studSurname}&group_Id=${results.studGroup}&student_project_name=${results.projectName}&mark_Obtained=${mark_Obtained}&status=${status}`);
+    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/submitResults.php?student_Id=${results.stud_ID}&mark_Obtained=${mark_Obtained}&status=${status}`);
   }
 }

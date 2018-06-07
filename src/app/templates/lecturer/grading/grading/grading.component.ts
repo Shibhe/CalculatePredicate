@@ -20,6 +20,7 @@ export class GradingComponent implements OnInit {
   left: number = 0;
   
   groups: any[] = [];
+  info: any[] = [];
 
   a1: Assessment1 = new Assessment1();
   a2: Assessment2 = new Assessment2();
@@ -36,6 +37,8 @@ export class GradingComponent implements OnInit {
   tasks: any[] = [];
   assessment: any[] = [];
   task: any = null;
+
+  
   constructor(private _AssessmentService: AssessmentService) {}
   
 
@@ -128,7 +131,18 @@ export class GradingComponent implements OnInit {
     this._AssessmentService.getGroups()
                             .subscribe((data) => {
                               this.groups = data;
+                              console.log(this.groups);
                             })
+  }
+
+  onChangeObj(val){
+    this.info.push(val);
+    this.student.stud_ID = this.info[0].student_Id;
+    this.student.projectName = this.info[0].student_Project_Name;
+    this.student.studInitials = this.info[0].student_Initials;
+    this.student.studSurname = this.info[0].student_Surname;
+    this.student.studGroup = this.info[0].group_Name;
+    // console.log(this.info);
   }
 
   onChange(val) {
