@@ -7,6 +7,7 @@ export class Assessment1 {
     t6: number = 0;
     t7: number = 0;
     t8: number = 0;
+    t9: number = 0;
     s1: string;
     s2: string;
     s3: string;
@@ -15,4 +16,5 @@ export class Assessment1 {
     s6: string;
     s7: string;
     s8: string;
+    s9: string;
 }

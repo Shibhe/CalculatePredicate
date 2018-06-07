@@ -14,6 +14,10 @@ export class Assessment5 {
     t13: number = 0;
     t14: number = 0;
     t15: number = 0;
+    t16: number = 0;
+    t17: number = 0;
+    t18: number = 0;
+    t19: number = 0;
     s1: string;
     s2: string;
     s3: string;
@@ -29,4 +33,8 @@ export class Assessment5 {
     s13: string;
     s14: string;
     s15: string;
+    s16: string;
+    s17: string;
+    s18: string;
+    s19: string;
 }
