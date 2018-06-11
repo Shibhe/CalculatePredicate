@@ -6,4 +6,6 @@ export class Stuff{
     User_ID: string;
     role_Name : string;
     Email: string;
+    phoneNumber: string;
+    stuffNo: string;
 }

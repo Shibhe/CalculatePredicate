@@ -5,4 +5,7 @@ export class Student {
     studInitials: string;
     studGroup: string;
     projectName: string;
+    student_Email: string;
+    stuffNo: string;
+    student_Status: string;
 }

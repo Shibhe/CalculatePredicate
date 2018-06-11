@@ -1564,8 +1564,8 @@ assess83(e){
 }
 
   submitResult(){
-
-  this._AssessmentService.submitResults(this.student, this.total, this.status)
+  let des;
+  this._AssessmentService.submitResults(this.student, this.total, this.status, des)
                                   .subscribe((data) => {
 
                                     if (data.success == 1){

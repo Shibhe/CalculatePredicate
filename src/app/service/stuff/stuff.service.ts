@@ -8,14 +8,13 @@ import { Student } from '../../model/student.model';
 })
 export class StuffService {
 
-  BASE_URL = "https://uncreditable-window.000webhostapp.com/financial_planning";
+  BASE_URL = "https://uncreditable-window.000webhostapp.com/Grading_Scripts";
+
   constructor(private http: HttpClient) { }
 
-  addLecturer(stuff){
-    return this.http.get<any>(`${this.BASE_URL}/addUser.php?status=${stuff.Initials}&LastName=${stuff.LastName}&Stuff_No=${stuff.Stuff_No}&Email=${stuff.Email}&Password=${stuff.Password}`);
+  addLecturer(stuff: Stuff){
+    return this.http.get<any>(`${this.BASE_URL}/addUser.php?staff_FName=${stuff.Initials}&staff_LName=${stuff.LastName}&staff_Number=${stuff.Stuff_No}&staff_PNumber=${stuff.phoneNumber}&staff_Email=${stuff.Email}&staff_Password=${stuff.Password}`);
   }
 
-  addStudent(stuff: Student){
-    return this.http.get("");
-  }
+  
 }
