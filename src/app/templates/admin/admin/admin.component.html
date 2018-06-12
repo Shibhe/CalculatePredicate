@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="">{{ currentUser.role_Name }}</a></li>
+        <li class="active"><a href="">{{ currentUser.role_Desc }}</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -27,7 +27,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="http://phpoll.com/login" class="dropdown-toggle">{{ currentUser.Initials }}, {{ currentUser.LastName }} <span class="caret"></span></a>
+          <a href="http://phpoll.com/login" class="dropdown-toggle">{{ currentUser.staff_FName }}, {{ currentUser.staff_LName }} <span class="caret"></span></a>
         </li>
         <li>
           <button type="button" class="btn btn-primary" (click)="logout()" style="margin-top: 5px; margin-right: 5px">Logout</button>
@@ -45,13 +45,16 @@
         <h1 style="color: rgb(19, 13, 13); text-transform: uppercase; margin-bottom: 10px">Add Lecturer</h1>
         <fieldset>
         <div class="form-group">
-          <input type="text" [(ngModel)]="stuff.Initials" name="Initials" id="username" tabindex="1" class="form-control" placeholder="Initials" value="">
+          <input type="text" [(ngModel)]="stuff.Initials" name="Initials" id="username" tabindex="1" class="form-control" placeholder="First Name" value="">
         </div>
         <div class="form-group">
           <input type="email" [(ngModel)]="stuff.LastName" name="Last_Name" id="email" tabindex="1" class="form-control" placeholder="Last Name" value="">
         </div>
         <div class="form-group">
-          <input type="text" [(ngModel)]="stuff.Stuff_No" maxlength="9" pattern="[0-9]+" name="Stuff_No" id="password" tabindex="2" class="form-control" placeholder="Stuff No">
+          <input type="text" [(ngModel)]="stuff.Stuff_No" maxlength="9" pattern="[0-9]+" name="Stuff_No" id="password" tabindex="2" class="form-control" placeholder="Staff No">
+        </div>
+        <div class="form-group">
+          <input type="tel" [(ngModel)]="stuff.phoneNumber" name="phoneNumber" i tabindex="2" class="form-control" placeholder="Phone Number">
         </div>
         <div class="form-group">
           <input type="email" [(ngModel)]="stuff.Email" name="Email"  tabindex="2" class="form-control" placeholder="Email">

@@ -7,40 +7,58 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-             <label class="radio-inline"><input type="radio" value="1" [(ngModel)]="optionSelected" name="optradi"> Individual</label>
-          <label class="radio-inline"><input type="radio" value="2" [(ngModel)]="optionSelected" name="optradio"> Group</label>
+              <label class="radio-inline"><input type="radio" value="1" [(ngModel)]="optradio" name="optradio"> Individual</label>
+              <label class="radio-inline"><input type="radio" value="2" [(ngModel)]="optradio" name="optradio"> Group</label>
           </div>
         </div>
-        <form>
+        <form *ngIf="optradio == 2" style="margin-top: 20px; margin-bottom: 50px">
+           <fieldset>
+             <div class="row">
+                <div class="col-lg-6">
+                    <label>Select Group:</label>
+                    <select class="form-control" style="height:40px" [(ngModel)]="student.studGroup" (ngModelChange)="selectedGroup($event)" name="group">
+                        <option value="0" selected disabled>Select Group</option>
+                        <option *ngFor="let s of group;let x = index" [ngValue]="s.GroupID">{{ s.Group_Name }}</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                    <label>Select the assessment:</label>
+                    <select class="form-control" [(ngModel)]="task" name="taskId" (ngModelChange)="onChange($event)">
+                      <option value="0" selected disabled>Select Assessment</option>
+                      <option *ngFor="let s of tasks" [value]="s.assessment_Id">{{ s.assessment_Desc }}</option>
+                      <option value="6">All Assessments</option>
+                    </select>
+                </div>
+             </div>
+           </fieldset>
+        </form>
+        
+        <form *ngIf="optradio == 1">
             <caption class="text-center"><h3>Student Details</h3></caption>
           <fieldset>
-            <div class="row" *ngIf="optionSelected == 1">
+            <div class="row">
               <div class="col-lg-4">
                 <label>Student Number:</label>
                 <select class="form-control" style="height:40px" [(ngModel)]="student.studNo" (ngModelChange)="onChangeObj($event)" name="group">
-                  <option value="0" selected disabled>Select Group</option>
-                  <option *ngFor="let s of groups;let x = index" [ngValue]="s">{{ s.student_Number }}</option>
+                  <option value="0" selected disabled>Select Student</option>
+                  <option *ngFor="let s of groups;let x = index" [ngValue]="s">{{ s.student_Number }} ({{ s.student_FName | slice:0:1}}, {{s.student_LName}})</option>
                 </select>
               </div>
               <div class="col-lg-4">
-                  <label>Surname:</label>
-                  <input class="form-control" [(ngModel)]="student.studSurname" name="surname" style="height:40px" type="text" placeholder="Enter student surname">
-              </div>
+                <label>First Name:</label>
+                <input class="form-control" [(ngModel)]="student.studInitials" name="initials" style="height:40px" type="text" placeholder="Enter student initials">
+            </div>
               <div class="col-lg-4">
-                  <label>Initials:</label>
-                  <input class="form-control" [(ngModel)]="student.studInitials" name="initials" style="height:40px" type="text" placeholder="Enter student initials">
+                  <label>Last Name:</label>
+                  <input class="form-control" [(ngModel)]="student.studSurname" name="surname" style="height:40px" type="text" placeholder="Enter student surname">
               </div>
             </div>
             <div class="row" style="margin-top:10px; margin-bottom: 55px">
-                <div class="col-lg-4">
-                    <label>Group Name:</label>
-                    <input class="form-control" [(ngModel)]="student.studGroup" name="studNo" style="height:40px" type="text" placeholder="Enter Group name">
-                </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <label>Project Name:</label>
                     <input class="form-control" [(ngModel)]="student.projectName" name="projectName" style="height:40px" type="text" placeholder="Enter student group">
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <label>Select the assessment:</label>
                     <select class="form-control" [(ngModel)]="task" name="taskId" (ngModelChange)="onChange($event)">
                       <option value="0" selected disabled>Select Assessment</option>
@@ -51,6 +69,31 @@
             </div>
           </fieldset>
         </form>
+        <div class="row" style="margin-top: 10px" *ngIf="students.length > 0 && optradio == 2">
+            <div class="col-lg-12">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr class="tabl">
+                        <th>#</th>
+                        <th>Student No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Project Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let stud of students; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{stud.student_Number}}</td>
+                        <td>{{stud.student_FName}}</td>
+                        <td>{{stud.student_LName}}</td>
+                        <td>{{stud.student_ProjectName}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+
     </div>
   </div>
   
@@ -85,7 +128,7 @@
             <td>{{ assessment['0']?.name }} </td>
             <td>{{ assessment['0']?.marks}} </td>
             <td>
-              <input type="number" (keyup)="ass1($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t1">
+              <input type="text" (keyup)="ass1($event)" class="form-control" [(ngModel)]="a1.t1">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a1.s1">
@@ -102,7 +145,7 @@
             <td>{{ assessment['1']?.name }} </td>
             <td>{{ assessment['1']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="ass2($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t2">
+              <input type="text" (keyup)="ass2($event)"  class="form-control" [(ngModel)]="a1.t2">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a1.s2">
@@ -119,7 +162,7 @@
             <td>{{ assessment['2']?.name }} </td>
             <td>{{ assessment['2']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="ass3($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t3">
+              <input type="text" (keyup)="ass3($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t3">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a1.s3">
@@ -136,7 +179,7 @@
             <td>{{ assessment['3']?.name }} </td>
             <td>{{ assessment['3']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
+              <input type="text" (keyup)="ass4($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t4">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a1.s4">
@@ -161,7 +204,7 @@
             <td>{{ assessment['4']?.name }} </td>
             <td>{{ assessment['4']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="ass5($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t5">
+            <input type="text" (keyup)="ass5($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t5">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a1.s5">
@@ -178,7 +221,7 @@
             <td>{{ assessment['5']?.name }} </td>
             <td>{{ assessment['5']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="ass6($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t6">
+            <input type="text" (keyup)="ass6($event)" maxlength="2"  class="form-control" [(ngModel)]="a1.t6">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a1.s6">
@@ -195,7 +238,7 @@
             <td>{{ assessment['6']?.name }} </td>
             <td>{{ assessment['6']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="ass7($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t7">
+            <input type="text" (keyup)="ass7($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t7">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a1.s7">
@@ -212,7 +255,7 @@
             <td>{{ assessment['7']?.name }} </td>
             <td>{{ assessment['7']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="ass8($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t8">
+            <input type="text" (keyup)="ass8($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t8">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a1.s8">
@@ -229,7 +272,7 @@
             <td>{{ assessment['8']?.name }} </td>
             <td>{{ assessment['8']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="ass9($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t9">
+            <input type="text" (keyup)="ass9($event)" maxlength="2" class="form-control" [(ngModel)]="a1.t9">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a1.s9">
@@ -242,7 +285,6 @@
         </tbody>
         <tfoot>
             <tr>
-              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
               <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
             </tr>
           </tfoot>
@@ -395,7 +437,6 @@
         </tbody>
         <tfoot>
             <tr>
-              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
               <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
             </tr>
           </tfoot>
@@ -765,7 +806,6 @@
         </tbody>
         <tfoot>
             <tr>
-              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
               <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
             </tr>
           </tfoot>
@@ -1089,7 +1129,6 @@
           </tbody>
           <tfoot>
               <tr>
-                <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
                 <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
               </tr>
             </tfoot>
@@ -1484,7 +1523,6 @@
             </tbody>
             <tfoot>
                 <tr>
-                  <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
                   <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
                 </tr>
               </tfoot>
@@ -2622,7 +2660,6 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="5" class="text-center">created by Joseph Sibiya.</td>
               <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
             </tr>
           </tfoot>

@@ -27,20 +27,20 @@ export class LoginComponent implements OnInit {
                   if (data.success == 1){
                     this.setIsLogged(JSON.stringify(data));
                     this.login.isAuthenticated = true;
-                   if (data.role_Name == "Admin"){
+                   if (data.role_Desc == "Admin"){
                       this.router.navigate(['/user/admin-dashboard']);
-                   } else if (data.role_Name == "Lecturer"){
+                   } else if (data.role_Desc == "Lecturer"){
                       this.router.navigate(['/user/lecturer-dashboard']);
                    } else {
                      alert("Unauthorized");
                    }
                     
                   } else {
-                    alert("Invalid login details");
+                    alert(data.message);
                   }
                 },
               (error) => {
-
+                console.log(error)
               })
   }
 

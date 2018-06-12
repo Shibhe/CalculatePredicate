@@ -32,8 +32,10 @@ export class AdminComponent implements OnInit {
                       if (data.success == 1){
                         alert(data.message);
                         this.stuff = new Stuff();
+                      } else if (data.success == 0) {
+                        alert(data.message);
                       } else {
-                        alert("Not successful added");
+                        alert("User already exists");
                       }
                      })
   }

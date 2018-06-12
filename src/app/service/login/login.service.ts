@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  BASE_URL = "https://uncreditable-window.000webhostapp.com/financial_planning";
+  BASE_URL = "https://uncreditable-window.000webhostapp.com/Grading_Scripts";
   isLoggedIn = true;
   constructor(private http: HttpClient) { }
 
-  userLogin(stuffNo, password): Observable<any>{
-    return this.http.get(`${this.BASE_URL}/login.php?Stuff_No=${stuffNo}&password=${password}`)
+  userLogin(email, password): Observable<any>{
+    return this.http.get(`${this.BASE_URL}/login.php?staff_Email=${email}&staff_Password=${password}&staff_Number=${email}`)
   }
 
   get isAuthenticated(){

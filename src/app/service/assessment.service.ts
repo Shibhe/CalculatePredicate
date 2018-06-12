@@ -8,30 +8,41 @@ import { Student } from '../model/student.model';
 })
 export class AssessmentService {
 
+
+  BASE_URL = "https://uncreditable-window.000webhostapp.com/Grading_Scripts";
+
   constructor(private httpClient: HttpClient) { }
 
 
   getAllAssessment(){
-    return this.httpClient.get<any>("https://uncreditable-window.000webhostapp.com/financial_planning/getAllAssessment.php")
+    return this.httpClient.get<any>(`${this.BASE_URL}/getAllAssessment.php`)
   }
 
   getAssessment2(){
-    return this.httpClient.get<any>("https://uncreditable-window.000webhostapp.com/financial_planning/getAssment2.php")
+    return this.httpClient.get<any>(`${this.BASE_URL}/getAssment2.php`)
   }
   
   getAssessment(id){
-    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/getAssessment.php?assessment_Id=${id}`)
+    return this.httpClient.get<any>(`${this.BASE_URL}/getAssessment.php?assessment_Id=${id}`)
   }
 
   getAsses(){
-    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/getAllAssess.php`)
+    return this.httpClient.get<any>(`${this.BASE_URL}/getAllAssess.php`)
   }
-
+  
   getGroups(){
-    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/getGroup.php`)
+    return this.httpClient.get<any>(`${this.BASE_URL}/getAllGroups.php`)
   }
 
-  submitResults(results, mark_Obtained, status){
-    return this.httpClient.get<any>(`https://uncreditable-window.000webhostapp.com/financial_planning/submitResults.php?student_Id=${results.stud_ID}&mark_Obtained=${mark_Obtained}&status=${status}`);
+  getStudentNoGroup(){
+    return this.httpClient.get<any>(`${this.BASE_URL}/studentNoGroup.php`)
+  }
+  
+  submitResults(results, assessment_Id, stud_No, group_Id){
+    return this.httpClient.get<any>(`${this.BASE_URL}/submitResults.php?student_Id=${stud_No}&results=${results}&assessment_Id=${assessment_Id}&group_Id=${group_Id}`);
+  }
+
+  submitIndResults(results, assessment_Id, stud_No){
+    return this.httpClient.get<any>(`${this.BASE_URL}/submitIndStudent.php?student_Id=${stud_No}&results=${results}&assessment_Id=${assessment_Id}`);
   }
 }
