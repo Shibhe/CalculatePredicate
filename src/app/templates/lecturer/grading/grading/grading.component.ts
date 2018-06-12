@@ -6,6 +6,7 @@ import { Assessment3 } from '../../../../model/assessment_3';
 import { Assessment4 } from '../../../../model/assessment_4';
 import { Assessment5 } from '../../../../model/assessment_5';
 import { AssessmentService } from '../../../../service/assessment.service';
+import { StudentService } from '../../../../service/student/student.service';
 //import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
@@ -38,9 +39,11 @@ export class GradingComponent implements OnInit {
   tasks: any[] = [];
   assessment: any[] = [];
   task: any = null;
+  optradio: any = null;
+  students: any[] = [];
 
-  
-  constructor(private _AssessmentService: AssessmentService) {}
+  constructor(private _AssessmentService: AssessmentService,
+              private studentService: StudentService) {}
   
 
   ngOnInit() {
@@ -123,7 +126,9 @@ export class GradingComponent implements OnInit {
     this.student.studNo = "0";
    
 
-
+    this.optradio = '1';
+    this.task = "0";
+    
     this._AssessmentService.getAsses()
                            .subscribe((data) => {
                              this.tasks = data;
@@ -143,14 +148,25 @@ export class GradingComponent implements OnInit {
     this.student.studInitials = this.info[0].student_Initials;
     this.student.studSurname = this.info[0].student_Surname;
     this.student.studGroup = this.info[0].group_Name;
-    // console.log(this.info);
+  }
+
+  selectedGroup(e){
+    this.studentService.getStudent(e)
+                       .subscribe((data) => {
+                        if (data.success !== 0){
+                          this.students = data;
+                          console.log(this.students);
+                        } else {
+                          alert(data.message);
+                        }
+                       })
   }
 
   onChange(val) {
     this.task = val;
 
    // this.spinnerService.show();
-    console.log(this.task)
+    console.log("Info ",this.task)
    if (this.task == "2"){
      this._AssessmentService.getAssessment2()
                             .subscribe((data) => {
@@ -161,14 +177,12 @@ export class GradingComponent implements OnInit {
    } else if (this.task == "6"){
     this._AssessmentService.getAllAssessment()
     .subscribe((data) => {
-     // this.spinnerService.hide();
       this.assessment = data;
       console.log(this.assessment);
     });
    } else {
     this._AssessmentService.getAssessment(this.task)
     .subscribe((data) => {
-    //  this.spinnerService.hide();
       this.assessment = data;
       console.log(this.assessment);
     });
@@ -178,117 +192,225 @@ export class GradingComponent implements OnInit {
   // Assessment 1
   ass1(e){
      let as1 = e.target.value;
-
-     if (as1 == "0"){
-      this.a1.s1 = "0";
-     }
-
-     if (as1 <= 3){
+  
+     if (as1 >= 1 && as1 <= 3){
        this.a1.t1 = as1;
 
        this.a1.s1 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
        
-     } else {
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+    
+      } else {
       this.a1.t1 = 0;
       this.a1.s1 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass2(e){
     let as12 = e.target.value;
 
-     if (as12 <= 2){
+     if (as12 >= 1 && as12 <= 2){
        this.a1.t2 = as12;
        this.a1.s2 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
 
-     } else {
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+      } else {
       this.a1.t2 = 0;
       this.a1.s2 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass3(e){
     let as3 = e.target.value;
 
-     if (as3 <= 3){
+     if (as3 >= 1 && as3 <= 3){
        this.a1.t3 = as3;
        this.a1.s3 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
 
-     } else {
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+     
+      } else {
       this.a1.t3 = 0;
       this.a1.s3 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass4(e){
     let as4 = e.target.value;
 
-     if (as4 <= 2){
+     if (as4 >= 1 && as4 <= 2){
        this.a1.t4 = as4;
        this.a1.s4 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
-     } else {
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
+     
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+     
+      } else {
        this.a1.t4 = 0;
        this.a1.s4 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass5(e){
     let as5 = e.target.value;
 
-     if (as5 <= 3){
+     if (as5 >= 1 && as5 <= 3){
        this.a1.t5 = as5;
        this.a1.s5 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
-     } else {
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
+     
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+      } else {
        this.a1.t5 = 0;
        this.a1.s5 = "5";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass6(e){
     let as6 = e.target.value;
 
-     if (as6 <= 2){
+     if (as6 >= 1 && as6 <= 2){
        this.a1.t6 = as6;
        this.a1.s6 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
-     } else {
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
+     
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+      } else {
        this.a1.t6 = 0;
        this.a1.s6 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass7(e){
     let as7 = e.target.value;
 
-     if (as7 <= 3){
+     if (as7 >= 1 && as7 <= 3){
        this.a1.t7 = as7;
        this.a1.s7 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.10;
-     } else {
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
+       this.total += this.average;
+
+       if (this.total < 50){
+         this.left = 50 - Number(this.total);
+         this.status = "Fail";
+       }else {
+
+        if (this.total >= 74){
+          this.status = "PD";
+        } else {
+          this.status = "Pass";
+        }
+        alert("Passed");
+        this.left = 0;
+      }
+     
+      } else {
        this.a1.t7 = 0;
        this.a1.s7 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass8(e){
     let as8 = e.target.value;
 
-     if (as8 <= 5){
+     if (as8 >= 1 && as8 <= 5){
        this.a1.t8 = as8;
        this.a1.s8 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) / 30) * 100) * 0.10;
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) / 30) * 100) * 0.1;
        this.total += this.average;
 
        if (this.total < 50){
@@ -308,17 +430,17 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t8 = 0;
        this.a1.s8 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
   ass9(e){
     let as8 = e.target.value;
 
-     if (as8 <= 7){
+     if (as8 >= 1 && as8 <= 7){
        this.a1.t9 = as8;
        this.a1.s9 = "Complete";
-       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) / 30) * 100) * 0.10;
+       this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) / 30) * 100) * 0.1;
        this.total += this.average;
 
        if (this.total < 50){
@@ -338,7 +460,7 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t9 = 0;
        this.a1.s9 = "0";
-       alert("Invalid number");
+       alert("Out of range");
      }
   }
 
@@ -1564,22 +1686,25 @@ assess83(e){
 }
 
   submitResult(){
-  let des;
-  this._AssessmentService.submitResults(this.student, this.total, this.status, des)
-                                  .subscribe((data) => {
+    if (this.optradio == '2'){
+      for (let i = 0; i < this.students.length; i++){
+        this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.task)
+                                .subscribe((data) => {
 
-                                    if (data.success == 1){
-                                      alert(data.message);
-                                    } else {
-                                      alert(data.message);
-                                    }
-                                    console.log(data);
+                                  if (data.success == 1){
+                                    
+                                  } else {
+                                    alert(data.message);
+                                  }
+                                  console.log(data);
 
-                                    this.student = new Student();
-                                  }, (error) => {
-                                    console.log(error);
-                                  })
-                               
+                                  this.student = new Student();
+                                }, (error) => {
+                                  console.log(error);
+                                })
+                        }
+    } else if (this.optradio == '2'){
 
+    }
   }
 }

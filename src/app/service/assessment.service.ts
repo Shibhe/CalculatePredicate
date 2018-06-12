@@ -38,7 +38,7 @@ export class AssessmentService {
     return this.httpClient.get<any>(`${this.BASE_URL}/getGroup.php`)
   }*/
 
-  submitResults(results, mark_Obtained, assessment_Id, group_Id){
-    return this.httpClient.get<any>(`${this.BASE_URL}/submitResults.php?student_Id=${results.stud_ID}&results=${mark_Obtained}&assessment_Id=${assessment_Id}&group_Id${group_Id}`);
+  submitResults(results, assessment_Id, stud_No, group_Id){
+    return this.httpClient.get<any>(`${this.BASE_URL}/submitResults.php?student_Id=${stud_No}&results=${results}&assessment_Id=${assessment_Id}&group_Id=${group_Id}`);
   }
 }
