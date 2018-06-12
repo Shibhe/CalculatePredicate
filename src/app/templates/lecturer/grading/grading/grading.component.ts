@@ -28,7 +28,8 @@ export class GradingComponent implements OnInit {
   a3: Assessment3 = new Assessment3();
   a4: Assessment4 = new Assessment4();
   a5: Assessment5 = new Assessment5();
-
+  
+  optionSelected;
   average: number = 0;
   average2: number = 0;
   average3: number = 0;

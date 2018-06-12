@@ -5,17 +5,22 @@
             <h4 class="text-right">Predicate: {{ total | number:'1.2-2' }}</h4>
             <h4 class="text-right">Left with {{ left | number:'1.2-2'}} to pass</h4>
         </div>
-        <form >
+        <div class="row">
+          <div class="col-lg-12">
+             <label class="radio-inline"><input type="radio" value="1" [(ngModel)]="optionSelected" name="optradi"> Individual</label>
+          <label class="radio-inline"><input type="radio" value="2" [(ngModel)]="optionSelected" name="optradio"> Group</label>
+          </div>
+        </div>
+        <form>
             <caption class="text-center"><h3>Student Details</h3></caption>
           <fieldset>
-            <div class="row">
+            <div class="row" *ngIf="optionSelected == 1">
               <div class="col-lg-4">
                 <label>Student Number:</label>
                 <select class="form-control" style="height:40px" [(ngModel)]="student.studNo" (ngModelChange)="onChangeObj($event)" name="group">
                   <option value="0" selected disabled>Select Group</option>
                   <option *ngFor="let s of groups;let x = index" [ngValue]="s">{{ s.student_Number }}</option>
                 </select>
-                  
               </div>
               <div class="col-lg-4">
                   <label>Surname:</label>
