@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   stuff: Stuff = new Stuff();
-
+  show: boolean = false;
   constructor(private login: LoginService,
               private router: Router) { }
 
@@ -22,8 +22,10 @@ export class LoginComponent implements OnInit {
       let stuffNo = this.stuff.Stuff_No;
       let password = this.stuff.Password;
 
+      this.show = true;
       this.login.userLogin(stuffNo, password)
                 .subscribe((data) => {
+                  this.show = false;
                   if (data.success == 1){
                     this.setIsLogged(JSON.stringify(data));
                     this.login.isAuthenticated = true;

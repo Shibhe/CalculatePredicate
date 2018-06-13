@@ -12,7 +12,7 @@
           <input type="password" [(ngModel)]="stuff.Password" name="password" placeholder="Your Password" required autocomplete="off"/>
         </div> 
         <p class="forgot"><a href="#">Forgot Password?</a></p> 
-        <button class="button button-block"  (click)="isLogged()">Log In</button> 
+        <button class="button button-block"  (click)="isLogged()">Log In <i class="fa fa-circle-o-notch fa-spin" *ngIf="show" style="font-size:24px"></i></button> 
       </form> 
     </div>
        

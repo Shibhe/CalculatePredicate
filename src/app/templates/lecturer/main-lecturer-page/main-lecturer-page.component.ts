@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StudentService } from '../../../service/student/student.service';
 import { Student } from '../../../model/student.model';
 import { AssessmentService } from '../../../service/assessment.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-lecturer-page',
@@ -27,7 +28,25 @@ export class MainLecturerPageComponent implements OnInit {
                             .subscribe((data) => {
                               this.groups = data;
                               console.log(this.groups);
-                            })
+                            },
+                            // Handle errors
+                            (err: HttpErrorResponse | Error) => {
+                             // this.spinnerService.hide();
+                            
+                            if (err instanceof HttpErrorResponse) {
+                                if (err.status == 200 && err.ok == false){
+                                   alert("Something went wrong. Please choose another option");
+                                } else if (err.status == 401){
+                                  alert("Server-side error occured. Please check your token");
+                                } else if (err.status == 400){
+                                  alert(err.message);
+                                } else if (err.status == 404){
+                                 alert(err.message);
+                               }
+                                } else {
+                                  console.log("Server-side error occured.");
+                                }
+                            });
   }
 
   logout(){
@@ -50,7 +69,26 @@ export class MainLecturerPageComponent implements OnInit {
                       } else {
                         alert("User already exists");
                       }
-                     })
+                     },
+                     // Handle errors
+                     (err: HttpErrorResponse | Error) => {
+                      // this.spinnerService.hide();
+                     
+                     if (err instanceof HttpErrorResponse) {
+                         if (err.status == 200 && err.ok == false){
+                            alert("Something went wrong. Please choose another option");
+                         } else if (err.status == 401){
+                           alert("Server-side error occured. Please check your token");
+                         } else if (err.status == 400){
+                           alert(err.message);
+                         } else if (err.status == 404){
+                          alert(err.message);
+                        }
+                         } else {
+                           console.log("Server-side error occured.");
+                         }
+                     });
+             
   }
 
   onChangeObj(e){
@@ -60,6 +98,5 @@ export class MainLecturerPageComponent implements OnInit {
 
   generateReport(){
     this.router.navigate(['user/lecturer-dashboard/report']);
-   this.rep = 1;
   }
 }
