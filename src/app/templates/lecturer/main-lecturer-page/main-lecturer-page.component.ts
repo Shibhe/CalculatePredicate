@@ -12,6 +12,7 @@ import { AssessmentService } from '../../../service/assessment.service';
 export class MainLecturerPageComponent implements OnInit {
 
   groups: any;
+  rep: number;
   currentUser: any = null;
   student: Student = new Student();
 
@@ -21,7 +22,7 @@ export class MainLecturerPageComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     console.log(this.currentUser);
-
+    this.rep = 0;
     this._AssessmentService.getGroups()
                             .subscribe((data) => {
                               this.groups = data;
@@ -55,5 +56,10 @@ export class MainLecturerPageComponent implements OnInit {
   onChangeObj(e){
     console.log(e);
     this.student.studGroup = e;
+  }
+
+  generateReport(){
+    this.router.navigate(['user/lecturer-dashboard/report']);
+   this.rep = 1;
   }
 }

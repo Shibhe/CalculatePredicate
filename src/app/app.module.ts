@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router'
 import { RoutingModule } from './config/routes';
 import { AuthGaurd } from 'src/app/config/auth';
 import { MainLecturerPageComponent } from './templates/lecturer/main-lecturer-page/main-lecturer-page.component';
+import { ReportComponent } from './templates/lecturer/report/report/report.component';
 // import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MainLecturerPageComponent } from './templates/lecturer/main-lecturer-pa
     AddStudentComponent,
     AdminComponent,
     AddLecturerComponent,
-    MainLecturerPageComponent
+    MainLecturerPageComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
