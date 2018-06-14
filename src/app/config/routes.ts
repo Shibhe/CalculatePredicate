@@ -5,7 +5,6 @@ import { AdminComponent } from "../templates/admin/admin/admin.component";
 import { AuthGaurd } from "src/app/config/auth";
 import { GradingComponent } from "../templates/lecturer/grading/grading/grading.component";
 import { AddLecturerComponent } from "../templates/admin/add-lecturer/add-lecturer.component";
-import { ReportsComponent } from "../templates/lecturer/grading/reports/reports.component";
 import { AddStudentComponent } from "../templates/lecturer/add-student/add-student.component";
 import { MainLecturerPageComponent } from "../templates/lecturer/main-lecturer-page/main-lecturer-page.component";
 import { ReportComponent } from "src/app/templates/lecturer/report/report/report.component";

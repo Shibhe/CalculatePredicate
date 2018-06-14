@@ -317,7 +317,6 @@ export class GradingComponent implements OnInit {
 
      if (as1.length == 0){
        this.a1.s1 = "0";
-       // alert("0");
      } else{
 
      if (as1 >= 0 && as1 <= 3){
@@ -325,7 +324,7 @@ export class GradingComponent implements OnInit {
 
        this.a1.s1 = "Complete";
        this.average = (((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8)+ Number(this.a1.t9)) / 30) * 100) * 0.1;
-       
+
        this.total += this.average;
 
        if (this.total < 50){
@@ -355,7 +354,6 @@ export class GradingComponent implements OnInit {
 
     if (as12.length == 0){
       this.a1.s2 = "0";
-      // alert("0");
     } else{
      if (as12 >= 0 && as12 <= 2){
        this.a1.t2 = as12;
