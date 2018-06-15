@@ -17,4 +17,8 @@ export class StudentService {
   getStudent(id){
     return this.http.get<any>(`${this.BASE_URL}/getStudent.php?group_Id=${id}`);
   }
+  
+  updateMarks(status, marks, student_Id){
+    return this.http.get<any>(`${this.BASE_URL}/updateMarks.php?student_Status=${status}&student_Marks=${marks}&student_Id=${student_Id}`);
+  }
 }

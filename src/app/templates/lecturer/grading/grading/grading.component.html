@@ -323,7 +323,7 @@
             <td>{{ assessment['0']?.name }} </td>
             <td>{{ assessment['0']?.marks}} </td>
             <td>
-              <input type="number" (keyup)="as1($event)" class="form-control" [(ngModel)]="a2.t1">
+              <input type="text" (keyup)="as1($event)" class="form-control" [(ngModel)]="a2.t1">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a2.s1">
@@ -340,7 +340,7 @@
             <td>{{ assessment['1']?.name }} </td>
             <td>{{ assessment['1']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="as2($event)"  class="form-control" [(ngModel)]="a2.t2">
+              <input type="text" (keyup)="as2($event)"  class="form-control" [(ngModel)]="a2.t2">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a2.s2">
@@ -357,7 +357,7 @@
             <td>{{ assessment['2']?.name }} </td>
             <td>{{ assessment['2']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="as3($event)" class="form-control" [(ngModel)]="a2.t3">
+              <input type="text" (keyup)="as3($event)" class="form-control" [(ngModel)]="a2.t3">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a2.s3">
@@ -374,7 +374,7 @@
             <td>{{ assessment['3']?.name }} </td>
             <td>{{ assessment['3']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="as4($event)" class="form-control" [(ngModel)]="a2.t4">
+              <input type="text" (keyup)="as4($event)" class="form-control" [(ngModel)]="a2.t4">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a2.s4">
@@ -390,7 +390,7 @@
             <td>{{ assessment['4']?.name }} </td>
             <td>{{ assessment['4']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="as5($event)"  class="form-control" [(ngModel)]="a2.t5">
+            <input type="text" (keyup)="as5($event)"  class="form-control" [(ngModel)]="a2.t5">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a2.s5">
@@ -407,7 +407,7 @@
             <td>{{ assessment['5']?.name }} </td>
             <td>{{ assessment['5']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="as6($event)" class="form-control" [(ngModel)]="a2.t6">
+            <input type="text" (keyup)="as6($event)" class="form-control" [(ngModel)]="a2.t6">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a2.s6">
@@ -424,7 +424,7 @@
             <td>{{ assessment['6']?.name }} </td>
             <td>{{ assessment['6']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="as7($event)" class="form-control" [(ngModel)]="a2.t7">
+            <input type="text" (keyup)="as7($event)" class="form-control" [(ngModel)]="a2.t7">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a2.s7">
@@ -482,7 +482,7 @@
           <td>{{ assessment['0']?.name }} </td>
           <td>{{ assessment['0']?.marks }} </td>
           <td>
-            <input type="number" (keyup)="asse1($event)" class="form-control" [(ngModel)]="a3.t1">
+            <input type="text" (keyup)="asse1($event)" class="form-control" [(ngModel)]="a3.t1">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a3.s1">
@@ -498,7 +498,7 @@
         <td>{{ assessment['1']?.name }} </td>
         <td>{{ assessment['1']?.marks }} </td>
         <td>
-          <input type="number" (keyup)="asse2($event)"  class="form-control" [(ngModel)]="a3.t2">
+          <input type="text" (keyup)="asse2($event)"  class="form-control" [(ngModel)]="a3.t2">
         </td>
         <td>
           <select class="form-control" [(ngModel)]="a3.s2">
@@ -514,7 +514,7 @@
         <td>{{ assessment['2']?.name }} </td>
         <td>{{ assessment['2']?.marks }} </td>
         <td>
-          <input type="number" (keyup)="asse3($event)"  class="form-control" [(ngModel)]="a3.t3">
+          <input type="text" (keyup)="asse3($event)"  class="form-control" [(ngModel)]="a3.t3">
         </td>
         <td>
           <select class="form-control" [(ngModel)]="a3.s3">
@@ -539,7 +539,7 @@
         <td>{{ assessment['3']?.name }} </td>
         <td>{{ assessment['3']?.marks }} </td>
       <td>
-        <input type="number" (keyup)="asse4($event)" class="form-control" [(ngModel)]="a3.t4">
+        <input type="text" (keyup)="asse4($event)" class="form-control" [(ngModel)]="a3.t4">
       </td>
       <td>
         <select class="form-control" [(ngModel)]="a3.s4">
@@ -556,7 +556,7 @@
         <td>{{ assessment['4']?.name }} </td>
         <td>{{ assessment['4']?.marks }} </td>
       <td>
-        <input type="number" (keyup)="asse5($event)"  class="form-control"[(ngModel)]="a3.t5">
+        <input type="text" (keyup)="asse5($event)"  class="form-control"[(ngModel)]="a3.t5">
       </td>
       <td>
         <select class="form-control" [(ngModel)]="a3.s5">
@@ -580,7 +580,7 @@
               <td>{{ assessment['5']?.name }} </td>
               <td>{{ assessment['5']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="asse6($event)" class="form-control" [(ngModel)]="a3.t6">
+              <input type="text" (keyup)="asse6($event)" class="form-control" [(ngModel)]="a3.t6">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a3.s6">
@@ -596,7 +596,7 @@
               <td>{{ assessment['6']?.name }} </td>
               <td>{{ assessment['6']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="asse7($event)"  class="form-control" [(ngModel)]="a3.t7">
+              <input type="text" (keyup)="asse7($event)"  class="form-control" [(ngModel)]="a3.t7">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a3.s7">
@@ -612,7 +612,7 @@
               <td>{{ assessment['7']?.name }} </td>
               <td>{{ assessment['7']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="asse8($event)"  class="form-control" [(ngModel)]="a3.t8">
+              <input type="text" (keyup)="asse8($event)"  class="form-control" [(ngModel)]="a3.t8">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a3.s8">
@@ -628,7 +628,7 @@
               <td>{{ assessment['8']?.name }} </td>
               <td>{{ assessment['8']?.marks }} </td>
             <td>
-              <input type="number" (keyup)="asse9($event)"  class="form-control" [(ngModel)]="a3.t9">
+              <input type="text" (keyup)="asse9($event)"  class="form-control" [(ngModel)]="a3.t9">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a3.s9">
@@ -645,7 +645,7 @@
                 <td>{{ assessment['9']?.name }} </td>
                 <td>{{ assessment['9']?.marks }} </td>
               <td>
-                <input type="number" (keyup)="asse10($event)"  class="form-control" [(ngModel)]="a3.t10">
+                <input type="text" (keyup)="asse10($event)"  class="form-control" [(ngModel)]="a3.t10">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a3.s10">
@@ -662,7 +662,7 @@
                 <td>{{ assessment['10']?.name }} </td>
                 <td>{{ assessment['10']?.marks }} </td>
               <td>
-                <input type="number" (keyup)="asse11($event)"  class="form-control" [(ngModel)]="a3.t11">
+                <input type="text" (keyup)="asse11($event)"  class="form-control" [(ngModel)]="a3.t11">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a3.s11">
@@ -679,7 +679,7 @@
                 <td>{{ assessment['11']?.name }} </td>
                 <td>{{ assessment['11']?.marks }} </td>
                   <td>
-                    <input type="number" (keyup)="asse12($event)"  class="form-control" [(ngModel)]="a3.t12">
+                    <input type="text" (keyup)="asse12($event)"  class="form-control" [(ngModel)]="a3.t12">
                   </td>
                   <td>
                     <select class="form-control" [(ngModel)]="a3.s12">
@@ -696,7 +696,7 @@
                     <td>{{ assessment['12']?.name }} </td>
                     <td>{{ assessment['12']?.marks }} </td>
                   <td>
-                      <input type="number" (keyup)="asse13($event)"  class="form-control" [(ngModel)]="a3.t13">
+                      <input type="text" (keyup)="asse13($event)"  class="form-control" [(ngModel)]="a3.t13">
                     </td>  
                     <td>
                       <select class="form-control" [(ngModel)]="a3.s13">
@@ -713,7 +713,7 @@
                         <td>{{ assessment['13']?.name }} </td>
                         <td>{{ assessment['13']?.marks }} </td>
                       <td>
-                        <input type="number" (keyup)="asse14($event)"  class="form-control" [(ngModel)]="a3.t14">
+                        <input type="text" (keyup)="asse14($event)"  class="form-control" [(ngModel)]="a3.t14">
                       </td>
                       <td>
                         <select class="form-control" [(ngModel)]="a3.s14">
@@ -737,7 +737,7 @@
                          <td>{{ assessment['14']?.name }} </td>
                          <td>{{ assessment['14']?.marks }} </td>
                         <td>
-                          <input type="number" (keyup)="asse15($event)"  class="form-control" [(ngModel)]="a3.t15">
+                          <input type="text" (keyup)="asse15($event)"  class="form-control" [(ngModel)]="a3.t15">
                         </td>
                         <td>
                           <select class="form-control" [(ngModel)]="a3.s15">
@@ -753,7 +753,7 @@
                            <td>{{ assessment['15']?.name }} </td>
                            <td>{{ assessment['15']?.marks }} </td>
                           <td>
-                            <input type="number" (keyup)="asse16($event)"  class="form-control" [(ngModel)]="a3.t16">
+                            <input type="text" (keyup)="asse16($event)"  class="form-control" [(ngModel)]="a3.t16">
                           </td>
                           <td>
                             <select class="form-control" [(ngModel)]="a3.s16">
@@ -777,7 +777,7 @@
                              <td>{{ assessment['16']?.name }} </td>
                              <td>{{ assessment['16']?.marks }} </td>
                             <td>
-                              <input type="number" (keyup)="asse17($event)"  class="form-control" [(ngModel)]="a3.t17">
+                              <input type="text" (keyup)="asse17($event)"  class="form-control" [(ngModel)]="a3.t17">
                             </td>
                             <td>
                               <select class="form-control" [(ngModel)]="a3.s17">
@@ -826,7 +826,7 @@
               <td>{{ assessment['0']?.name }} </td>
               <td>{{ assessment['0']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="asses1($event)"  class="form-control" [(ngModel)]="a4.t1">
+                <input type="text" (keyup)="asses1($event)"  class="form-control" [(ngModel)]="a4.t1">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a4.s1">
@@ -842,7 +842,7 @@
               <td>{{ assessment['1']?.name }} </td>
               <td>{{ assessment['1']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="asses2($event)"  class="form-control" [(ngModel)]="a4.t2">
+                <input type="text" (keyup)="asses2($event)"  class="form-control" [(ngModel)]="a4.t2">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a4.s4">
@@ -858,7 +858,7 @@
               <td>{{ assessment['2']?.name }} </td>
               <td>{{ assessment['2']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="asses3($event)"  class="form-control" [(ngModel)]="a4.t3">
+                <input type="text" (keyup)="asses3($event)"  class="form-control" [(ngModel)]="a4.t3">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a4.s3">
@@ -874,7 +874,7 @@
               <td>{{ assessment['3']?.name }} </td>
               <td>{{ assessment['3']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="asses4($event)"  class="form-control" [(ngModel)]="a4.t4">
+                <input type="text" (keyup)="asses4($event)"  class="form-control" [(ngModel)]="a4.t4">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a4.s4">
@@ -890,7 +890,7 @@
                 <td>{{ assessment['4']?.name }} </td>
                 <td>{{ assessment['4']?.marks }}</td>
                 <td>
-                  <input type="number" (keyup)="asses5($event)"  class="form-control" [(ngModel)]="a4.t5">
+                  <input type="text" (keyup)="asses5($event)"  class="form-control" [(ngModel)]="a4.t5">
                 </td>
                 <td>
                   <select class="form-control" [(ngModel)]="a4.s5">
@@ -906,7 +906,7 @@
                   <td>{{ assessment['5']?.name }} </td>
                   <td>{{ assessment['5']?.marks }}</td>
                   <td>
-                    <input type="number" (keyup)="asses6($event)"  class="form-control" [(ngModel)]="a4.t6">
+                    <input type="text" (keyup)="asses6($event)"  class="form-control" [(ngModel)]="a4.t6">
                   </td>
                   <td>
                     <select class="form-control" [(ngModel)]="a4.s6">
@@ -922,7 +922,7 @@
                     <td>{{ assessment['6']?.name }} </td>
                     <td>{{ assessment['6']?.marks }}</td>
                     <td>
-                      <input type="number" (keyup)="asses7($event)"  class="form-control" [(ngModel)]="a4.t7">
+                      <input type="text" (keyup)="asses7($event)"  class="form-control" [(ngModel)]="a4.t7">
                     </td>
                     <td>
                       <select class="form-control" [(ngModel)]="a4.s7">
@@ -962,7 +962,7 @@
             <td>{{ assessment['8']?.name }} </td>
             <td>{{ assessment['8']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="asses9($event)"  class="form-control" [(ngModel)]="a4.t9">
+              <input type="text" (keyup)="asses9($event)"  class="form-control" [(ngModel)]="a4.t9">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a4.s9">
@@ -978,7 +978,7 @@
             <td>{{ assessment['9']?.name }} </td>
             <td>{{ assessment['9']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="asses10($event)"  class="form-control" [(ngModel)]="a4.t10">
+              <input type="text" (keyup)="asses10($event)"  class="form-control" [(ngModel)]="a4.t10">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a4.s10">
@@ -994,7 +994,7 @@
             <td>{{ assessment['10']?.name }} </td>
             <td>{{ assessment['10']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="asses11($event)"  class="form-control" [(ngModel)]="a4.t11">
+              <input type="text" (keyup)="asses11($event)"  class="form-control" [(ngModel)]="a4.t11">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a4.s11">
@@ -1010,7 +1010,7 @@
             <td>{{ assessment['11']?.name }} </td>
             <td>{{ assessment['11']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="asses12($event)"  class="form-control" [(ngModel)]="a4.t12">
+              <input type="text" (keyup)="asses12($event)"  class="form-control" [(ngModel)]="a4.t12">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a4.s12">
@@ -1026,7 +1026,7 @@
               <td>{{ assessment['12']?.name }} </td>
               <td>{{ assessment['12']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="asses13($event)"  class="form-control" [(ngModel)]="a4.t13">
+                <input type="text" (keyup)="asses13($event)"  class="form-control" [(ngModel)]="a4.t13">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a4.s13">
@@ -1042,7 +1042,7 @@
                 <td>{{ assessment['13']?.name }} </td>
                 <td>{{ assessment['13']?.marks }}</td>
                 <td>
-                  <input type="number" (keyup)="asses14($event)"  class="form-control" [(ngModel)]="a4.t14">
+                  <input type="text" (keyup)="asses14($event)"  class="form-control" [(ngModel)]="a4.t14">
                 </td>
                 <td>
                   <select class="form-control" [(ngModel)]="a4.s14">
@@ -1059,7 +1059,7 @@
           <td>{{ assessment['14']?.name }} </td>
           <td>{{ assessment['14']?.marks }}</td>
           <td>
-            <input type="number" (keyup)="asses15($event)" class="form-control" [(ngModel)]="a4.t15">
+            <input type="text" (keyup)="asses15($event)" class="form-control" [(ngModel)]="a4.t15">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a4.s15">
@@ -1083,7 +1083,7 @@
           <td>{{ assessment['15']?.name }} </td>
           <td>{{ assessment['15']?.marks }}</td>
           <td>
-            <input type="number" (keyup)="asses16($event)"  class="form-control" [(ngModel)]="a4.t16">
+            <input type="text" (keyup)="asses16($event)"  class="form-control" [(ngModel)]="a4.t16">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a4.s16">
@@ -1099,7 +1099,7 @@
           <td>{{ assessment['16']?.name }} </td>
           <td>{{ assessment['16']?.marks }}</td>
           <td>
-            <input type="number" (keyup)="asses17($event)" class="form-control" [(ngModel)]="a4.t17">
+            <input type="text" (keyup)="asses17($event)" class="form-control" [(ngModel)]="a4.t17">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a4.s17">
@@ -1150,7 +1150,7 @@
               <td>{{ assessment['0']?.name }} </td>
               <td>{{ assessment['0']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="assess1($event)"class="form-control" [(ngModel)]="a5.t1">
+                <input type="text" (keyup)="assess1($event)"class="form-control" [(ngModel)]="a5.t1">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a5.s1">
@@ -1166,7 +1166,7 @@
               <td>{{ assessment['1']?.name }} </td>
               <td>{{ assessment['1']?.marks }}</td>
               <td>
-                <input type="number" (keyup)="assess2($event)"  class="form-control" [(ngModel)]="a5.t2">
+                <input type="text" (keyup)="assess2($event)"  class="form-control" [(ngModel)]="a5.t2">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a5.s2">
@@ -1191,7 +1191,7 @@
             <td>{{ assessment['2']?.name }} </td>
               <td>{{ assessment['2']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="assess3($event)"  class="form-control" [(ngModel)]="a5.t3">
+              <input type="text" (keyup)="assess3($event)"  class="form-control" [(ngModel)]="a5.t3">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a5.s3">
@@ -1207,7 +1207,7 @@
             <td>{{ assessment['3']?.name }} </td>
               <td>{{ assessment['3']?.marks }}</td>
             <td>
-              <input type="number" (keyup)="assess4($event)"  class="form-control" [(ngModel)]="a5.t4">
+              <input type="text" (keyup)="assess4($event)"  class="form-control" [(ngModel)]="a5.t4">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a5.s4">
@@ -1223,7 +1223,7 @@
             <td>{{ assessment['4'].name }} </td>
               <td>{{ assessment['4'].marks }}</td>
             <td>
-              <input type="number" (keyup)="assess5($event)"  class="form-control" [(ngModel)]="a5.t5">
+              <input type="text" (keyup)="assess5($event)"  class="form-control" [(ngModel)]="a5.t5">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a5.s5">
@@ -1247,7 +1247,7 @@
             <td>{{ assessment['5'].name }} </td>
             <td>{{ assessment['5'].marks }}</td>
             <td>
-              <input type="number" (keyup)="assess6($event)"  class="form-control" [(ngModel)]="a5.t6">
+              <input type="text" (keyup)="assess6($event)"  class="form-control" [(ngModel)]="a5.t6">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a5.s6">
@@ -1263,7 +1263,7 @@
             <td>{{ assessment['6'].name }} </td>
               <td>{{ assessment['6'].marks }}</td>
             <td>
-              <input type="number" (keyup)="assess7($event)"  class="form-control" [(ngModel)]="a5.t7">
+              <input type="text" (keyup)="assess7($event)"  class="form-control" [(ngModel)]="a5.t7">
             </td>
             <td>
               <select class="form-control" [(ngModel)]="a5.s7">
@@ -1288,7 +1288,7 @@
           <td>{{ assessment['7'].name }} </td>
           <td>{{ assessment['7'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess8($event)"  class="form-control" [(ngModel)]="a5.t8">
+            <input type="text" (keyup)="assess8($event)"  class="form-control" [(ngModel)]="a5.t8">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s8">
@@ -1305,7 +1305,7 @@
               <td>{{ assessment['8'].name }} </td>
               <td>{{ assessment['8'].marks }}</td>
               <td>
-                <input type="number" (keyup)="assess81($event)"  class="form-control" [(ngModel)]="a5.t17">
+                <input type="text" (keyup)="assess81($event)"  class="form-control" [(ngModel)]="a5.t17">
               </td>
               <td>
                 <select class="form-control" [(ngModel)]="a5.s17">
@@ -1322,7 +1322,7 @@
                   <td>{{ assessment['9'].name }} </td>
                   <td>{{ assessment['9'].marks }}</td>
                   <td>
-                    <input type="number" (keyup)="assess82($event)"  class="form-control" [(ngModel)]="a5.t18">
+                    <input type="text" (keyup)="assess82($event)"  class="form-control" [(ngModel)]="a5.t18">
                   </td>
                   <td>
                     <select class="form-control" [(ngModel)]="a5.s18">
@@ -1339,7 +1339,7 @@
                       <td>{{ assessment['10'].name }} </td>
                       <td>{{ assessment['10'].marks }}</td>
                       <td>
-                        <input type="number" (keyup)="assess83($event)"  class="form-control" [(ngModel)]="a5.t19">
+                        <input type="text" (keyup)="assess83($event)"  class="form-control" [(ngModel)]="a5.t19">
                       </td>
                       <td>
                         <select class="form-control" [(ngModel)]="a5.s19">
@@ -1364,7 +1364,7 @@
           <td>{{ assessment['11'].name }} </td>
           <td>{{ assessment['11'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess9($event)" class="form-control" [(ngModel)]="a5.t9">
+            <input type="text" (keyup)="assess9($event)" class="form-control" [(ngModel)]="a5.t9">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s9">
@@ -1380,7 +1380,7 @@
           <td>{{ assessment['12'].name }} </td>
           <td>{{ assessment['12'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess10($event)"  class="form-control" [(ngModel)]="a5.t10">
+            <input type="text" (keyup)="assess10($event)"  class="form-control" [(ngModel)]="a5.t10">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s10">
@@ -1396,7 +1396,7 @@
           <td>{{ assessment['13'].name }} </td>
           <td>{{ assessment['13'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess11($event)"  class="form-control" [(ngModel)]="a5.t11">
+            <input type="text" (keyup)="assess11($event)"  class="form-control" [(ngModel)]="a5.t11">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s11">
@@ -1412,7 +1412,7 @@
           <td>{{ assessment['14'].name }} </td>
           <td>{{ assessment['14'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess12($event)"  class="form-control" [(ngModel)]="a5.t12">
+            <input type="text" (keyup)="assess12($event)"  class="form-control" [(ngModel)]="a5.t12">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s12">
@@ -1436,7 +1436,7 @@
           <td>{{ assessment['15'].name }} </td>
           <td>{{ assessment['15'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess13($event)"  class="form-control" [(ngModel)]="a5.t13">
+            <input type="text" (keyup)="assess13($event)"  class="form-control" [(ngModel)]="a5.t13">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s13">
@@ -1454,7 +1454,7 @@
           <td>{{ assessment['16'].name }} </td>
           <td>{{ assessment['16'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess14($event)"  class="form-control" [(ngModel)]="a5.t14">
+            <input type="text" (keyup)="assess14($event)"  class="form-control" [(ngModel)]="a5.t14">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s14">
@@ -1478,7 +1478,7 @@
           <td>{{ assessment['17'].name }} </td>
           <td>{{ assessment['17'].marks }}</td>
           <td>
-            <input type="number" (keyup)="assess15($event)"  class="form-control" [(ngModel)]="a5.t15">
+            <input type="text" (keyup)="assess15($event)"  class="form-control" [(ngModel)]="a5.t15">
           </td>
           <td>
             <select class="form-control" [(ngModel)]="a5.s15">
@@ -1494,7 +1494,7 @@
                 <td>{{ assessment['18'].name }} </td>
                 <td>{{ assessment['18'].marks }}</td>
                 <td>
-                  <input type="number" (keyup)="assess16($event)"  class="form-control" [(ngModel)]="a5.t16">
+                  <input type="text" (keyup)="assess16($event)"  class="form-control" [(ngModel)]="a5.t16">
                 </td>
                 <td>
                   <select class="form-control" [(ngModel)]="a5.s16">
@@ -1514,7 +1514,7 @@
         </div>
       </div>
      
-  <div class="row" *ngIf="task == 6" style="margin-top: 20px; background-color: aliceblue">
+ <!-- <div class="row" *ngIf="task == 6" style="margin-top: 20px; background-color: aliceblue">
     <div class="col-xs-12">
       
       <div class="table-responsive">
@@ -2650,5 +2650,5 @@
         </table>
       </div>end of .table-responsive
     </div>
-  </div>
+  </div>-->
 </div>

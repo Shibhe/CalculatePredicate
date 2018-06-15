@@ -27,18 +27,28 @@
           <td colspan="7">
             <table class="table table-bordered table-striped">
               <thead>
+                <tr>
                 <th>ASSESSMENTS</th>
                 <th>RESULTS</th>
+                </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let asse of result.report; let x = index">
                   <td>{{ asse.assessment_Desc }}</td>
                   <td>{{ asse.results }}</td>
                 </tr>
+                <tr>
+                  <td><strong>MARKS:</strong></td>
+                  <td><strong>{{result.student_Marks}}</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>STATUS:</strong></td>
+                    <td><strong>{{result.student_Status}}</strong></td>
+                  </tr>
               </tbody>
             </table>
           </td>
-          <td>Passed</td>
+          
         </tr>
       </tbody>
     </table>
