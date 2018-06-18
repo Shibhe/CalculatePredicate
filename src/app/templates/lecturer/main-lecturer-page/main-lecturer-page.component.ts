@@ -21,6 +21,8 @@ export class MainLecturerPageComponent implements OnInit {
               private _AssessmentService: AssessmentService) { }
 
   ngOnInit() {
+
+    this.student.studGroup = "0";
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     console.log(this.currentUser);
     this.rep = 0;
