@@ -62,7 +62,7 @@
                         </div>
                         <select class="form-control" style="height:40px" [(ngModel)]="student.studGroup" (ngModelChange)="onChangeObj($event)" name="group">
                             <option value="0" selected disabled>Select Group</option>
-                            <option *ngFor="let s of groups;let x = index" [ngValue]="s.GroupID">{{ s.Group_Name }}</option>
+                            <option *ngFor="let s of groups;let x = index" [ngValue]="s.Group_Id">{{ s.Group_Name }}</option>
                         </select>
                       <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
                      </fieldset>
