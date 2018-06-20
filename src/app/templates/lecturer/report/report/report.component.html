@@ -35,11 +35,11 @@
               <tbody>
                 <tr *ngFor="let asse of result.report; let x = index">
                   <td>{{ asse.assessment_Desc }}</td>
-                  <td>{{ asse.results }}</td>
+                  <td>{{ asse.results | number:'1.0-0'}}</td>
                 </tr>
                 <tr>
                   <td><strong>MARKS:</strong></td>
-                  <td><strong>{{result.student_Marks}}</strong></td>
+                  <td><strong>{{result.student_Marks | number:'1.0-0'}}</strong></td>
                 </tr>
                 <tr>
                     <td><strong>STATUS:</strong></td>

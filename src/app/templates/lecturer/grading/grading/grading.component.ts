@@ -1117,7 +1117,8 @@ asse17(e){
     let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
     let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
     this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
-    this.total = this.average2;
+    this.total = this.average2 - 0.2;
+    this.average2 = this.total;
 
     
   } else {
@@ -1486,7 +1487,7 @@ asses14(e){
        let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
        let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
        this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
-    this.total = this.average3;
+       this.total = this.average3;
 
     
   } else {
@@ -1563,7 +1564,8 @@ asses17(e){
        let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
        let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
        this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
-       this.total = this.average3;
+       this.total = this.average3 - 2;
+       this.average3 = this.total;
 
      } else {
        this.a4.t17 = 0;
@@ -1587,9 +1589,9 @@ assess1(e){
        this.a5.s1 = "Complete";
 
        let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-       let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-       let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-       this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+       let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+       let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+       this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
        this.total = this.average4;
      } else {
        this.a5.t1 = 0;
@@ -1611,9 +1613,9 @@ assess2(e){
     this.a5.s2 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
    
   } else {
@@ -1636,9 +1638,9 @@ assess3(e){
     this.a5.s3 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t3 = 0;
@@ -1661,9 +1663,9 @@ assess4(e){
     this.a5.s4 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t4 = 0;
@@ -1684,9 +1686,9 @@ assess5(e){
     this.a5.s5 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t5 = 0;
@@ -1709,9 +1711,9 @@ assess6(e){
     this.a5.s6 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t6 = 0;
@@ -1733,9 +1735,9 @@ assess7(e){
     this.a5.s7 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t7 = 0;
@@ -1757,9 +1759,9 @@ assess8(e){
     this.a5.s8 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t8 = 0;
@@ -1781,9 +1783,9 @@ assess9(e){
     this.a5.s9 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t9 = 0;
@@ -1804,9 +1806,9 @@ assess10(e){
     this.a5.s10 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t10 = 0;
@@ -1827,9 +1829,9 @@ assess11(e){
     this.a5.s11 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t11 = 0;
@@ -1851,9 +1853,9 @@ assess12(e){
     this.a5.s12 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t12 = 0;
@@ -1875,9 +1877,9 @@ assess13(e){
     this.a5.s13 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t13 = 0;
@@ -1898,9 +1900,9 @@ assess14(e){
     this.a5.s14 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t14 = 0;
@@ -1921,9 +1923,9 @@ assess15(e){
     this.a5.s15 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
    
   } else {
@@ -1945,9 +1947,9 @@ assess16(e){
     this.a5.s16 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t16 = 0;
@@ -1968,9 +1970,9 @@ assess81(e){
     this.a5.s17 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
 
   } else {
@@ -1992,9 +1994,9 @@ assess82(e){
     this.a5.s18 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t18 = 0;
@@ -2015,9 +2017,9 @@ assess83(e){
     this.a5.s19 = "Complete";
 
     let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
-    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + (Number(this.a5.t8) * 4) + Number(this.a5.t9) + Number(this.a5.t10);
-    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + (Number(this.a5.t13) * 4) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
-    this.average4 = ((sum1 + sum2 + sum3) * 35) / 110;
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
     this.total = this.average4;
   } else {
     this.a5.t19 = 0;
@@ -2035,7 +2037,7 @@ assess83(e){
                                 .subscribe((data) => {
 
                                   if (data.success == 1){
-                                     alert(data.message);
+                                      alert(data.message);
                                     this.students = [];
                                   } else {
                                     alert(data.message);

@@ -26,6 +26,7 @@ export class ReportComponent implements OnInit {
                .subscribe((data) => {
                  this.updateResults.push(data);
                  //this.result.push(["0"].report);
+                 this.status = "";
 
                  for (let i = 0; i < this.updateResults["0"].student_Results.length; i++){
                    this.total = 0;
@@ -33,13 +34,14 @@ export class ReportComponent implements OnInit {
                       this.total = this.total + Number(this.updateResults["0"].student_Results[i].report[x].results)
                    }
 
-                   this.total = this.total;
+                  // this.total = this.total;
 
+                  console.log(this.total);
                    if (this.total <= 48){
                      this.status = "Fail";
                    } else if (this.total >= 49 || this.total < 74){
                      this.status = "Pass";
-                   } else if (this.total > 74){
+                   } else{
                      this.status = "PD";
                    }
 
