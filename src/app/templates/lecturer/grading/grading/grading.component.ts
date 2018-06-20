@@ -25,6 +25,7 @@ export class GradingComponent implements OnInit {
   groups: any[] = [];
   group: any[] = [];
   info: any[] = [];
+  currentUser: any = null;
 
   a1: Assessment1 = new Assessment1();
   a2: Assessment2 = new Assessment2();
@@ -129,6 +130,8 @@ export class GradingComponent implements OnInit {
     this.student.studNo = "0";
    
 
+    this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    console.log("currentUser", this.currentUser);
     this.optradio = '1';
     this.task = "0";
     
@@ -217,7 +220,7 @@ export class GradingComponent implements OnInit {
   selectedGroup(e){
     console.log(e);
     this.students = [];
-    this.studentService.getStudent(e)
+    this.studentService.getStudent(e, this.currentUser.staff_Id)
                        .subscribe((data) => {
                         if (data.success !== 0){
                           this.students = data;
@@ -331,6 +334,8 @@ export class GradingComponent implements OnInit {
       } else {
       this.a1.t1 = 0;
       this.a1.s1 = "0";
+      this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+      this.total = this.average;
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -353,6 +358,8 @@ export class GradingComponent implements OnInit {
       } else {
       this.a1.t2 = 0;
       this.a1.s2 = "0";
+      this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+      this.total = this.average;
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -375,6 +382,8 @@ export class GradingComponent implements OnInit {
       } else {
       this.a1.t3 = 0;
       this.a1.s3 = "0";
+      this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+      this.total = this.average;
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -398,6 +407,8 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t4 = 0;
        this.a1.s4 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -420,7 +431,9 @@ export class GradingComponent implements OnInit {
     
       } else {
        this.a1.t5 = 0;
-       this.a1.s5 = "5";
+       this.a1.s5 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -444,6 +457,8 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t6 = 0;
        this.a1.s6 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -466,6 +481,8 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t7 = 0;
        this.a1.s7 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -488,6 +505,8 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t8 = 0;
        this.a1.s8 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 5");
      }
     }
@@ -511,6 +530,8 @@ export class GradingComponent implements OnInit {
       } else {
        this.a1.t9 = 0;
        this.a1.s9 = "0";
+       this.average = ((Number(this.a1.t1) + Number(this.a1.t2) + Number(this.a1.t3) + Number(this.a1.t4) + Number(this.a1.t5) + Number(this.a1.t6) + Number(this.a1.t7) + Number(this.a1.t8) + Number(this.a1.t9)) * 10) / 30;
+       this.total = this.average;
        alert("Out of range, it must be between 0 - 7");
      }
     }
@@ -535,6 +556,9 @@ export class GradingComponent implements OnInit {
     } else {
      this.a2.t1 = 0;
      this.a2.s1 = "0";
+     this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+     this.total = this.average11;
+
       alert("Out of range");
     }
   }
@@ -558,6 +582,9 @@ export class GradingComponent implements OnInit {
     } else {
      this.a2.t2 = 0;
      this.a2.s2 = "0";
+     this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+     this.total = this.average11;
+
       alert("Out of range, it must be between 0 - 3");
     }
   }
@@ -579,6 +606,9 @@ export class GradingComponent implements OnInit {
     } else {
      this.a2.t3 = 0;
      this.a2.s3 = "0";
+     this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+     this.total = this.average11;
+
       alert("Out of range, it must be between o - 2");
     }
   }
@@ -601,6 +631,9 @@ export class GradingComponent implements OnInit {
     } else {
       this.a2.t4 = 0;
       this.a2.s4 = "0";
+      this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+      this.total = this.average11;
+
       alert("Out of range, it must be between 0 - 26");
     }
   }
@@ -622,7 +655,10 @@ export class GradingComponent implements OnInit {
     
     } else {
       this.a2.t5 = 0;
-      this.a2.s5 = "5";
+      this.a2.s5 = "0";
+      this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+      this.total = this.average11;
+
       alert("Out of range");
     }
   }
@@ -645,6 +681,9 @@ export class GradingComponent implements OnInit {
     } else {
       this.a2.t6 = 0;
       this.a2.s6 = "0";
+      this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+      this.total = this.average11;
+
       alert("Out of range");
     }
   }
@@ -668,6 +707,9 @@ export class GradingComponent implements OnInit {
     } else {
       this.a2.t7 = 0;
       this.a2.s7 = "0";
+      this.average11 = ((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) * 15) / 36;     
+      this.total = this.average11;
+
       alert("Out of range");
     }
   }
@@ -695,6 +737,11 @@ asse1(e){
      } else {
        this.a3.t1 = 0;
        this.a3.s1 = "0";
+       let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -723,6 +770,11 @@ asse2(e){
      } else {
        this.a3.t2 = 0;
        this.a3.s2 = "0";
+       let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
        alert("Out of range, it must be between 0 - 5");
      }
     }
@@ -751,6 +803,11 @@ asse3(e){
      } else {
        this.a3.t3 = 0;
        this.a3.s3 = "0";
+       let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
        alert("Out of range, it must be 0 - 24");
      }
     }
@@ -779,6 +836,11 @@ asse4(e){
   } else {
     this.a3.t4 = 0;
     this.a3.s4 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 6");
   }
 }
@@ -805,6 +867,11 @@ asse5(e){
   } else {
     this.a3.t5 = 0;
     this.a3.s5 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 5");
   }
   }
@@ -831,6 +898,11 @@ asse6(e){
   } else {
     this.a3.t6 = 0;
     this.a3.s6 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 3");
   }
 }
@@ -857,6 +929,11 @@ asse7(e){
   } else {
     this.a3.t7 = 0;
     this.a3.s7 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 10");
   }
 }
@@ -884,6 +961,11 @@ asse8(e){
   } else {
     this.a3.t8 = 0;
     this.a3.s8 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 2");
   }
 }
@@ -911,6 +993,11 @@ asse9(e){
   } else {
     this.a3.t9 = 0;
     this.a3.s9 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 4");
   }
 }
@@ -937,6 +1024,11 @@ asse10(e){
   } else {
     this.a3.t10 = 0;
     this.a3.s10 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 2");
   }
 }
@@ -963,6 +1055,11 @@ asse11(e){
   } else {
     this.a3.t11 = 0;
     this.a3.s11 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 8");
   }
 }
@@ -990,6 +1087,11 @@ asse12(e){
      } else {
        this.a3.t12 = 0;
        this.a3.s12 = "0";
+       let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
        alert("Out of range, it must be 0 - 5");
      }
     }
@@ -1016,6 +1118,11 @@ asse13(e){
   } else {
     this.a3.t13 = 0;
     this.a3.s13 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 3");
   }
 }
@@ -1042,6 +1149,11 @@ asse14(e){
      } else {
        this.a3.t14 = 0;
        this.a3.s14 = "0";
+       let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
        alert("Out of range, it must be between 0 - 4");
      }
     }
@@ -1070,6 +1182,11 @@ asse15(e){
   } else {
     this.a3.t15 = 0;
     this.a3.s15 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 10");
   }
 }
@@ -1097,6 +1214,11 @@ asse16(e){
   } else {
     this.a3.t16 = 0;
     this.a3.s16 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+       let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+       let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+       this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
+       this.total = this.average2;
     alert("Out of range, it must be between 0 - 20");
   }
 }
@@ -1116,14 +1238,22 @@ asse17(e){
     let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
     let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
     let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
-    this.average2 = ((sum1 + sum2 + sum3) * 20) / 132;
-    this.total = this.average2 - 0.2;
-    this.average2 = this.total;
+    let av = ((sum1 + sum2 + sum3) * 20) / 132;
+    let tot = av - 0.2;
+    this.average2 = tot;
+    this.total = this.average2;
 
     
   } else {
     this.a3.t17 = 0;
     this.a3.s17 = "0";
+    let sum1 = Number(this.a3.t1) + Number(this.a3.t2) + Number(this.a3.t3) + Number(this.a3.t4) + Number(this.a3.t5);
+    let sum2 = Number(this.a3.t6) + Number(this.a3.t7) + Number(this.a3.t8) + Number(this.a3.t9) + Number(this.a3.t10);
+    let sum3 = Number(this.a3.t11) + Number(this.a3.t12) + Number(this.a3.t13) + Number(this.a3.t14) + Number(this.a3.t15) + Number(this.a3.t16) + Number(this.a3.t17);
+    let av = ((sum1 + sum2 + sum3) * 20) / 132;
+    let tot = av - 0.2;
+    this.average2 = tot;
+    this.total = this.average2;
     alert("Out of range, it must be between 0 - 20");
   }
 }
@@ -1153,6 +1283,12 @@ asses1(e){
      } else {
        this.a4.t1 = 0;
        this.a4.s1 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1180,6 +1316,12 @@ asses2(e){
      } else {
        this.a4.t2 = 0;
        this.a4.s2 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -1207,6 +1349,12 @@ asses3(e){
      } else {
        this.a4.t3 = 0;
        this.a4.s3 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1234,6 +1382,12 @@ asses4(e){
      } else {
        this.a4.t4 = 0;
        this.a4.s4 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 2");
      }
     }
@@ -1259,6 +1413,12 @@ asses5(e){
      } else {
        this.a4.t5 = 0;
        this.a4.s5 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1285,6 +1445,12 @@ asses6(e){
      } else {
        this.a4.t6 = 0;
        this.a4.s6 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 4");
      }
     }
@@ -1310,6 +1476,12 @@ asses7(e){
   } else {
     this.a4.t7 = 0;
     this.a4.s7 = "0";
+    let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
     alert("Out of range, it must be between 0  - 5");
   }
 }
@@ -1336,6 +1508,12 @@ asses8(e){
   } else {
     this.a4.t8 = 0;
     this.a4.s8 = "0";
+    let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
     alert("Out of range, it must be between 0 - 3");
   }
 }
@@ -1362,6 +1540,12 @@ asses9(e){
      } else {
        this.a4.t9 = 0;
        this.a4.s9 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1388,6 +1572,12 @@ asses10(e){
      } else {
        this.a4.t10 = 0;
        this.a4.s10 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range");
      }
     }
@@ -1414,6 +1604,12 @@ asses11(e){
      } else {
        this.a4.t11 = 0;
        this.a4.s11 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1440,6 +1636,12 @@ asses12(e){
   } else {
     this.a4.t12 = 0;
     this.a4.s12 = "0";
+    let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
     alert("Out of range, it must be between 0 - 6");
   }
 }
@@ -1466,6 +1668,12 @@ asses13(e){
      } else {
        this.a4.t13 = 0;
        this.a4.s13 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 3");
      }
     }
@@ -1493,6 +1701,12 @@ asses14(e){
   } else {
     this.a4.t14 = 0;
     this.a4.s14 = "0";
+    let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
     alert("Out of range, it must be between 0 - 5");
   }
 }
@@ -1519,6 +1733,12 @@ asses15(e){
       } else {
        this.a4.t15 = 0;
        this.a4.s15 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 4");
      }
     }
@@ -1545,6 +1765,12 @@ asses16(e){
      } else {
        this.a4.t16 = 0;
        this.a4.s16 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3;
+
        alert("Out of range, it must be between 0 - 20");
      }
     }
@@ -1570,6 +1796,12 @@ asses17(e){
      } else {
        this.a4.t17 = 0;
        this.a4.s17 = "0";
+       let sum1 = Number(this.a4.t1) + Number(this.a4.t2) + Number(this.a4.t3) + Number(this.a4.t4) + Number(this.a4.t5);
+       let sum2 = Number(this.a4.t6) + Number(this.a4.t7) + Number(this.a4.t8) + Number(this.a4.t9) + Number(this.a4.t10);
+       let sum3 = Number(this.a4.t11) + Number(this.a4.t12) + Number(this.a4.t13) + Number(this.a4.t14) + Number(this.a4.t15) + Number(this.a4.t16) + Number(this.a4.t17);
+       this.average3 = ((sum1 + sum2 + sum3) * 22) / 80;
+       this.total = this.average3 - 2;
+       this.average3 = this.total;
        alert("Out of range, it must be between 0 - 10");
      }
     }
@@ -1596,6 +1828,11 @@ assess1(e){
      } else {
        this.a5.t1 = 0;
        this.a5.s1 = "0";
+       let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+       let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+       let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+       this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+       this.total = this.average4;
        alert("Out of range, it must be between 0 - 8");
      }
     }
@@ -1621,6 +1858,11 @@ assess2(e){
   } else {
     this.a5.t2 = 0;
     this.a5.s2 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range, it must be between 0 - 2");
   }
 }
@@ -1645,6 +1887,11 @@ assess3(e){
   } else {
     this.a5.t3 = 0;
     this.a5.s3 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range, it must be between 0 - 4");
   }
 }
@@ -1670,6 +1917,11 @@ assess4(e){
   } else {
     this.a5.t4 = 0;
     this.a5.s4 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range, it must be between 0 - 4");
   }
 }
@@ -1693,6 +1945,11 @@ assess5(e){
   } else {
     this.a5.t5 = 0;
     this.a5.s5 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range, it must be between 0 - 2");
   }
 }
@@ -1718,6 +1975,11 @@ assess6(e){
   } else {
     this.a5.t6 = 0;
     this.a5.s6 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1742,6 +2004,11 @@ assess7(e){
   } else {
     this.a5.t7 = 0;
     this.a5.s7 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1766,6 +2033,11 @@ assess8(e){
   } else {
     this.a5.t8 = 0;
     this.a5.s8 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1790,6 +2062,11 @@ assess9(e){
   } else {
     this.a5.t9 = 0;
     this.a5.s9 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1813,6 +2090,11 @@ assess10(e){
   } else {
     this.a5.t10 = 0;
     this.a5.s10 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1836,6 +2118,11 @@ assess11(e){
   } else {
     this.a5.t11 = 0;
     this.a5.s11 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1860,6 +2147,11 @@ assess12(e){
   } else {
     this.a5.t12 = 0;
     this.a5.s12 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1884,6 +2176,11 @@ assess13(e){
   } else {
     this.a5.t13 = 0;
     this.a5.s13 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
   }
@@ -1907,6 +2204,11 @@ assess14(e){
   } else {
     this.a5.t14 = 0;
     this.a5.s14 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1931,6 +2233,11 @@ assess15(e){
   } else {
     this.a5.t15 = 0;
     this.a5.s15 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1954,6 +2261,11 @@ assess16(e){
   } else {
     this.a5.t16 = 0;
     this.a5.s16 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -1978,6 +2290,11 @@ assess81(e){
   } else {
     this.a5.t17 = 0;
     this.a5.s17 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -2001,6 +2318,11 @@ assess82(e){
   } else {
     this.a5.t18 = 0;
     this.a5.s18 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }
@@ -2024,6 +2346,11 @@ assess83(e){
   } else {
     this.a5.t19 = 0;
     this.a5.s19 = "0";
+    let sum1 = Number(this.a5.t1) + Number(this.a5.t2) + Number(this.a5.t3) + Number(this.a5.t4) + Number(this.a5.t5);
+    let sum2 = Number(this.a5.t6) + Number(this.a5.t7) + Number(this.a5.t8) + Number(this.a5.t9) + Number(this.a5.t10);
+    let sum3 = Number(this.a5.t11) + Number(this.a5.t12) + Number(this.a5.t13) + Number(this.a5.t14) + Number(this.a5.t15) + Number(this.a5.t16) + Number(this.a5.t17) +  Number(this.a5.t18)  + Number(this.a5.t19);
+    this.average4 = ((sum1 + sum2 + sum3) * 35) / 120;
+    this.total = this.average4;
     alert("Out of range");
   }
 }

@@ -10,7 +10,7 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
-  getReport(){
-    return this.http.get<any[]>(`${this.BASE_URL}/generateReport.php`);
+  getReport(id){
+    return this.http.get<any[]>(`${this.BASE_URL}/generateReport.php?staff_Id=${id}`);
   }
 }

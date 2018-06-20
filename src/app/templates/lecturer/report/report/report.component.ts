@@ -22,7 +22,8 @@ export class ReportComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
-    this.reportService.getReport()
+    console.log(this.currentUser);
+    this.reportService.getReport(this.currentUser.staff_Id)
                .subscribe((data) => {
                  this.updateResults.push(data);
                  //this.result.push(["0"].report);
@@ -36,10 +37,14 @@ export class ReportComponent implements OnInit {
 
                   // this.total = this.total;
 
+                  if (this.total == 49){
+                     this.total = 50;
+                  }
+
                   console.log(this.total);
                    if (this.total <= 48){
                      this.status = "Fail";
-                   } else if (this.total >= 49 || this.total < 74){
+                   } else if (this.total <= 74){
                      this.status = "Pass";
                    } else{
                      this.status = "PD";
@@ -72,7 +77,7 @@ export class ReportComponent implements OnInit {
                });
 
 
-         this.reportService.getReport()
+         this.reportService.getReport(this.currentUser.staff_Id)
                            .subscribe((data) => {
                              this.reportResults.push(data);
                            },
