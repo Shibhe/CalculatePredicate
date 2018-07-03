@@ -1,0 +1,318 @@
+<table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+  <caption class="text-center" style="margin-bottom: 10px"><h2>DSO34BT (GRADING SYSTEM)</h2></caption>
+  <thead>
+    <tr style="background: #58D68D">
+      <th>ASSESSMENTS</th>
+      <th>WEIGHT (%)</th>
+      <th>STORIES</th>
+      <th>MARKS</th>
+      <th>ALLOCATED MARKS</th>
+      <th style="width: 160px">TASK STATUS</th>
+    </tr>  
+  </thead>
+  <tbody>
+      <tr style="background: #DC7633">
+          <th> {{ assessment['0']?.assessment_Desc }}</th>
+          <th>{{ assessment['0']?.assessment_Weight }}</th>
+          <th>{{ assessment['0']?.category_Desc }}</th>
+          <th>[25]</th>
+          <th>{{ average3 | number:'1.1-1' }}</th>
+          <th></th>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['0']?.name }} </td>
+      <td>{{ assessment['0']?.marks }}</td>
+      <td>
+        <input type="text" (keyup)="asses1($event)"  class="form-control" [(ngModel)]="a4.t1">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s1">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['1']?.name }} </td>
+      <td>{{ assessment['1']?.marks }}</td>
+      <td>
+        <input type="text" (keyup)="asses2($event)"  class="form-control" [(ngModel)]="a4.t2">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s4">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['2']?.name }} </td>
+      <td>{{ assessment['2']?.marks }}</td>
+      <td>
+        <input type="text" (keyup)="asses3($event)"  class="form-control" [(ngModel)]="a4.t3">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s3">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>{{ assessment['3']?.name }} </td>
+      <td>{{ assessment['3']?.marks }}</td>
+      <td>
+        <input type="text" (keyup)="asses4($event)"  class="form-control" [(ngModel)]="a4.t4">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s4">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{ assessment['4']?.name }} </td>
+        <td>{{ assessment['4']?.marks }}</td>
+        <td>
+          <input type="text" (keyup)="asses5($event)"  class="form-control" [(ngModel)]="a4.t5">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s5">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>{{ assessment['5']?.name }} </td>
+          <td>{{ assessment['5']?.marks }}</td>
+          <td>
+            <input type="text" (keyup)="asses6($event)"  class="form-control" [(ngModel)]="a4.t6">
+          </td>
+          <td>
+            <select class="form-control" [(ngModel)]="a4.s6">
+                <option value="0">Not done</option>
+                <option value="Complete">Complete</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>{{ assessment['6']?.name }} </td>
+            <td>{{ assessment['6']?.marks }}</td>
+            <td>
+              <input type="text" (keyup)="asses7($event)"  class="form-control" [(ngModel)]="a4.t7">
+            </td>
+            <td>
+              <select class="form-control" [(ngModel)]="a4.s7">
+                  <option value="0">Not done</option>
+                  <option value="Complete">Complete</option>
+                  <option value="Pending">Pending</option>
+              </select>
+          </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td>{{ assessment['7']?.name }} </td>
+              <td>{{ assessment['7']?.marks }}</td>
+              <td>
+                <input type="number" (keyup)="asses8($event)"  class="form-control" [(ngModel)]="a4.t8">
+              </td>
+              <td>
+                <select class="form-control" [(ngModel)]="a4.s8">
+                    <option value="0">Not done</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            </tr>
+    <tr style="background: #21618C">
+        <th></th>
+        <th></th>
+        <th>{{ assessment['8']?.category_Desc }}</th>
+        <th>[25]</th>
+        <th></th>
+        <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['8']?.name }} </td>
+    <td>{{ assessment['8']?.marks }}</td>
+    <td>
+      <input type="text" (keyup)="asses9($event)"  class="form-control" [(ngModel)]="a4.t9">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s9">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['9']?.name }} </td>
+    <td>{{ assessment['9']?.marks }}</td>
+    <td>
+      <input type="text" (keyup)="asses10($event)"  class="form-control" [(ngModel)]="a4.t10">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s10">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <th></th>
+    <td>{{ assessment['10']?.name }} </td>
+    <td>{{ assessment['10']?.marks }}</td>
+    <td>
+      <input type="text" (keyup)="asses11($event)"  class="form-control" [(ngModel)]="a4.t11">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s11">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>{{ assessment['11']?.name }} </td>
+    <td>{{ assessment['11']?.marks }}</td>
+    <td>
+      <input type="text" (keyup)="asses12($event)"  class="form-control" [(ngModel)]="a4.t12">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a4.s12">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>{{ assessment['12']?.name }} </td>
+      <td>{{ assessment['12']?.marks }}</td>
+      <td>
+        <input type="text" (keyup)="asses13($event)"  class="form-control" [(ngModel)]="a4.t13">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a4.s13">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{ assessment['13']?.name }} </td>
+        <td>{{ assessment['13']?.marks }}</td>
+        <td>
+          <input type="text" (keyup)="asses14($event)"  class="form-control" [(ngModel)]="a4.t14">
+        </td>
+        <td>
+          <select class="form-control" [(ngModel)]="a4.s14">
+              <option value="0">Not done</option>
+              <option value="Complete">Complete</option>
+              <option value="Pending">Pending</option>
+          </select>
+      </td>
+      </tr>
+ 
+<tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['14']?.name }} </td>
+  <td>{{ assessment['14']?.marks }}</td>
+  <td>
+    <input type="text" (keyup)="asses15($event)" class="form-control" [(ngModel)]="a4.t15">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a4.s15">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+</td>
+</tr>
+<tr style="background: #21618C">
+    <th></th>
+    <th></th>
+    <th>{{ assessment['15']?.category_Desc }}</th>
+    <th>[30]</th>
+    <th></th>
+    <th></th>
+</tr>
+<tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['15']?.name }} </td>
+  <td>{{ assessment['15']?.marks }}</td>
+  <td>
+    <input type="text" (keyup)="asses16($event)"  class="form-control" [(ngModel)]="a4.t16">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a4.s16">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+</td>
+</tr>
+<tr>
+  <td></td>
+  <th></th>
+  <td>{{ assessment['16']?.name }} </td>
+  <td>{{ assessment['16']?.marks }}</td>
+  <td>
+    <input type="text" (keyup)="asses17($event)" class="form-control" [(ngModel)]="a4.t17">
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="a4.s17">
+        <option value="0">Not done</option>
+        <option value="Complete">Complete</option>
+        <option value="Pending">Pending</option>
+    </select>
+</td>
+</tr>
+
+  </tbody>
+  <tfoot>
+      <tr>
+        <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
+      </tr>
+    </tfoot>
+</table>

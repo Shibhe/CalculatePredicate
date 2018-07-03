@@ -1,0 +1,146 @@
+<table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+  <caption class="text-center" style="margin-bottom: 10px"><h2>DSO34BT (GRADING SYSTEM)</h2></caption>
+  <thead>
+    <tr style="background: #58D68D">
+      <th>ASSESSMENTS</th>
+      <th>WEIGHT (%)</th>
+      <th>STORIES</th>
+      <th>MARKS</th>
+      <th>ALLOCATED MARKS</th>
+      <th style="width: 160px">TASK STATUS</th>
+    </tr>  
+  </thead>
+  <tbody>
+    <tr style="background: #DC7633">
+          <th></th>
+          <th>{{ assessment['0']?.assessment_Weight }}</th>
+          <th></th>
+          <th>[ 36 ]</th>
+          <th>{{ average11 | number:'1.1-1' }}</th>
+          <th></th>
+    </tr>
+
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['0']?.name }} </td>
+      <td>{{ assessment['0']?.marks}} </td>
+      <td>
+        <input type="text" (keyup)="as1($event)" class="form-control" [(ngModel)]="a2.t1">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a2.s1">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['1']?.name }} </td>
+      <td>{{ assessment['1']?.marks }} </td>
+      <td>
+        <input type="text" (keyup)="as2($event)"  class="form-control" [(ngModel)]="a2.t2">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a2.s2">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['2']?.name }} </td>
+      <td>{{ assessment['2']?.marks }} </td>
+      <td>
+        <input type="text" (keyup)="as3($event)" class="form-control" [(ngModel)]="a2.t3">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a2.s3">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <th></th>
+      <td>{{ assessment['3']?.name }} </td>
+      <td>{{ assessment['3']?.marks }} </td>
+      <td>
+        <input type="text" (keyup)="as4($event)" class="form-control" [(ngModel)]="a2.t4">
+      </td>
+      <td>
+        <select class="form-control" [(ngModel)]="a2.s4">
+            <option value="0">Not done</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </td>
+    </tr>
+  <tr>
+    <td></td>
+    <th></th>
+      <td>{{ assessment['4']?.name }} </td>
+      <td>{{ assessment['4']?.marks }} </td>
+    <td>
+      <input type="text" (keyup)="as5($event)"  class="form-control" [(ngModel)]="a2.t5">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a2.s5">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <th></th>
+      <td>{{ assessment['5']?.name }} </td>
+      <td>{{ assessment['5']?.marks }} </td>
+    <td>
+      <input type="text" (keyup)="as6($event)" class="form-control" [(ngModel)]="a2.t6">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a2.s6">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <th></th>
+      <td>{{ assessment['6']?.name }} </td>
+      <td>{{ assessment['6']?.marks }} </td>
+    <td>
+      <input type="text" (keyup)="as7($event)" class="form-control" [(ngModel)]="a2.t7">
+    </td>
+    <td>
+      <select class="form-control" [(ngModel)]="a2.s7">
+          <option value="0">Not done</option>
+          <option value="Complete">Complete</option>
+          <option value="Pending">Pending</option>
+      </select>
+  </td>
+  </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+        <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
+      </tr>
+    </tfoot>
+</table>

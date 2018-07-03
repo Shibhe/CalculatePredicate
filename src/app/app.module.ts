@@ -14,6 +14,11 @@ import { RoutingModule } from './config/routes';
 import { AuthGaurd } from 'src/app/config/auth';
 import { MainLecturerPageComponent } from './templates/lecturer/main-lecturer-page/main-lecturer-page.component';
 import { ReportComponent } from './templates/lecturer/report/report/report.component';
+import { FirstAssessmentComponent } from './templates/lecturer/assessments/first-assessment/first-assessment.component';
+import { SecondAssessmentComponent } from './templates/lecturer/assessments/second-assessment/second-assessment.component';
+import { ThirdAssessmentComponent } from './templates/lecturer/assessments/third-assessment/third-assessment.component';
+import { FourthAssessmentComponent } from './templates/lecturer/assessments/fourth-assessment/fourth-assessment.component';
+import { FifthAssessmentComponent } from './templates/lecturer/assessments/fifth-assessment/fifth-assessment.component';
 // import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
@@ -25,7 +30,12 @@ import { ReportComponent } from './templates/lecturer/report/report/report.compo
     AdminComponent,
     AddLecturerComponent,
     MainLecturerPageComponent,
-    ReportComponent
+    ReportComponent,
+    FirstAssessmentComponent,
+    SecondAssessmentComponent,
+    ThirdAssessmentComponent,
+    FourthAssessmentComponent,
+    FifthAssessmentComponent
   ],
   imports: [
     BrowserModule,
