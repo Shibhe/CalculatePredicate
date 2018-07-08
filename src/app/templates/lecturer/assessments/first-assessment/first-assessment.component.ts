@@ -239,7 +239,7 @@ export class FirstAssessmentComponent implements OnInit {
     if (as8 >= 0 && as8 <= 5){
       this.a1.t8 = as8;
      
-      let checkIf40 = (this.a1.t8 / 3) * 100;
+      let checkIf40 = (this.a1.t8 / 5) * 100;
 
       if (checkIf40 < 40){
         this.a1.s8 = "Pending";
@@ -264,7 +264,7 @@ export class FirstAssessmentComponent implements OnInit {
     if (as8 >= 0 && as8 <= 7){
       this.a1.t9 = as8;
       
-      let checkIf40 = (this.a1.t9 / 3) * 100;
+      let checkIf40 = (this.a1.t9 / 7) * 100;
 
       if (checkIf40 < 40){
         this.a1.s9 = "Pending";
