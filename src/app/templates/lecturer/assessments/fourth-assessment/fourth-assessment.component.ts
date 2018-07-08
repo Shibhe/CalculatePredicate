@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Assessment4 } from 'src/app/model/assessment_4';
+import { Input } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Student } from 'src/app/model/student.model';
+import { AssessmentService } from 'src/app/service/assessment.service';
 
 @Component({
   selector: 'app-fourth-assessment',
@@ -7,15 +11,39 @@ import { Assessment4 } from 'src/app/model/assessment_4';
   styleUrls: ['./fourth-assessment.component.css']
 })
 export class FourthAssessmentComponent implements OnInit {
+  @Input() student: Student = new Student();
+  @Input() assessment = null;
+  @Input() students = [];
+  @Input() optradio = null;
+  
   status: string;
   left: number;
   total: number = 0;
   average3: number = 0;
 
   a4: Assessment4 = new Assessment4();
-  constructor() { }
+
+  constructor(private _AssessmentService: AssessmentService) { }
 
   ngOnInit() {
+     //Assessment 4
+     this.a4.s1 = "0";
+     this.a4.s2 = "0";
+     this.a4.s3 = "0";
+     this.a4.s4 = "0";
+     this.a4.s5 = "0";
+     this.a4.s6 = "0";
+     this.a4.s7 = "0";
+     this.a4.s8 = "0";
+     this.a4.s9 = "0";
+     this.a4.s10 = "0";
+     this.a4.s11 = "0";
+     this.a4.s12 = "0";
+     this.a4.s13 = "0";
+     this.a4.s14 = "0";
+     this.a4.s15 = "0";
+     this.a4.s16 = "0";
+     this.a4.s17 = "0";
   }
 
   // Assessment 4
@@ -621,6 +649,79 @@ asses17(e){
      }
     }
 }
+
+submitResult(){
+  
+  if (this.optradio == '2'){
+    for (let i = 0; i < this.students.length; i++){
+      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup)
+                              .subscribe((data) => {
+
+                                if (data.success == 1){
+                                   while(i < this.students.length){
+                                    alert(data.message);
+                                   }
+                                  this.students = [];
+                                } else {
+                                  alert(data.message);
+                                }
+                                console.log(data);
+
+                                this.student = new Student();
+                              },
+                              // Handle errors
+                              (err: HttpErrorResponse | Error) => {
+                               // this.spinnerService.hide();
+                              
+                              if (err instanceof HttpErrorResponse) {
+                                  if (err.status == 200 && err.ok == false){
+                                     alert("Something went wrong. Please choose another option");
+                                  } else if (err.status == 401){
+                                    alert("Server-side error occured. Please check your token");
+                                  } else if (err.status == 400){
+                                    alert(err.message);
+                                  } else if (err.status == 404){
+                                   alert(err.message);
+                                 }
+                                  } else {
+                                    console.log("Server-side error occured.");
+                                  }
+                              });
+                      }
+  } else if (this.optradio == '1'){
+    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID)
+                          .subscribe((data) => {
+
+                            if (data.success == 1){
+                              alert(data.message);
+                            } else {
+                              alert(data.message);
+                            }
+                            console.log(data);
+
+                            this.student = new Student();
+                          },
+                          // Handle errors
+                          (err: HttpErrorResponse | Error) => {
+                           // this.spinnerService.hide();
+                          
+                          if (err instanceof HttpErrorResponse) {
+                              if (err.status == 200 && err.ok == false){
+                                 alert("Something went wrong. Please choose another option");
+                              } else if (err.status == 401){
+                                alert("Server-side error occured. Please check your token");
+                              } else if (err.status == 400){
+                                alert(err.message);
+                              } else if (err.status == 404){
+                               alert(err.message);
+                             }
+                              } else {
+                                console.log("Server-side error occured.");
+                              }
+                          });
+      }
+  }
+
 
 
 }
