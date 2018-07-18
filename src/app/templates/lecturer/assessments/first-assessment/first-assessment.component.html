@@ -8,7 +8,6 @@
       <th>MARKS</th>
       <th>ALLOCATED MARKS</th>
       <th style="width: 160px">TASK STATUS</th>
-      <th style="width: 260px">COMMENT</th>
     </tr>  
   </thead>
   <tbody>
@@ -38,9 +37,6 @@
             <option value="Pending">Pending</option>
         </select>
     </td>
-    <td>
-      <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-    </td>
     </tr>
 
     <tr>
@@ -57,9 +53,6 @@
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
         </select>
-      </td>
-      <td>
-        <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
       </td>
     </tr>
 
@@ -78,9 +71,6 @@
             <option value="Pending">Pending</option>
         </select>
     </td>
-    <td>
-      <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-    </td>
     </tr>
 
     <tr>
@@ -97,9 +87,6 @@
             <option value="Complete">Complete</option>
             <option value="Pending">Pending</option>
         </select>
-    </td>
-    <td>
-      <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
     </td>
     </tr>
 
@@ -127,9 +114,6 @@
           <option value="Pending">Pending</option>
       </select>
   </td>
-  <td>
-    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-  </td>
   </tr>
 
   <tr>
@@ -146,9 +130,6 @@
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
       </select>
-  </td>
-  <td>
-    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
   </td>
   </tr>
 
@@ -167,9 +148,6 @@
           <option value="Pending">Pending</option>
       </select>
   </td>
-  <td>
-    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-  </td>
   </tr>
 
   <tr>
@@ -186,9 +164,6 @@
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
       </select>
-  </td>
-  <td>
-    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
   </td>
   </tr>
 
@@ -207,14 +182,18 @@
           <option value="Pending">Pending</option>
       </select>
   </td>
-  <td>
-    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-  </td>
   </tr>
   </tbody>
   <tfoot>
+    <tr>
+        <td colspan="5" class="text-center">
+            <textarea class="form-control" [(ngModel)]="comment" placeholder="Comment" rows="4"></textarea>
+        </td>
+    </tr>
       <tr>
-        <td colspan="5" class="text-center"><button class=" form-control btn btn-primary" (click)="submitResult()">Submit</button></td>
+        <td colspan="5" class="text-center" style="border-top: 0">
+          <button class="form-control btn btn-primary" style="width:100px; float:right" (click)="submitResult()">Submit</button>
+        </td>
       </tr>
     </tfoot>
 </table>

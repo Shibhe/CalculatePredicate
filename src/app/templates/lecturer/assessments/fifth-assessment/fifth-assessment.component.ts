@@ -20,7 +20,7 @@ export class FifthAssessmentComponent implements OnInit {
   left: number;
   total: number = 0;
   average4: number = 0;
-
+  comment;
   a5: Assessment5 = new Assessment5();
 
   constructor(private _AssessmentService: AssessmentService) { }
@@ -697,7 +697,7 @@ submitResult(){
   
   if (this.optradio == '2'){
     for (let i = 0; i < this.students.length; i++){
-      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup)
+      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
                                 if (data.success == 1){
@@ -732,7 +732,7 @@ submitResult(){
                               });
                       }
   } else if (this.optradio == '1'){
-    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID)
+    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID,this.comment)
                           .subscribe((data) => {
 
                             if (data.success == 1){

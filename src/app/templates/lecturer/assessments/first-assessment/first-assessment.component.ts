@@ -20,7 +20,7 @@ export class FirstAssessmentComponent implements OnInit {
   left: number;
   total: number = 0;
   average: number = 0;
-
+  comment: string = null;
   a1: Assessment1 = new Assessment1();
   
   constructor(private _AssessmentService: AssessmentService) { }
@@ -288,13 +288,11 @@ export class FirstAssessmentComponent implements OnInit {
   
   if (this.optradio == '2'){
     for (let i = 0; i < this.students.length; i++){
-      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup)
+      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
                                 if (data.success == 1){
-                                  // while(i > this.students.length){
                                     alert(data.message);
-                                  // }
                                   this.students = [];
                                 } else {
                                   alert(data.message);
@@ -323,7 +321,7 @@ export class FirstAssessmentComponent implements OnInit {
                               });
                       }
   } else if (this.optradio == '1'){
-    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID)
+    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID, this.comment)
                           .subscribe((data) => {
 
                             if (data.success == 1){

@@ -20,6 +20,7 @@ export class SecondAssessmentComponent implements OnInit {
   left: number;
   total: number = 0;
   average11: number = 0;
+  comment;
 
   a2: Assessment2 = new Assessment2();
 
@@ -285,7 +286,7 @@ export class SecondAssessmentComponent implements OnInit {
   
   if (this.optradio == '2'){
     for (let i = 0; i < this.students.length; i++){
-      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup)
+      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
                                 if (data.success == 1){
@@ -320,7 +321,7 @@ export class SecondAssessmentComponent implements OnInit {
                               });
                       }
   } else if (this.optradio == '1'){
-    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID)
+    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID,this.comment)
                           .subscribe((data) => {
 
                             if (data.success == 1){
