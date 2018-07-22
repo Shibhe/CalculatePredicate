@@ -4,6 +4,7 @@ import { Input } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Student } from 'src/app/model/student.model';
 import { AssessmentService } from 'src/app/service/assessment.service';
+import { Results } from 'src/app/model/results';
 
 @Component({
   selector: 'app-second-assessment',
@@ -11,6 +12,7 @@ import { AssessmentService } from 'src/app/service/assessment.service';
   styleUrls: ['./second-assessment.component.css']
 })
 export class SecondAssessmentComponent implements OnInit {
+  results: Results = new Results();
   @Input() student: Student = new Student();
   @Input() assessment = null;
   @Input() students = [];
@@ -43,256 +45,193 @@ export class SecondAssessmentComponent implements OnInit {
   as1(e){
     let as1 = e.target.value;
 
-    if (as1.length == 0){
-      this.a2.s1 = "0";
-      // alert("0");
-    } else{
 
     if (as1 == 1){
       this.a2.t1 = as1;
 
-      this.a2.s1 = "Complete";
+      let checkIf40 = (this.a2.t1 / 1) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s1 = "Pending";
+      } else  {
+        this.a2.s1 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
-   
     } else {
      this.a2.t1 = 0;
      this.a2.s1 = "0";
       alert("Out of range");
     }
-  }
  }
 
  as2(e){
    let as12 = e.target.value;
 
-   if (as12.length == 0){
-    this.a2.s2 = "0";
-    // alert("0");
-  } else{
+  
     if (as12 >= 0 && as12 <= 3){
       this.a2.t2 = as12;
-      this.a2.s2 = "Complete";
+      let checkIf40 = (this.a2.t2 / 3) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s2 = "Pending";
+      } else  {
+        this.a2.s2 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
 
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
     } else {
      this.a2.t2 = 0;
      this.a2.s2 = "0";
-      alert("Out of range, it must be between 0 - 3");
+      alert("Out of range");
     }
-  }
+  
  }
 
  as3(e){
    let as3 = e.target.value;
-   if (as3.length == 0){
-    this.a2.s1 = "0";
-    // alert("0");
-  } else{
+
     if (as3 >= 0 && as3 <= 2){
       this.a2.t3 = as3;
-      this.a2.s3 = "Complete";
+      let checkIf40 = (this.a2.t3 / 2) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s3 = "Pending";
+      } else  {
+        this.a2.s3 = "Complete";
+      }
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
 
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
     } else {
      this.a2.t3 = 0;
      this.a2.s3 = "0";
-      alert("Out of range, it must be between o - 2");
+      alert("Out of range");
     }
-  }
  }
 
  as4(e){
    let as4 = e.target.value;
 
-   if (as4.length == 0){
-    this.a2.s1 = "0";
-    // alert("0");
-  } else{
+   
     if (as4 >= 0 && as4 <= 26){
       this.a2.t4 = as4;
-      this.a2.s4 = "Complete";
+     
+      let checkIf40 = (this.a2.t4 / 26) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s4 = "Pending";
+      } else  {
+        this.a2.s4 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
     } else {
       this.a2.t4 = 0;
       this.a2.s4 = "0";
-      alert("Out of range, it must be between 0 - 26");
+      alert("Out of range");
     }
-  }
+  
  }
 
  as5(e){
    let as5 = e.target.value;
 
-   if (as5.length == 0){
-    this.a2.s1 = "0";
-    // alert("0");
-  } else{
+  
     if (as5 >=0 && as5 <= 2){
       this.a2.t5 = as5;
-      this.a2.s5 = "Complete";
+      let checkIf40 = (this.a2.t5 / 2) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s5 = "Pending";
+      } else  {
+        this.a2.s5 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
     } else {
       this.a2.t5 = 0;
       this.a2.s5 = "5";
       alert("Out of range");
     }
-  }
  }
 
  as6(e){
    let as6 = e.target.value;
 
-   if (as6.length == 0){
-    this.a2.s1 = "0";
-    // alert("0");
-  } else{
     if (as6 == 1){
       this.a2.t6 = as6;
-      this.a2.s6 = "Complete";
+      
+      let checkIf40 = (this.a2.t6 / 1) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s6 = "Pending";
+      } else  {
+        this.a2.s6 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7))/ 36) * 100) * 0.15;
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
     } else {
       this.a2.t6 = 0;
       this.a2.s6 = "0";
       alert("Out of range");
     }
-  }
  }
 
  as7(e){
    let as7 = e.target.value;
-   if (as7.length == 0){
-    this.a2.s1 = "0";
-    // alert("0");
-  } else{
+  
     if (as7 == 1){
       this.a2.t7 = as7;
-      this.a2.s7 = "Complete";
+      let checkIf40 = (this.a2.t7 / 1) * 100;
+
+      if (checkIf40 < 40){
+        this.a2.s7 = "Pending";
+      } else  {
+        this.a2.s7 = "Complete";
+      }
+
       this.average11 = (((Number(this.a2.t1) + Number(this.a2.t2) + Number(this.a2.t3) + Number(this.a2.t4) + Number(this.a2.t5) + Number(this.a2.t6) + Number(this.a2.t7)) / 36) * 100) * 0.15;
       this.total += this.average11;
 
-      if (this.total < 50){
-        this.left = 50 - Number(this.total);
-        this.status = "Fail";
-      }else {
-
-       if (this.total >= 74){
-         this.status = "PD";
-       } else {
-         this.status = "Pass";
-       }
-       alert("Passed");
-       this.left = 0;
-     }
 
     } else {
       this.a2.t7 = 0;
       this.a2.s7 = "0";
       alert("Out of range");
     }
-  }
  }
 
  submitResult(){
   
+  //this.results.results = this.total;
+ // this.results.assessment_Id = this.assessment[0].assessment_Id;
+  //this.results.comment = this.comment;
+  //this.results.group_Id = Number(this.student.studGroup);
+
   if (this.optradio == '2'){
     for (let i = 0; i < this.students.length; i++){
+
+     
+      //this.results.student_Id = this.students[i].student_Id;
+
       this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
                                 if (data.success == 1){
-                                   while(i < this.students.length){
                                     alert(data.message);
-                                   }
                                   this.students = [];
                                 } else {
                                   alert(data.message);
@@ -321,7 +260,10 @@ export class SecondAssessmentComponent implements OnInit {
                               });
                       }
   } else if (this.optradio == '1'){
-    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID,this.comment)
+
+   // this.results.student_Id = Number(this.student.stud_ID);
+
+    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID, this.comment)
                           .subscribe((data) => {
 
                             if (data.success == 1){

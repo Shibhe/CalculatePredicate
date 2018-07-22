@@ -4,6 +4,7 @@ import { Input } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Student } from 'src/app/model/student.model';
 import { AssessmentService } from 'src/app/service/assessment.service';
+import { Results } from 'src/app/model/results';
 
 @Component({
   selector: 'app-first-assessment',
@@ -22,7 +23,8 @@ export class FirstAssessmentComponent implements OnInit {
   average: number = 0;
   comment: string = null;
   a1: Assessment1 = new Assessment1();
-  
+  results: Results = new Results();
+
   constructor(private _AssessmentService: AssessmentService) { }
 
   ngOnInit() {
@@ -41,10 +43,6 @@ export class FirstAssessmentComponent implements OnInit {
   // Assessment 1
   ass1(e){
     let as1 = e.target.value;
-
-    if (as1.length == 0){
-      this.a1.s1 = "0";
-    } else{
 
     if (as1 >= 0 && as1 <= 3){
       this.a1.t1 = as1;
@@ -66,7 +64,7 @@ export class FirstAssessmentComponent implements OnInit {
      this.a1.s1 = "0";
       alert("Out of range, it must be between 0 - 3");
     }
-   }
+   
  }
 
  ass2(e){
@@ -286,8 +284,17 @@ export class FirstAssessmentComponent implements OnInit {
 
  submitResult(){
   
+ // this.results.results = this.total;
+ // this.results.assessment_Id = this.assessment[0].assessment_Id;
+ // this.results.comment = this.comment;
+ // this.results.group_Id = Number(this.student.studGroup);
+
   if (this.optradio == '2'){
     for (let i = 0; i < this.students.length; i++){
+
+     
+      //this.results.student_Id = this.students[i].student_Id;
+
       this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
@@ -321,6 +328,9 @@ export class FirstAssessmentComponent implements OnInit {
                               });
                       }
   } else if (this.optradio == '1'){
+
+   // this.results.student_Id = Number(this.student.stud_ID);
+
     this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID, this.comment)
                           .subscribe((data) => {
 
