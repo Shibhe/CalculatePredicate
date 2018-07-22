@@ -1,6 +1,10 @@
 ul.dropdown-lr {
     width: 300px;
   }
+
+  a {
+    pointer-events: none;
+}
   
   /* mobile fix */
   @media (max-width: 768px) {
