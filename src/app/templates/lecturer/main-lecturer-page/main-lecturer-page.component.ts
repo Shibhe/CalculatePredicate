@@ -24,12 +24,10 @@ export class MainLecturerPageComponent implements OnInit {
 
     this.student.studGroup = "0";
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log(this.currentUser);
     this.rep = 0;
     this._AssessmentService.getGroups()
                             .subscribe((data) => {
                               this.groups = data;
-                              console.log(this.groups);
                             },
                             // Handle errors
                             (err: HttpErrorResponse | Error) => {
@@ -94,7 +92,6 @@ export class MainLecturerPageComponent implements OnInit {
   }
 
   onChangeObj(e){
-    console.log(e);
     this.student.studGroup = e;
   }
 

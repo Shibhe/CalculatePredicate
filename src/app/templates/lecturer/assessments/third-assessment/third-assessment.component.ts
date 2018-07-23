@@ -530,7 +530,6 @@ submitResult(){
                                 } else {
                                   alert(data.message);
                                 }
-                                console.log(data);
 
                                 this.student = new Student();
                               },
@@ -565,7 +564,6 @@ submitResult(){
                             } else {
                               alert(data.message);
                             }
-                            console.log(data);
 
                             this.student = new Student();
                           },

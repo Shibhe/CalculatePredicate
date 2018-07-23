@@ -85,7 +85,6 @@ export class GradingComponent implements OnInit {
    this._AssessmentService.getGroups()
                             .subscribe((data) => {
                               this.group = data;
-                              console.log(this.groups);
                             },
                             // Handle errors
                             (err: HttpErrorResponse | Error) => {
@@ -109,7 +108,6 @@ export class GradingComponent implements OnInit {
     this._AssessmentService.getStudentNoGroup()
                            .subscribe((data) => {
                             this.groups = data;
-                            console.log(this.groups);
                            },
                            // Handle errors
                            (err: HttpErrorResponse | Error) => {
@@ -140,7 +138,6 @@ export class GradingComponent implements OnInit {
   }
 
   selectedGroup(e){
-    console.log(e);
     this.students = [];
     let id = this.currentUser.staff_Id;
     
@@ -148,7 +145,6 @@ export class GradingComponent implements OnInit {
                        .subscribe((data) => {
                         if (data.success !== 0){
                           this.students = data;
-                          console.log(this.students);
                         } else {
                           alert(data.message);
                         }
@@ -177,18 +173,15 @@ export class GradingComponent implements OnInit {
     
     this.total = 0;
     this.left = 0;
-    console.log("Info ",this.task)
    if (this.task == "2"){
      this._AssessmentService.getAssessment2()
                             .subscribe((data) => {
                               this.assessment = data;
-                              console.log(this.assessment);
                             })
    } else if (this.task == "6"){
     this._AssessmentService.getAllAssessment()
     .subscribe((data) => {
       this.assessment = data;
-      console.log(this.assessment);
     },
     // Handle errors
     (err: HttpErrorResponse | Error) => {
@@ -211,7 +204,6 @@ export class GradingComponent implements OnInit {
     this._AssessmentService.getAssessment(this.task)
     .subscribe((data) => {
       this.assessment = data;
-      console.log(this.assessment);
     },
     // Handle errors
     (err: HttpErrorResponse | Error) => {

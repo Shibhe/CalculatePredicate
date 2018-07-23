@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/service/report/report.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { StudentService } from '../../../../service/student/student.service';
+import { ExcelServiceService } from '../../../../service/export/excel-service.service';
+import { ExportResults } from '../../../../model/exportResults';
 
 @Component({
   selector: 'app-report',
@@ -16,8 +18,12 @@ export class ReportComponent implements OnInit {
   show: boolean = false;
   result: any[] = [];
   total: number = 0;
+  exportResults: ExportResults = new ExportResults();
+  data: any[]   = [];
+
   constructor(private reportService: ReportService,
-              private studentService: StudentService) { }
+              private studentService: StudentService,
+              private excelService:ExcelServiceService) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -26,7 +32,6 @@ export class ReportComponent implements OnInit {
     this.reportService.getReport(this.currentUser.staff_Id)
                .subscribe((data) => {
                  this.updateResults.push(data);
-                 //this.result.push(["0"].report);
                  this.status = "";
 
                  for (let i = 0; i < this.updateResults["0"].student_Results.length; i++){
@@ -34,8 +39,6 @@ export class ReportComponent implements OnInit {
                    for (let x = 0; x < this.updateResults["0"].student_Results[i].report.length; x++){
                       this.total = this.total + Number(this.updateResults["0"].student_Results[i].report[x].results)
                    }
-
-                  // this.total = this.total;
 
                   if (this.total == 49){
                      this.total = 50;
@@ -55,7 +58,6 @@ export class ReportComponent implements OnInit {
                                        console.log(data); 
                                       });
                  }
-                 console.log(this.updateResults);
                },
                // Handle errors
                (err: HttpErrorResponse | Error) => {
@@ -71,9 +73,7 @@ export class ReportComponent implements OnInit {
                    } else if (err.status == 404){
                     alert(err.message);
                   }
-                   } else {
-                     console.log("Server-side error occured.");
-                   }
+                }
                });
 
 
@@ -95,12 +95,30 @@ export class ReportComponent implements OnInit {
                                } else if (err.status == 404){
                                 alert(err.message);
                               }
-                               } else {
-                                 console.log("Server-side error occured.");
                                }
                            });
 
-        console.log(this.result);
+  }
+
+  exportPage() {
+
+    for (let x = 0; x < this.reportResults["0"].student_Results.length; x++){
+      this.exportResults = {
+        "Group":          this.reportResults["0"].student_Results[x].Group_Name,
+        "Name":           this.reportResults["0"].student_Results[x].student_FName,
+        "Surname":        this.reportResults["0"].student_Results[x].student_LName,
+        "Status":         this.reportResults["0"].student_Results[x].student_Status,
+        "Marks":          this.reportResults["0"].student_Results[x].student_Marks,
+        "Staff_No":       this.currentUser.staff_Number,
+        "Student_Number": this.reportResults["0"].student_Results[x].student_Number,
+      }
+
+      this.data.push(this.exportResults);
+      
+    }
+
+    this.excelService.exportAsExcelFile(this.data, "DSO34BT");
+    
   }
 
   printPage(){
@@ -109,5 +127,4 @@ export class ReportComponent implements OnInit {
         window.print();
       }, 30)
   }
-
 }

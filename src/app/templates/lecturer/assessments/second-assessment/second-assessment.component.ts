@@ -45,8 +45,7 @@ export class SecondAssessmentComponent implements OnInit {
   as1(e){
     let as1 = e.target.value;
 
-
-    if (as1 == 1){
+    if (as1 >= 0 && as1 <= 1){
       this.a2.t1 = as1;
 
       let checkIf40 = (this.a2.t1 / 1) * 100;
@@ -146,7 +145,7 @@ export class SecondAssessmentComponent implements OnInit {
    let as5 = e.target.value;
 
   
-    if (as5 >=0 && as5 <= 2){
+    if (as5 >= 0 && as5 <= 2){
       this.a2.t5 = as5;
       let checkIf40 = (this.a2.t5 / 2) * 100;
 
@@ -169,7 +168,7 @@ export class SecondAssessmentComponent implements OnInit {
  as6(e){
    let as6 = e.target.value;
 
-    if (as6 == 1){
+    if (as6 >= 0 && as6 <= 1){
       this.a2.t6 = as6;
       
       let checkIf40 = (this.a2.t6 / 1) * 100;
@@ -193,7 +192,7 @@ export class SecondAssessmentComponent implements OnInit {
  as7(e){
    let as7 = e.target.value;
   
-    if (as7 == 1){
+    if (as7 >= 0 && as7 <= 1){
       this.a2.t7 = as7;
       let checkIf40 = (this.a2.t7 / 1) * 100;
 
@@ -236,7 +235,6 @@ export class SecondAssessmentComponent implements OnInit {
                                 } else {
                                   alert(data.message);
                                 }
-                                console.log(data);
 
                                 this.student = new Student();
                               },
@@ -271,7 +269,6 @@ export class SecondAssessmentComponent implements OnInit {
                             } else {
                               alert(data.message);
                             }
-                            console.log(data);
 
                             this.student = new Student();
                           },

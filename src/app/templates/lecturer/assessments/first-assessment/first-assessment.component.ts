@@ -75,7 +75,6 @@ export class FirstAssessmentComponent implements OnInit {
 
       let checkIf40 = (this.a1.t2 / 2) * 100;
 
-      console.log(checkIf40);
 
       if (checkIf40 < 40){
         this.a1.s2 = "Pending";
@@ -304,7 +303,6 @@ export class FirstAssessmentComponent implements OnInit {
                                 } else {
                                   alert(data.message);
                                 }
-                                console.log(data);
 
                                 this.student = new Student();
                               },
@@ -339,7 +337,6 @@ export class FirstAssessmentComponent implements OnInit {
                             } else {
                               alert(data.message);
                             }
-                            console.log(data);
 
                             this.student = new Student();
                           },

@@ -18,7 +18,6 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log(this.currentUser);
   }
 
   logout(){
