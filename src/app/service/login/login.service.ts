@@ -16,6 +16,10 @@ export class LoginService {
     return this.http.get(`${this.BASE_URL}/login.php?staff_Email=${email}&staff_Password=${password}&staff_Number=${email}`)
   }
 
+  updatePassword(password, id){
+    return this.http.get<any>(`${this.BASE_URL}/updatePassword.php?staff_Password=${password}&staff_Id=${id}`)
+  }
+
   get isAuthenticated(){
     return this.isLoggedIn;
   }

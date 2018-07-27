@@ -19,6 +19,7 @@ import { SecondAssessmentComponent } from './templates/lecturer/assessments/seco
 import { ThirdAssessmentComponent } from './templates/lecturer/assessments/third-assessment/third-assessment.component';
 import { FourthAssessmentComponent } from './templates/lecturer/assessments/fourth-assessment/fourth-assessment.component';
 import { FifthAssessmentComponent } from './templates/lecturer/assessments/fifth-assessment/fifth-assessment.component';
+import { UpdatePasswordComponent } from './templates/update/update-password/update-password.component';
 // import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FifthAssessmentComponent } from './templates/lecturer/assessments/fifth
     SecondAssessmentComponent,
     ThirdAssessmentComponent,
     FourthAssessmentComponent,
-    FifthAssessmentComponent
+    FifthAssessmentComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,
