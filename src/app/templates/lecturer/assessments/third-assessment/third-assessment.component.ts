@@ -521,7 +521,7 @@ submitResult(){
      
       //this.results.student_Id = this.students[i].student_Id;
 
-      this._AssessmentService.submitResults(this.total, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
+      this._AssessmentService.submitResults(this.average2, this.assessment[0].assessment_Id, this.students[i].student_Id, this.student.studGroup,this.comment)
                               .subscribe((data) => {
 
                                 if (data.success == 1){
@@ -556,7 +556,7 @@ submitResult(){
 
     //this.results.student_Id = Number(this.student.stud_ID);
 
-    this._AssessmentService.submitIndResults(this.total, this.assessment[0].assessment_Id, this.student.stud_ID, this.comment)
+    this._AssessmentService.submitIndResults(this.average2, this.assessment[0].assessment_Id, this.student.stud_ID, this.comment)
                           .subscribe((data) => {
 
                             if (data.success == 1){

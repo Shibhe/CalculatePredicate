@@ -22,7 +22,7 @@ export class MainLecturerPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.student.studGroup = "0";
+    this.student.studGroup = "12";
     this.currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     this.rep = 0;
     this._AssessmentService.getGroups()
