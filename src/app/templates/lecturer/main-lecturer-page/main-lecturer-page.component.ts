@@ -66,8 +66,8 @@ export class MainLecturerPageComponent implements OnInit {
                         this.student = new Student();
                       } else if (data.success == 0) {
                         alert(data.message);
-                      } else {
-                        alert("User already exists");
+                      } else if (data.success == 2) {
+                        alert(data.message);
                       }
                      },
                      // Handle errors
